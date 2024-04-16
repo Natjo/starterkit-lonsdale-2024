@@ -1,0 +1,14 @@
+#footer {
+    background: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+#nav-footer {
+    ul{
+        display: flex;
+        gap: 12px;
+    }
+}

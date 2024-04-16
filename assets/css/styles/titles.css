@@ -1,0 +1,16 @@
+.tl1 {
+    font-family: var(--font-2);
+    font-size: var(--font-size-xxlg);
+    line-height: 1.1;
+}
+.tl2 {
+    font-family: var(--font-2);
+    font-size: var(--font-size-xlg);
+    line-height: 1.1;
+}
+.tl3 {
+    font-family: var(--font-2);
+    font-size: var(--font-size-md);
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
