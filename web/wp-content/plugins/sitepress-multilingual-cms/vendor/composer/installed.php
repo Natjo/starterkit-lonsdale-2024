@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '4.6.9',
-        'version' => '4.6.9.0',
+        'pretty_version' => '4.6.10',
+        'version' => '4.6.10.0',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e12d806a3b01b0103a3ce248640b58dcbac584f5',
+        'reference' => '5a768ce986f7e9d0660e5c791000ae5a22ab6082',
         'name' => 'wpml/core',
         'dev' => false,
     ),
@@ -58,12 +58,12 @@
             'dev_requirement' => false,
         ),
         'otgs/installer' => array(
-            'pretty_version' => '3.1.4',
-            'version' => '3.1.4.0',
+            'pretty_version' => '3.1.6',
+            'version' => '3.1.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../otgs/installer',
             'aliases' => array(),
-            'reference' => '37511cd2189e056792208385725355c1c7c9e334',
+            'reference' => '502434c0241facf7afe37b8e761f02933eae5f61',
             'dev_requirement' => false,
         ),
         'otgs/ui' => array(
@@ -164,12 +164,12 @@
             'dev_requirement' => false,
         ),
         'wpml/core' => array(
-            'pretty_version' => '4.6.9',
-            'version' => '4.6.9.0',
+            'pretty_version' => '4.6.10',
+            'version' => '4.6.10.0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e12d806a3b01b0103a3ce248640b58dcbac584f5',
+            'reference' => '5a768ce986f7e9d0660e5c791000ae5a22ab6082',
             'dev_requirement' => false,
         ),
         'wpml/core-api' => array(

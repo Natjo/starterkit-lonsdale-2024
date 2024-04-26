@@ -2086,7 +2086,6 @@ class WP_Installer {
 		$plugins = get_plugins();
 
 		foreach ( $plugins as $plugin_id => $plugin ) {
-
 			$wp_plugin_slug = dirname( $plugin_id );
 
 			// Exception: embedded plugins
@@ -2162,6 +2161,9 @@ class WP_Installer {
 				foreach ( $package['products'] as $product ) {
 
 					foreach ( $product['plugins'] as $plugin_slug ) {
+                        if( ! array_key_exists( $plugin_slug, $this->settings['repositories'][ $repository_id ]['data']['downloads']['plugins'] ) ) {
+                            continue;
+                        }
 
 						$download = $this->settings['repositories'][ $repository_id ]['data']['downloads']['plugins'][ $plugin_slug ];
 
@@ -2962,23 +2964,17 @@ class WP_Installer {
 								foreach ( $package['products'] as $product ) {
 
 									foreach ( $product['plugins'] as $plugin_slug ) {
-
-										$download = $this->settings['repositories'][ $repository_id ]['data']['downloads']['plugins'][ $plugin_slug ];
-
-										if ( $download['slug'] == $wp_plugin_slug ) {
+										if ( $this->settings['repositories'][ $repository_id ]['data']['downloads']['plugins'][ $plugin_slug ]['slug'] == $wp_plugin_slug ) {
+											$download = $this->settings['repositories'][ $repository_id ]['data']['downloads']['plugins'][ $plugin_slug ];
 											$plugin_repository = $repository_id;
 											$product_name      = $repository['data']['product-name'];
 											$plugin_name       = $download['name'];
 											$free_on_wporg     = ! empty( $download['free-on-wporg'] ) && $download['channel'] == WP_Installer_Channels::CHANNEL_PRODUCTION;
 											break;
 										}
-
 									}
-
 								}
-
 							}
-
 						}
 
 						if ( $plugin_repository ) {
@@ -3078,7 +3074,7 @@ class WP_Installer {
 
 					if ( ! $site_key ) {
 						list( $plugin_repository, $site_key ) = $this->match_product_in_external_repository( $plugin_repository, $wp_plugin_slug );
-                    }
+					}
 
 					if ( $site_key ) {
 						try {

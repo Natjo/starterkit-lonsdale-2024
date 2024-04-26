@@ -617,6 +617,7 @@ return array(
     'WPML\\Media\\Translate\\Endpoint\\PrepareForTranslation' => $baseDir . '/classes/media/translate/endpoints/PrepareForTranslation.php',
     'WPML\\Media\\Translate\\Endpoint\\TranslateExistingMedia' => $baseDir . '/classes/media/translate/endpoints/TranslateExistingMedia.php',
     'WPML\\Notices\\DismissNotices' => $baseDir . '/classes/notices/DismissNotices.php',
+    'WPML\\Notices\\ExportImport\\Notice' => $baseDir . '/classes/notices/export-import/Notice.php',
     'WPML\\Options\\Reset' => $baseDir . '/classes/options/Reset.php',
     'WPML\\Plugins' => $baseDir . '/classes/plugins/Plugins.php',
     'WPML\\PostTranslation\\SpecialPage\\Hooks' => $baseDir . '/classes/post-translation/SpecialPage/Hooks.php',

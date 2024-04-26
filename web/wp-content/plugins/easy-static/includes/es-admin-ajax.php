@@ -127,12 +127,10 @@ function test_callback()
                 $docker_url = str_replace($this->site_url_base . "/", 'https://' . $_SERVER['SERVER_ADDR'] . '/', $url);
                 $html = file_get_contents($docker_url . "?generate=true", false, stream_context_create($arrContextOptions));
                 $html1 = str_replace('https://' . $_SERVER['SERVER_ADDR'],  "", $html);
-                $html1 = str_replace(str_replace("/", "\/", 'https://' . $_SERVER['SERVER_ADDR']),  "", $html1);
                 $html1 = str_replace($this->site_url_base,  "", $html1);
             } else {
                 $html = file_get_contents($url . "?generate=true", false, stream_context_create($arrContextOptions));
-                //TODO replace $this->site_url_base to "" and params theme url
-                $html1 = $html;
+                $html1 = str_replace($this->site_url_base, "", $html);
             }
 
             if ($this->isminify  === true) {
@@ -328,7 +326,7 @@ function static_export_pages_callback()
 
             $this->crawlPage($this->site_url_base . "/");
 
-            //assets
+            // change url and copy assets
             copyfolder(THEME_DIR . "/assets/", WP_CONTENT_DIR . "/easy-static/export/assets/");
             $appjs_file = file_get_contents(WP_CONTENT_DIR . "/easy-static/export/assets/js/app.js");
             $appjs_file = str_replace("/wp-content/themes/" . $this->theme_slug . "/assets/", "/" . $this->dist_folder . "assets/", $appjs_file);
@@ -369,19 +367,14 @@ function static_export_pages_callback()
                 $docker_url = str_replace($this->site_url_base . "/", 'https://' . $_SERVER['SERVER_ADDR'] . '/', $url);
                 $html = file_get_contents($docker_url . "?generate=true", false, stream_context_create($arrContextOptions));
                 $html1 = str_replace('https://' . $_SERVER['SERVER_ADDR'] . "/", "/" . $this->dist_folder, $html);
-                $site_url_baseSlashed = str_replace("/", "\/", 'https://' . $_SERVER['SERVER_ADDR'] . "/");
             } else {
                 $html = file_get_contents($url . "?generate=true", false, stream_context_create($arrContextOptions));
-                $html1 = str_replace($this->site_url_base . '/', "/" . $this->dist_folder . "", $html);
-                $site_url_baseSlashed = str_replace("/", "\/", $this->site_url_base . '/');
-                //TODO test if working
+                $html1 = str_replace($this->site_url_base . '/', "/" . $this->dist_folder, $html);
             }
 
             $html1 = str_replace("/wp-content/uploads/", "/uploads/", $html1);
-            $html1 = str_replace("/wp-content/themes/" . $this->theme_slug . "/assets/", "/assets/", $html1);
-            $dist_folderSlashed = str_replace("/", "\/", $this->dist_folder);
-            $html1 = str_replace($site_url_baseSlashed . "wp-content\/themes\/" . $this->theme_slug . "\/",   "\/" . $dist_folderSlashed, $html1);
-
+            $html1 = str_replace("/wp-content/themes/" . $this->theme_slug . "/", "/", $html1);
+           
             if ($this->isminify  === true) {
                 file_put_contents(WP_CONTENT_DIR . "/easy-static/export/" .  $folder  . 'index.html', TinyMinify::html($html1));
             } else {
