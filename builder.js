@@ -14,7 +14,7 @@ require('dotenv').config({ path: '.docker/.env' })
 const { optimize } = require('svgo');
 
 const src = 'assets/';
-const dist = `web/wp-content/themes/${process.env.THEME_NAME}/`;
+const dist = `web/wp-content/themes/${process.env.WP_THEME_NAME}/`;
 
 let styles = [];
 let date = new Date();

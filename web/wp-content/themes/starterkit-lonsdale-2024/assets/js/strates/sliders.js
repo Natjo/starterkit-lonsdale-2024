@@ -1,4 +1,4 @@
-import Slider from '../modules/slider.js?v=3210479';
+import Slider from '../modules/slider.js?v=3516651';
 export default (el => {
   const sliders = document.querySelectorAll('.slider0,.slider1,.slider2,.slider3,.slider4');
   window.onload = () => {

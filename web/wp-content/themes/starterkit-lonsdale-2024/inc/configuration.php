@@ -116,6 +116,8 @@ add_filter('wp_editor_set_quality', function ($arg) {
     return -1;
 });
 
+// empeche que l'image soit scaled si trop grande
+add_filter( 'big_image_size_threshold', '__return_false' );
 
 /*  DISABLE GUTENBERG STYLE IN HEADER| WordPress 5.9 */
 function wps_deregister_styles()
