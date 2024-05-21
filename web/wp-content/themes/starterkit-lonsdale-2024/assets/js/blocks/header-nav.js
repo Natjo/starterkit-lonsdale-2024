@@ -1,4 +1,1 @@
-import { ParamsData } from '../app.js?v=3516651';
-export default (el => {
-  console.log("header");
-});
+import{ParamsData}from"../app.js?v=4214551";export default(el=>{console.log("header")});
