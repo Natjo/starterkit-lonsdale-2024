@@ -52,14 +52,15 @@ function create_cpt()
         'capability_type' => 'post',
         'taxonomies' => array(''),
         'rewrite' => array(
-            'slug' => actualites_slugByLang[apply_filters('wpml_current_language', null)],
+            'slug' => 'actualites',
+            //'slug' => actualites_slugByLang[apply_filters('wpml_current_language', null)],
             'with_front' => true,
         ),
     );
     register_post_type('news', $argsNews);
 
     // Rewrite rules for pagination page
-    add_action('init', 'news_rewrite_url');
+   /*  add_action('init', 'news_rewrite_url');
     function news_rewrite_url()
     {
         add_rewrite_tag('%paged%', '([^&]+)');
@@ -73,7 +74,7 @@ function create_cpt()
                 'top'
             );
         }
-    }
+    }*/
 }
 
 add_action('init', 'create_cpt', 0);
