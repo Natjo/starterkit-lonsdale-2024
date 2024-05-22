@@ -93,3 +93,31 @@ function lsd_get_featured($id, $size = 'medium')
         return $imgUrl;
     }
 }
+
+
+/**
+ * SEO title and desc
+ */
+function lsd_seo()
+{
+    remove_action('wp_head', '_wp_render_title_tag', 1);
+
+    $title = get_field('options-seo-title', 'options');
+    $desc = get_field('options-seo-desc', 'options');
+
+    if (empty($title)) {
+        $title = get_bloginfo('name');
+    }
+
+    if (!is_front_page()) {
+
+        $title =  $title . " | " . get_the_title();
+    }
+    $markup = '<title>' . $title  . '</title>' . "\n";
+
+    if (!empty($desc)) {
+        $markup .= '<meta name="description" content="' . $desc . '">' . "\n";
+    }
+
+    return $markup;
+}
