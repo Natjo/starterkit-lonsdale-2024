@@ -23,7 +23,9 @@ btn_generate.onclick = () => {
     data.append('nonce', nonce);
     data.append('status', toogle_status.checked);
     const xhr = new XMLHttpRequest();
-    xhr.open("post", ajax_url, true);
+  
+    xhr.open("post", ajax_url, true);  
+    //xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
     xhr.onload = () => {
         btn_generate.classList.remove('loading');

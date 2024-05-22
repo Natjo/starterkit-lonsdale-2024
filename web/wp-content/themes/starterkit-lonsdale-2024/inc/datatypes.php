@@ -1,11 +1,13 @@
 <?php
+/*
+ if wpml
 define(
     "actualites_slugByLang",
     [
         "fr" => 'actualites',
         "en" => 'news',
     ]
-);
+);*/
 
 function create_cpt()
 {
@@ -60,11 +62,12 @@ function create_cpt()
     register_post_type('news', $argsNews);
 
     // Rewrite rules for pagination page
-   /*  add_action('init', 'news_rewrite_url');
+    add_action('init', 'news_rewrite_url');
     function news_rewrite_url()
     {
         add_rewrite_tag('%paged%', '([^&]+)');
-
+       
+        /* if wpml
         $dataLangs = apply_filters('wpml_active_languages', NULL, 'orderby=id&order=asc');
 
         foreach ($dataLangs as $dataLang) {
@@ -74,7 +77,13 @@ function create_cpt()
                 'top'
             );
         }
-    }*/
+        */
+        add_rewrite_rule(
+            'actualites/page/([^/]+)',
+            'index.php?pagename=actualites&paged=$matches[1]',
+            'top'
+        );
+    }
 }
 
 add_action('init', 'create_cpt', 0);

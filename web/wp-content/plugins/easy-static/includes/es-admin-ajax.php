@@ -119,7 +119,6 @@ function test_callback()
 
             // folder
             $folder = str_replace($this->site_url_base . "/", "", $page_url);
-
             rm_rf(WP_CONTENT_DIR . '/easy-static/static/' . $folder);
             mkdir(WP_CONTENT_DIR . '/easy-static/static/' . $folder, 0755, true);
 
@@ -149,11 +148,14 @@ function test_callback()
         // Recursive function that crawls a page's anchor tags and store them in the scanned array.
         private function crawlPage($page_url)
         {
+            $page_url = rtrim($page_url, "/") . '/';
+
             if (ENV_LOCAL) {
                 $page_url = str_replace('https://' . $_SERVER['SERVER_ADDR'], $this->site_url_base, $page_url);
             }
 
             $url = filter_var($page_url, FILTER_SANITIZE_URL);
+
 
             // Check if the url is invalid or if the page is already scanned;
             if (in_array($url, $this->scanned, FALSE) || !filter_var($page_url, FILTER_VALIDATE_URL)) {
@@ -374,7 +376,7 @@ function static_export_pages_callback()
 
             $html1 = str_replace("/wp-content/uploads/", "/uploads/", $html1);
             $html1 = str_replace("/wp-content/themes/" . $this->theme_slug . "/", "/", $html1);
-           
+
             if ($this->isminify  === true) {
                 file_put_contents(WP_CONTENT_DIR . "/easy-static/export/" .  $folder  . 'index.html', TinyMinify::html($html1));
             } else {
