@@ -180,6 +180,7 @@ watch(src, { recursive: true }, (evt, file) => {
     if (hasError) evt = 'error';
 
     if (folder === 'css') {
+        styles = [];
         core.dirScan(`${src}css`);
         core.compile_syles(true);
 

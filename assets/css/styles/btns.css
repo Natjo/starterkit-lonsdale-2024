@@ -1,5 +1,12 @@
-.btn-1 {
+.btn {
     font-size: var(--font-size);
+    background-color: var(--color-1);
+    color: #fff;
+    padding: 4px;
+}
+
+
+.btn-1 {
     background-color: var(--color-1);
     color: #fff;
 }

@@ -5,7 +5,7 @@
     </div>
 </div>
 
-<header id="header" role="banner" data-module="blocks/header-nav">
+<header id="header" role="banner" data-module="common/header-nav">
     <div class="container">
         <a href="<?= get_home_url() ?>" class="logo" aria-label="Aller à la page d'accueil">
             <svg xmlns="http://www.w3.org/2000/svg" width="122" height="14" viewBox="0 0 122 14" xml:space="preserve">
@@ -26,13 +26,12 @@
                 ));
                 ?>
             </nav>
+
             <form id="search" method="post" action="/">
                 <input id="search-input" type="text" name="s" placeholder="recherche"> 
                 <label for="search-input">Search</label>
                 <?= icon('search', 30, 21)?>
-            </form>
-
-           
+            </form> 
         </div>
     </div>
 </header>

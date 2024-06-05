@@ -24,11 +24,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_630cab0764860",
-                            "label": "Text",
-                            "name": "text",
+                            "key": "field_6654a87ac6459",
+                            "label": "Contenu",
+                            "name": "",
                             "aria-label": "",
-                            "type": "wysiwyg",
+                            "type": "tab",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -37,28 +37,86 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6654a7a31e74c",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6654a73465d63"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6654a88ac645a",
+                            "label": "Options",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6654a8a5c645b",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6652efba91e5a"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
                     "max": ""
                 },
-                "layout_630cab5864862": {
-                    "key": "layout_630cab5864862",
+                "layout_6652f82349159": {
+                    "key": "layout_6652f82349159",
                     "name": "strate-image",
                     "label": "Image",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_630cab6864863",
-                            "label": "Image desktop",
-                            "name": "img-desktop",
+                            "key": "field_66530002dc017",
+                            "label": "Contenu",
+                            "name": "",
                             "aria-label": "",
-                            "type": "image",
+                            "type": "tab",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -67,23 +125,15 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "id",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
-                            "key": "field_630cab8764864",
-                            "label": "Image mobile",
-                            "name": "image_mobile",
+                            "key": "field_66530094f77b5",
+                            "label": "",
+                            "name": "block-image",
                             "aria-label": "",
-                            "type": "image",
+                            "type": "clone",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -92,23 +142,20 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "id",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "clone": [
+                                "group_6652f6a5f1175"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         },
                         {
-                            "key": "field_630caba164865",
-                            "label": "Image tablet",
-                            "name": "img-tablet",
+                            "key": "field_6652ffbff68f2",
+                            "label": "Options",
+                            "name": "",
                             "aria-label": "",
-                            "type": "image",
+                            "type": "tab",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -117,33 +164,15 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "id",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_632829d7549d9": {
-                    "key": "layout_632829d7549d9",
-                    "name": "strate-news",
-                    "label": "News",
-                    "display": "block",
-                    "sub_fields": [
+                            "placement": "top",
+                            "endpoint": 0
+                        },
                         {
-                            "key": "field_6328506575531",
-                            "label": "Titre",
-                            "name": "title",
+                            "key": "field_6652ff3c24c2f",
+                            "label": "",
+                            "name": "",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "clone",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -152,20 +181,22 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "clone": [
+                                "group_6652efba91e5a"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
                     "max": ""
                 }
             },
-            "button_label": "Ajouter un élément",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Ajouter un élément"
         }
     ],
     "location": [
@@ -200,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695911580
+    "modified": 1716824248
 }

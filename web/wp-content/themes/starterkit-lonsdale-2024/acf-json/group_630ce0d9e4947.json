@@ -6,6 +6,7 @@
             "key": "field_630ce0df13158",
             "label": "Description",
             "name": "card-news-desc",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -37,8 +38,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663587883
+    "modified": 1716711351
 }

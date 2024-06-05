@@ -1,7 +1,5 @@
-<section class="strate-wysiwyg bg-color-<?= $args['bg-color']; ?>">
+<section class="strate strate-wysiwyg<?= options($args) ?>">
     <div class="container">
-        <div class="rte">
-            <?= $args['text'] ?>
-        </div>
+        <?php get_template_part('template-parts/blocks/block', 'text', $args["block-text"]); ?>
     </div>
 </section>

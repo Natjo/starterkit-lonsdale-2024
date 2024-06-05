@@ -3,9 +3,9 @@
     z-index: 1000;
     top: 0;
     width: 100%;
-    background: #fff;
+    background: aliceblue;
 
-    .container-fluid {
+    .container {
         display: flex;
         justify-content: space-between;
         align-items: center;

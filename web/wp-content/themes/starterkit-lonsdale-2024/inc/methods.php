@@ -20,11 +20,6 @@ function dateMonthInFr($date)
     return str_replace($english_months, $french_months,  $date);
 }
 
-function icon($name, $width, $height, $url = THEME_ASSETS)
-{
-    return '<svg class="icon" width="' . $width . '" height="' . $height . '" aria-hidden="true" viewBox="0 0 ' . $width . ' ' . $height . '"><use xlink:href="' . $url . 'img/icons.svg#' . $name . '"></use></svg>';
-}
-
 function youtube_id_from_url($url)
 {
     $parts = parse_url($url);
@@ -95,29 +90,100 @@ function lsd_get_featured($id, $size = 'medium')
 }
 
 
+
 /**
- * SEO title and desc
+ * isWebp
+ * for srcset picture, add ext .webp if not svg 
  */
-function lsd_seo()
+function isWebp($img)
 {
-    remove_action('wp_head', '_wp_render_title_tag', 1);
-
-    $title = get_field('options-seo-title', 'options');
-    $desc = get_field('options-seo-desc', 'options');
-
-    if (empty($title)) {
-        $title = get_bloginfo('name');
+    if (!empty($img)) {
+        return pathinfo($img)['extension'] != "svg" ? $img . ".webp" : $img;
     }
+}
 
-    if (!is_front_page()) {
 
-        $title =  $title . " | " . get_the_title();
+/**
+ * Picture
+ */
+function picture($image, $class = "", $lazy = false, $breakpoints = [768, 1440])
+{
+    if (!empty($image)) {
+        $sm = $breakpoints[0];
+        $wd = $breakpoints[1];
+        $lazy = !empty($lazy) ? ' loading="lazy"' : "";
+        $class = !empty($class) ? ' class="' . $class . '"' : "";
+        $alt = !empty($image["alt"]) ?  $image["alt"]  : "";
+
+        $imgMobile = !empty($image['mobile']) ? $image['mobile'] : null;
+        $imgTablet = !empty($image['tablet']) ? $image['tablet'] : null;
+        $imgDesktop = $image['desktop'];
+
+        echo '<picture' . $class . '>';
+        if (!empty($imgMobile)) {
+            echo '<source srcset="' . isWebp($imgMobile) . '" media="(max-width: ' . ($sm - 1) . 'px)" type="image/webp">';
+            echo '<source srcset="' . $imgMobile . '" media="(max-width: ' . ($sm - 1) . 'px)" type="image/jpeg">';
+        }
+
+        // si mobile et tablet
+        if (!empty($imgMobile) && !empty($imgTablet)) {
+            echo '<source srcset="' . isWebp($imgDesktop) . '" media="(min-width: ' .  $wd  . 'px)" type="image/webp">';
+            echo '<source srcset="' . $imgDesktop . '" media="(min-width: ' .  $wd  . 'px)" type="image/jpeg">';
+        }
+        // si only mobile
+        if (!empty($imgMobile) && empty($imgTablet)) {
+            echo '<source srcset="' . isWebp($imgDesktop) . '" media="(min-width: ' . $sm . 'px)" type="image/webp">';
+            echo '<source srcset="' . $imgDesktop . '" media="(min-width: ' .  $sm . 'px)" type="image/jpeg">';
+        }
+        // si only tablet
+        if (empty($imgMobile) && !empty($imgTablet)) {
+            echo '<source srcset="' . isWebp($imgDesktop) . '" media="(min-width: ' . $wd . 'px)" type="image/webp">';
+            echo '<source srcset="' . $imgDesktop . '" media="(min-width: ' . $wd . 'px)" type="image/jpeg">';
+        }
+        // si only desktop
+        if (empty($imgMobile) && empty($imgTablet)) {
+            echo '<source srcset="' . isWebp($imgDesktop) . '"  type="image/webp">';
+            echo '<source srcset="' . $imgDesktop . '"  type="image/jpeg">';
+        }
+
+        //echo '<source srcset="' . isWebp($imgDesktop) . '" media="(min-width: ' . (!empty($imgTablet) ? $wd : $sm) . 'px)" type="image/webp">';
+        //echo '<source srcset="' . $imgDesktop . '" media="(min-width: ' . (!empty($imgTablet) ? $wd : $sm)  . 'px)" type="image/jpeg">';
+
+        if (!empty($imgTablet)) {
+            echo ' <source srcset="' . isWebp($imgTablet) . '" media="(min-width: ' . $sm . 'px)" type="image/webp">';
+            echo ' <source srcset="' . $imgTablet . '" media="(min-width: ' . $sm . 'px)" type="image/jpeg">';
+        }
+
+        echo '<img src="' . $imgDesktop . '" alt="' . $alt . '" width="' . $image['width'] . '" height="' . $image['height'] . '"' . $lazy . '>';
+        echo '</picture>';
     }
-    $markup = '<title>' . $title  . '</title>' . "\n";
+}
 
-    if (!empty($desc)) {
-        $markup .= '<meta name="description" content="' . $desc . '">' . "\n";
-    }
 
-    return $markup;
+/**
+ * Create link
+ *
+ */
+function setlink($link, $classes = "")
+{
+    $target = !empty($link["target"]) && $link["target"] != "" ? 'target="_blank"' : '';
+    return '<a href="' . $link["url"] . '" class="' . $classes . '" ' . $target . '>' . $link["title"] . '</a>';
+}
+
+/**
+ * Create link width picto
+ *
+ */
+function setlinkIcon($link, $classes = "", $icon = "", $width = 13, $height = 17, $label = "")
+{
+    $target = !empty($link["target"]) ? 'target="_blank"' : '';
+    return '<a ' . (!empty($label) ? ' aria-label="' . $label . '"' : "") . ' href="' . $link["url"] . '" class="' . $classes . '" ' . $target . '>' . icon($icon, $width, $height) . "<span>" . $link["title"] . "</span></a>";
+}
+
+/**
+ * Icon
+ */
+function icon($name, $width, $height, $url = THEME_ASSETS)
+{
+    return '<svg class="icon" width="' . $width . '" height="' . $height . '" aria-hidden="true" viewBox="0 0 ' . $width . ' ' . $height . '"><use xlink:href="' . $url . 'img/icons.svg#' . $name . '"></use></svg>';
 }
