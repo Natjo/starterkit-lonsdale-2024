@@ -1,32 +1,14 @@
-/* ConduitITCPro */
+/* Montserrat */
+
 @font-face {
-    font-family: 'ConduitITCPro';
-    src: url(fonts/ConduitITCPro-Light.woff2) format('woff2');
-    font-weight: 300;
+    font-family: "Montserrat";
+    src: url("fonts/montserrat.woff2") format("woff2-variations");
+    font-weight: 125 950;
+    font-stretch: 75% 125%;
     font-style: normal;
     font-display: swap;
 }
-@font-face {
-    font-family: 'ConduitITCPro';
-    src: url(fonts/ConduitITCPro-LightItalic.woff2) format('woff2');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'ConduitITCPro';
-    src: url(fonts/ConduitITCStd-Regular.woff2) format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'ConduitITCPro';
-    src: url(fonts/ConduitITCPro-Bold.woff2) format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+
 
 /* Aeonik */
 @font-face {
@@ -36,6 +18,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Aeonik';
     src: url(fonts/aeonik-regular.woff2) format('woff2');
@@ -43,6 +26,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Aeonik';
     src: url(fonts/aeonik-medium.woff2) format('woff2');
@@ -50,6 +34,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Aeonik';
     src: url(fonts/aeonik-bold.woff2) format('woff2');

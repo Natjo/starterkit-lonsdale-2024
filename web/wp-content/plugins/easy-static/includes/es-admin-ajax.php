@@ -250,6 +250,11 @@ function test_callback()
     $link = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), getenv('MYSQL_DATABASE'));
     $sql = "UPDATE " . $table . " SET value = CURRENT_TIMESTAMP WHERE option ='generate' ";
     mysqli_query($link, $sql);
+
+    $link = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), getenv('MYSQL_DATABASE'));
+    $sql = "UPDATE " . $table . " SET value = 0 WHERE option ='haschange' ";
+    mysqli_query($link, $sql);
+
     mysqli_close($link);
 
     $response['markup'] = "done";

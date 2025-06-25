@@ -26,6 +26,7 @@ if (!ENV_LOCAL) {
 }
 
 require_once(__DIR__ . '/inc/methods.php');
+require_once(__DIR__ . '/inc/methods-front.php');
 require_once(__DIR__ . '/inc/ajax-methods.php');
 require_once(__DIR__ . '/inc/strates_helper.php');
 require_once(__DIR__ . '/inc/blocks_helper.php');

@@ -3,10 +3,26 @@
     background-color: var(--color-1);
     color: #fff;
     padding: 4px;
-}
+    box-sizing: border-box;
 
+    &.btn-1 {
+        background-color: var(--color-1);
+        color: #fff;
+    }
 
-.btn-1 {
-    background-color: var(--color-1);
-    color: #fff;
+    &.btn-2 {
+        background-color: var(--color-1);
+        color: #fff;
+    }
+
+    &.outline {
+        background: none;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    &.light {
+        background: #fff;
+        color: #000;
+    }
 }

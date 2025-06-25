@@ -30,6 +30,8 @@ btn_generate.onclick = () => {
     xhr.onload = () => {
         btn_generate.classList.remove('loading');
         document.getElementById('pages').classList.remove('disabled');
+document.querySelector(".es-notice").remove();
+        
 
         const response = JSON.parse(xhr.responseText);
         // pages_result.innerHTML = response.markup;

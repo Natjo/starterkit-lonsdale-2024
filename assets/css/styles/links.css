@@ -1,4 +1,9 @@
-.link-1 {
+.link {
     text-decoration: underline;
     color: var(--color-2);
+
+    &.link-1 {
+        font-weight: 800;
+    }
+
 }
