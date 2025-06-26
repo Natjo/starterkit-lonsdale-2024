@@ -1,11 +1,11 @@
 <?php
 
 get_header();
-get_template_part('template-parts/general/block', 'header_nav');
+get_template_part('template-parts/common/header_nav', '');
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-article">
-    <?php get_template_part('template-parts/general/block', 'breadcrumb'); ?>
+    <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
 
     <article>
         <?php
@@ -17,10 +17,10 @@ get_template_part('template-parts/general/block', 'header_nav');
             'width' => '590',
             'height' => '491'
         );
-        get_template_part('template-parts/heros/hero', 'article', $args);
+        get_template_part('template-parts/heros/article', '', $args);
         ?>
 
-        <?php get_template_part('template-parts/general/block', 'strates'); ?>
+        <?php get_template_part('template-parts/common/strates', ''); ?>
     </article>
 </main>
 

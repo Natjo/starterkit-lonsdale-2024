@@ -4,11 +4,11 @@ Template Name: Page flexible
 */
 
 get_header();
-get_template_part('template-parts/general/block', 'header_nav');
+get_template_part('template-parts/common/header_nav', '');
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-flexible">
-    <?php get_template_part('template-parts/general/block', 'breadcrumb'); ?>
+    <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
 
     <?php
         $args = [
@@ -19,9 +19,9 @@ get_template_part('template-parts/general/block', 'header_nav');
         ];
     ?>
     
-    <?php get_template_part('template-parts/heros/hero', 'flexible', $args); ?>
+    <?php get_template_part('template-parts/heros/flexible', '', $args); ?>
 
-    <?php get_template_part('template-parts/general/block', 'strates'); ?>
+    <?php get_template_part('template-parts/common/strates', ''); ?>
 </main>
 
 <?php

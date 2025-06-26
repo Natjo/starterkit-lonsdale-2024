@@ -26,10 +26,9 @@ if (!ENV_LOCAL) {
 }
 
 require_once(__DIR__ . '/inc/methods.php');
-require_once(__DIR__ . '/inc/methods-front.php');
+require_once(__DIR__ . '/inc/components.php');
 require_once(__DIR__ . '/inc/ajax-methods.php');
 require_once(__DIR__ . '/inc/strates_helper.php');
-require_once(__DIR__ . '/inc/blocks_helper.php');
 require_once(__DIR__ . '/inc/customs/walker.php');
 require_once(__DIR__ . '/inc/customs/form.php');
 require_once(__DIR__ . '/inc/customs/breadcrumb.php');
@@ -130,4 +129,10 @@ function options($args)
 {
     $margin = !empty($args["options"]["margin"]) ? " margin-" . $args["options"]["margin"] : "";
     return $margin;
+}
+
+function console($value){
+    echo '<pre><code>';
+    print_r($value);
+ echo '</code></pre>';
 }

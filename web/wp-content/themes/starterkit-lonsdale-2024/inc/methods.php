@@ -55,22 +55,35 @@ function lsd_get_the_terms_name($ID, $taxonomy)
 }
 
 // Image url fonction id
-function lsd_get_thumb($id, $size = 'medium')
+
+function lsd_get_thumb($id, $size = 'full')
 {
     if ($id) {
         $img = wp_get_attachment_image_src($id, $size);
-        $extension = substr($img[0], strrpos($img[0], '.') + 1);
+        $alt = trim( strip_tags( get_post_meta( $id, '_wp_attachment_image_alt', true ) ) );
 
-        if ($extension == 'gif' || $extension == 'GIF') :
-            $img = wp_get_attachment_image_src($id, 'full');
-        endif;
+        if ($img) {
+            $extension = substr($img[0], strrpos($img[0], '.') + 1);
 
-        $imgUrl = is_array($img) ? reset($img) : "";
+            if ($extension == 'gif' || $extension == 'GIF') :
+                $img = wp_get_attachment_image_src($id, 'full');
+            endif;
 
-        return $imgUrl;
+            $imgUrl = is_array($img) ? reset($img) : "";
+
+            if ("full" == $size) {
+                $imgUrl = wp_get_original_image_url($id);
+            }
+
+            $src = $imgUrl;
+            $upload_dir = wp_upload_dir();
+            $image_path = str_replace($upload_dir['baseurl'], $upload_dir['basedir'], $src);
+            $getimagesize = wp_getimagesize($image_path);
+
+            return array($imgUrl, $getimagesize[0], $getimagesize[1], $alt);
+        }
     }
 }
-
 // Image url function de mise en avant des articles
 function lsd_get_featured($id, $size = 'medium')
 {

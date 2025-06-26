@@ -12,11 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <link rel="icon" type="image/png" href="<?= THEME_ASSETS ?>favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="<?= THEME_ASSETS ?>favicon.svg" />
-    <link rel="shortcut icon" href="<?= THEME_ASSETS ?>favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= THEME_ASSETS ?>apple-touch-icon.png" />
-    <link rel="manifest" href="<?= THEME_ASSETS ?>site.webmanifest" />
+    <link rel="icon" type="image/png" href="<?= THEME_ASSETS ?>favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="<?= THEME_ASSETS ?>favicon/favicon.svg" />
+    <link rel="shortcut icon" href="<?= THEME_ASSETS ?>favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= THEME_ASSETS ?>favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="<?= THEME_ASSETS ?>favicon/site.webmanifest" />
 
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">

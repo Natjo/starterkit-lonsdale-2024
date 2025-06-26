@@ -1,5 +1,11 @@
+<?php
+
+//console($args);
+?>
+
+
 <section class="strate strate-image<?= options($args) ?>">
     <div class="container">
-        <?php get_template_part('template-parts/blocks/block', 'image', $args["block-image"]); ?>
+        <?php component::picture($args["images"], true); ?>
     </div>
 </section>

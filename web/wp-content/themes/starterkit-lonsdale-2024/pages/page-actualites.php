@@ -4,7 +4,7 @@ Template Name: Actualites
 */
 
 get_header();
-get_template_part('template-parts/general/block', 'header_nav');
+get_template_part('template-parts/common/header_nav', '');
 
 $currentSearch = -1;
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
@@ -13,11 +13,11 @@ $argsPosts = getSearchCptNews(["s" => $currentSearch], $paged, $postsPerPage);
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-actualities">
-    <?php get_template_part('template-parts/general/block', 'breadcrumb'); ?>
+    <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
 
     <?php
     $args['title'] =  get_the_title();
-    get_template_part('template-parts/heros/hero', 'page', $args);
+    get_template_part('template-parts/heros/page', '', $args);
     ?>
 
     <section>

@@ -118,7 +118,9 @@
            object-fit: cover;
     }.strate-image img {
         width: 100%;
-    }.btn {
+    }.strate-wysiwyg {
+
+}.btn {
     font-size: var(--font-size);
     background-color: var(--color-1);
     color: #fff;

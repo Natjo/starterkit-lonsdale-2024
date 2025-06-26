@@ -32,7 +32,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -41,6 +41,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
+                    "allow_in_bindings": 1,
                     "preview_size": "medium"
                 },
                 {
@@ -57,7 +58,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "id",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -66,6 +67,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
+                    "allow_in_bindings": 1,
                     "preview_size": "medium"
                 }
             ]
@@ -94,5 +96,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716828319
+    "modified": 1750952794
 }

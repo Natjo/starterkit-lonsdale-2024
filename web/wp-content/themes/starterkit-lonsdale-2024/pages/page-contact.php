@@ -4,7 +4,7 @@ Template Name: Contact
 */
 
 get_header();
-get_template_part('template-parts/general/block', 'header_nav');
+get_template_part('template-parts/common/header_nav', '');
 
 $mail = formulaire_contact();
 $mail_send = !empty($mail) && empty($mail['error']) ? true : false;
@@ -14,7 +14,7 @@ $mail_error = !empty($mail['error']) ? true : false;
 <main id="main" role="main" tabindex="-1" class="page-contact">
     <?php
     $args['title'] = "Contact";
-    get_template_part('template-parts/heros/hero', 'page', $args);
+    get_template_part('template-parts/heros/page', '', $args);
     ?>
 
     <section data-view="form-contact" data-module="strates/contact">

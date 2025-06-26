@@ -30,7 +30,7 @@
             <form id="search" method="post" action="/">
                 <input id="search-input" type="text" name="s" placeholder="recherche"> 
                 <label for="search-input">Search</label>
-                <?= icon('search', 30, 21)?>
+                <?= component::icon('search', 30, 21)?>
             </form> 
         </div>
     </div>

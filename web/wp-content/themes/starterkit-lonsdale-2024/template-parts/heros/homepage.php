@@ -16,6 +16,6 @@ $images = $args['images'];
             </a>
         <?php endif; ?>
     </div>
-    <?php picture($args["images"], "", true); ?>
+    <?php component::picture($args["images"], "", true); ?>
 
 </header>
