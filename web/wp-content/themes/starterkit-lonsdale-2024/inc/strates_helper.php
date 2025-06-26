@@ -11,7 +11,7 @@ class Strate_Helper
                 $image = lsd_get_thumb($item["id"], $item["size"]);
                 $ext = pathinfo($image[0])['extension'];
                 if ($ext != "svg") {
-                    $webp = str_replace("." . $ext, ".jpg.webp", $image[0]);
+                    $webp = str_replace("." . $ext, ".webp", $image[0]);
                     if (file_exists(str_replace("https://" . $_SERVER['HTTP_HOST'] . "/", ABSPATH, $webp))) {
                         $args[$key]["webp"] = $webp;
                     }
@@ -47,7 +47,11 @@ class Strate_Helper
     {
         $options = Strate_Helper::strate_options($aStrate);
 
-        return array_merge($options);
+        $fields = [
+           "text" =>  $aStrate["block-text"]["text"]
+        ];
+
+        return array_merge($options, $fields);
     }
 
     public static function image($aStrate)
@@ -69,7 +73,6 @@ class Strate_Helper
 
         $fields = [
             "images" => Strate_Helper::images($images),
-            "cta" => []
         ];
 
         return array_merge($fields, $options, $header);

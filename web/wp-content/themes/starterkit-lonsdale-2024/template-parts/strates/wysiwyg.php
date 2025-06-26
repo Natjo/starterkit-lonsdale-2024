@@ -1,5 +1,10 @@
+<?php
+
+?>
 <section class="strate strate-wysiwyg<?= options($args) ?>">
     <div class="container">
-        <?php get_template_part('template-parts/blocks/text', '', $args["block-text"]); ?>
+        <div class="rte">
+            <?= $args["text"] ?>
+        </div>
     </div>
 </section>
