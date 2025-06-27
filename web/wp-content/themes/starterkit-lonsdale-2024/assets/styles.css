@@ -1,8 +1,9 @@
-#footer {
-    background: antiquewhite;
-}
+.block-header {
 
-    #footer .container {
+  margin-bottom: var(--margin-md);
+}#footer {
+    background: antiquewhite;
+}#footer .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -118,6 +119,14 @@
            object-fit: cover;
     }.strate-image img {
         width: 100%;
+        height: auto
+    }.strate-text_image .strate-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap);
+    }.strate-text_image img {
+        width: 100%;
+        height: auto;
     }.strate-wysiwyg {
 
 }.btn {

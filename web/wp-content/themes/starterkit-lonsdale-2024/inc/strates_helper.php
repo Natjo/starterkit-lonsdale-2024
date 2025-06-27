@@ -2,11 +2,27 @@
 
 class Strate_Helper
 {
-    public static function images($arr)
+    public static function images($arr, $size_desktop = "full", $size_mobile = "full")
     {
+
+        $images = [
+            "desktop" => [
+                "id" => $arr["image-desktop"],
+                "size" => $size_desktop
+            ]
+           
+        ];
+
+        if (!empty($arr["image-mobile"])) {
+            $images["mobile"] = [
+                "id" => $arr["image-mobile"],
+                "size" =>  $size_mobile
+            ];
+        }
+
         $args = [];
 
-        foreach ($arr as $key => $item) {
+        foreach ($images as $key => $item) {
             if (!empty($item["id"])) {
                 $image = lsd_get_thumb($item["id"], $item["size"]);
                 $ext = pathinfo($image[0])['extension'];
@@ -52,6 +68,9 @@ class Strate_Helper
         return $args;
     }
 
+    /**
+     * 
+     */
     public static function wysiwyg($aStrate)
     {
         $options = Strate_Helper::strate_options($aStrate);
@@ -71,19 +90,22 @@ class Strate_Helper
 
         $header = Strate_Helper::strate_header($aStrate);
 
-        $images = [
-            "desktop" => [
-                "id" => $aStrate["block-image"]["image-desktop"],
-                "size" => "full"
-            ],
-            "mobile" => [
-                "id" => $aStrate["block-image"]["image-mobile"],
-                "size" => "full"
-            ],
+        $fields = [
+            "images" => Strate_Helper::images($aStrate["block-image"]),
         ];
 
+        return array_merge($fields, $options, $header);
+    }
+
+    public static function text_image($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
         $fields = [
-            "images" => Strate_Helper::images($images),
+            "images" => Strate_Helper::images($aStrate["block-image"], "full"),
+            "text" =>  $aStrate["text"]
         ];
 
         return array_merge($fields, $options, $header);
