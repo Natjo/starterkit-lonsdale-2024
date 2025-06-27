@@ -226,33 +226,46 @@ main {
 
 
 /* strate */
-.strate.margin-sm {
-        margin-bottom: var(--margin-sm);
-    }
-.strate.margin-md {
-        margin-bottom: var(--margin);
-    }
-.strate.margin-lg {
-        margin-bottom: var(--margin-lg);
-    }
-.strate.bg {
-        padding-top: var(--margin);
-        padding-bottom: var(--margin);
-    }
-.strate.bg-color-1 {
-            background-color: var(--color-1);
-        }
-.strate.bg-color-2 {
-            background-color: var(--color-2);
-            color: #fff;
-        }
-.strate.bg-color-2 h2 {
-                color: #fff;
-            }
-.strate.bg-color-3 {
-            background-color: var(--color-3);
-        }
+.strate {
+    --margin: var(--margin-md);
 
+    margin-bottom: var(--margin);
+}
+.strate[class*="bg"] {
+        padding-top: var(--margin-md);
+        padding-bottom: var(--margin-md);
+    }
+
+/* margin */
+.margin-none{
+    --margin: 0;
+}
+.margin-sm{
+    --margin: var(--margin-sm);
+}
+.margin-md{
+     --margin: var(--margin-md);
+}
+.margin-lg{
+    --margin: var(--margin-lg);
+}
+
+/* bg */
+.bg-color-1 {
+    background-color: var(--color-1);
+}
+.bg-color-2 {
+    background-color: var(--color-2);
+    color: #fff;
+}
+.bg-color-2 h2 {
+        color: #fff;
+    }
+.bg-color-3 {
+    background-color: var(--color-3);
+}
+
+/* quick access*/
 #quick_access {
     width: 100%;
     height: 0;
@@ -265,24 +278,20 @@ main {
     display: flex;
     justify-content: center;
 }
-
 #quick_access:focus-within {
         height: auto;
     }
-
 #quick_access:focus-within .content {
             color: #fff;
             background-color: #000;
             padding: 10px var(--ctr-offset);
             display: flex;
             gap: 15px;
-        }
-.link {
+        }.link {
     text-decoration: underline;
     color: var(--color-2);
 
-}
-.link.link-1 {
+}.link.link-1 {
         font-weight: 800;
     }h1, h2, h3, h4{
 	margin: 0;
@@ -491,7 +500,6 @@ a img.aligncenter {
     --color-2: #9e9456;
     --color-3: #f4ebe2;
 
-
     --color-error: red;
     --color-valid: green;
     --color-focus: blue;
@@ -502,8 +510,9 @@ a img.aligncenter {
         --ctr-offset: 20px;
         --header-height: 70px;
         --gap: 20px;
+       
         --margin-sm: 10px;
-        --margin: 10px;
+        --margin-md: 10px;
         --margin-lg: 20px;
     }
 }
@@ -514,10 +523,8 @@ a img.aligncenter {
         --header-height: 90px;
         --gap: 40px;
 
-
-
         --margin-sm: 20px;
-        --margin: 40px;
+        --margin-md: 40px;
         --margin-lg: 60px;
     }
 }

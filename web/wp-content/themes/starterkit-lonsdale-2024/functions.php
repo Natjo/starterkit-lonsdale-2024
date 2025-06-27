@@ -125,14 +125,33 @@ function mode()
 }
 
 /* options des strates */
-function options($args)
+function options($classes = "", $args)
 {
-    $margin = !empty($args["options"]["margin"]) ? " margin-" . $args["options"]["margin"] : "";
-    return $margin;
+    $margin = " margin-none";
+    if (!empty($args["options"]["margin"])) {
+        if ($args["options"]["margin"] == "md") {
+            $margin = "";
+        } else {
+            $margin = !empty($args["options"]["margin"]) ? " margin-" . $args["options"]["margin"] : "";
+        }
+    }
+
+    $background = "";
+    if (!empty($args["options"]["background"])) {
+        $background =  !empty($args["options"]["background"]) ? " bg-" . $args["options"]["background"] : "";
+    }
+    
+    $id = "";
+    if (!empty($args["options"]["id"])) {
+        $id = ' id="'.$args["options"]["id"].'"';
+    }
+
+    return 'class="' . $classes . $margin . $background . '"' . $id;
 }
 
-function console($value){
+function console($value)
+{
     echo '<pre><code>';
     print_r($value);
- echo '</code></pre>';
+    echo '</code></pre>';
 }

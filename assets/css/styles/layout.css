@@ -42,40 +42,47 @@ main {
 
 /* strate */
 .strate {
-   
-    &.margin-sm {
-        margin-bottom: var(--margin-sm);
-    }
-    &.margin-md {
-        margin-bottom: var(--margin);
-    }
-    &.margin-lg {
-        margin-bottom: var(--margin-lg);
-    }
+    --margin: var(--margin-md);
 
-    &.bg {
-        padding-top: var(--margin);
-        padding-bottom: var(--margin);
+    margin-bottom: var(--margin);
 
-        &-color-1 {
-            background-color: var(--color-1);
-        }
-
-        &-color-2 {
-            background-color: var(--color-2);
-            color: #fff;
-
-            h2 {
-                color: #fff;
-            }
-        }
-
-        &-color-3 {
-            background-color: var(--color-3);
-        }
+    &[class*="bg"] {
+        padding-top: var(--margin-md);
+        padding-bottom: var(--margin-md);
     }
 }
 
+/* margin */
+.margin-none{
+    --margin: 0;
+}
+.margin-sm{
+    --margin: var(--margin-sm);
+}
+.margin-md{
+     --margin: var(--margin-md);
+}
+.margin-lg{
+    --margin: var(--margin-lg);
+}
+
+/* bg */
+.bg-color-1 {
+    background-color: var(--color-1);
+}
+.bg-color-2 {
+    background-color: var(--color-2);
+    color: #fff;
+
+    h2 {
+        color: #fff;
+    }
+}
+.bg-color-3 {
+    background-color: var(--color-3);
+}
+
+/* quick access*/
 #quick_access {
     width: 100%;
     height: 0;

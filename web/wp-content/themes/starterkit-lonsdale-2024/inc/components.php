@@ -94,6 +94,6 @@ class block
             "classes" => $classes,
             "attributes" => $attributes
         ];
-        get_template_part('template-parts/components/header', '', $args);
+        get_template_part('template-parts/blocks/header', '', $args);
     }
 }

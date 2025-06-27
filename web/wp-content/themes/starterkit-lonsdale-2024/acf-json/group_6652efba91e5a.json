@@ -17,7 +17,7 @@
                 "id": ""
             },
             "choices": {
-                "none": "Aucune",
+                "0": "Aucune",
                 "sm": "Petit",
                 "md": "Moyen",
                 "lg": "Large"
@@ -48,7 +48,7 @@
                 "id": ""
             },
             "choices": {
-                "none": "Pas de background",
+                "0": "Pas de background",
                 "color-1": "Rouge",
                 "color-2": "Green"
             },
@@ -62,6 +62,27 @@
             "placeholder": "",
             "create_options": 0,
             "save_options": 0
+        },
+        {
+            "key": "field_685e8dbc7db24",
+            "label": "Id",
+            "name": "strates-options-id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -82,5 +103,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751017790
+    "modified": 1751027160
 }

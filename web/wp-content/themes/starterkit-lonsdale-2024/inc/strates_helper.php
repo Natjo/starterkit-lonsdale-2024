@@ -30,7 +30,9 @@ class Strate_Helper
     {
         $args = [
             "options" => [
-                "margin" => !empty($aStrate['strates-options-margin']) ? $aStrate['strates-options-margin'] : ""
+                "margin" => !empty($aStrate['strates-options-margin']) ? $aStrate['strates-options-margin'] : "",
+                "background" => !empty($aStrate['strates-options-background']) ? $aStrate['strates-options-background'] : "",
+                "id" => !empty($aStrate['strates-options-id']) ? $aStrate['strates-options-id'] : "",
             ]
         ];
 
@@ -60,7 +62,7 @@ class Strate_Helper
             "text" =>  $aStrate["text"]
         ];
 
-        return array_merge($options, $header, $fields);
+        return array_merge($fields, $options, $header);
     }
 
     public static function image($aStrate)
