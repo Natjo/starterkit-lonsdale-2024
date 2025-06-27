@@ -1,16 +1,27 @@
 .title-1 {
     font-family: var(--font-2);
-    font-size: var(--font-size-xxlg);
+    font-size: 5rem;
     line-height: 1.1;
 }
 .title-2 {
     font-family: var(--font-2);
-    font-size: var(--font-size-xlg);
+    font-size: 4rem;
     line-height: 1.1;
 }
 .title-3 {
     font-family: var(--font-2);
-    font-size: var(--font-size-md);
+    font-size: 3rem;
     margin-bottom: 20px;
     line-height: 1.25;
+}
+.title-4 {
+    font-family: var(--font-2);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.intro{
+    font-size: 2rem;
+    line-height: 1.4;
 }

@@ -1,10 +1,10 @@
 <?php
-
+//console($args["header"]);
 ?>
 <section class="strate strate-wysiwyg<?= options($args) ?>">
     <div class="container">
-        <div class="rte">
-            <?= $args["text"] ?>
-        </div>
+        <?= block::header($args["header"]) ?>
+
+        <?= component::text($args["text"]) ?>
     </div>
 </section>

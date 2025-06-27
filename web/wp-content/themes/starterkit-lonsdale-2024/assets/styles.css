@@ -192,7 +192,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     font-family: var(--font-1);
-    font-size: var(--font-size);
+    font-size: 1.6rem;
     color: var(--color-text);
     line-height: 1;
     overflow-anchor: none;
@@ -451,21 +451,31 @@ a img.aligncenter {
     margin-right: auto;
 }.title-1 {
     font-family: var(--font-2);
-    font-size: var(--font-size-xxlg);
+    font-size: 5rem;
     line-height: 1.1;
 }
 .title-2 {
     font-family: var(--font-2);
-    font-size: var(--font-size-xlg);
+    font-size: 4rem;
     line-height: 1.1;
 }
 .title-3 {
     font-family: var(--font-2);
-    font-size: var(--font-size-md);
+    font-size: 3rem;
     margin-bottom: 20px;
     line-height: 1.25;
 }
-:root {
+.title-4 {
+    font-family: var(--font-2);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
+}
+
+.intro{
+    font-size: 2rem;
+    line-height: 1.4;
+}:root {
     --font-1: 'Montserrat', sans-serif;
     --font-2: 'aeonik', sans-serif;
 
@@ -495,11 +505,6 @@ a img.aligncenter {
         --margin-sm: 10px;
         --margin: 10px;
         --margin-lg: 20px;
-        --font-size-sm: 1.2rem;
-        --font-size: 1.4rem;
-        --font-size-md: 1.6rem;
-        --font-size-lg: 1.8rem;
-        --font-size-xlg: 2rem;
     }
 }
 
@@ -509,11 +514,7 @@ a img.aligncenter {
         --header-height: 90px;
         --gap: 40px;
 
-        --font-size-sm: 1.2rem;
-        --font-size: 1.6rem;
-        --font-size-md: 1.8rem;
-        --font-size-lg: 2.2rem;
-        --font-size-xlg: 2.8rem;
+
 
         --margin-sm: 20px;
         --margin: 40px;

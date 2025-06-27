@@ -3,11 +3,11 @@
     "title": "Strates - options",
     "fields": [
         {
-            "key": "field_6652efba54369",
-            "label": "",
-            "name": "strates-options",
+            "key": "field_685e68aa2916b",
+            "label": "Marge",
+            "name": "strates-options-margin",
             "aria-label": "",
-            "type": "group",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,37 +16,52 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_6652f00a32c03",
-                    "label": "Marge",
-                    "name": "margin",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "none": "Aucune",
-                        "sm": "Petit",
-                        "md": "Moyen",
-                        "lg": "Large"
-                    },
-                    "default_value": false,
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": ""
-                }
-            ]
+            "choices": {
+                "none": "Aucune",
+                "sm": "Petit",
+                "md": "Moyen",
+                "lg": "Large"
+            },
+            "default_value": "md",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_685e68f62916c",
+            "label": "Background",
+            "name": "strates-options-background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "Pas de background",
+                "color-1": "Rouge",
+                "color-2": "Green"
+            },
+            "default_value": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -67,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716712657
+    "modified": 1751017790
 }

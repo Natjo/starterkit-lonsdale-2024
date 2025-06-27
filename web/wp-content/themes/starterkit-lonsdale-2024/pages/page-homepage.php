@@ -27,8 +27,8 @@ $pageID = get_the_ID();
     $args = [
         'title' => strip_tags($title, '<strong>'),
         'intro' => get_field('hero-homepage-intro', $pageID),
-        'cta' => [
-            'label' => $cta['title'],
+        'link' => [
+            'title' => $cta['title'],
             'link' => $cta['url'],
         ],
         'images' =>  Strate_Helper::images($images),

@@ -25,11 +25,12 @@ class Strate_Helper
 
         return  $args;
     }
+
     public static function strate_options($aStrate)
     {
         $args = [
             "options" => [
-                "margin" => !empty($aStrate['strates-options']["margin"]) ? $aStrate['strates-options']["margin"] : ""
+                "margin" => !empty($aStrate['strates-options-margin']) ? $aStrate['strates-options-margin'] : ""
             ]
         ];
 
@@ -38,7 +39,13 @@ class Strate_Helper
 
     public static function strate_header($aStrate)
     {
-        $args = [];
+        $args = [
+            "header" => [
+                "title" => !empty($aStrate["block-header-title"]) ? $aStrate["block-header-title"] : "",
+                "text" => !empty($aStrate["block-header-text"]) ? $aStrate["block-header-text"] : "",
+                "link" => !empty($aStrate["block-header-link"]) ? $aStrate["block-header-link"] : ""
+            ]
+        ];
 
         return $args;
     }
@@ -47,11 +54,13 @@ class Strate_Helper
     {
         $options = Strate_Helper::strate_options($aStrate);
 
+        $header = Strate_Helper::strate_header($aStrate);
+
         $fields = [
-           "text" =>  $aStrate["block-text"]["text"]
+            "text" =>  $aStrate["text"]
         ];
 
-        return array_merge($options, $fields);
+        return array_merge($options, $header, $fields);
     }
 
     public static function image($aStrate)
