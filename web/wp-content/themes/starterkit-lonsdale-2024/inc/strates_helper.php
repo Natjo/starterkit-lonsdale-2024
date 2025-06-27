@@ -4,7 +4,6 @@ class Strate_Helper
 {
     public static function images($arr, $size_desktop = "full", $size_mobile = "full")
     {
-
         $images = [
             "desktop" => [
                 "id" => $arr["image-desktop"],

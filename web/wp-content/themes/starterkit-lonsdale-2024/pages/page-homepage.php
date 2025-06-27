@@ -12,26 +12,13 @@ $pageID = get_the_ID();
 <main id="main" role="main" class="page-homepage">
     <?php
 
-    $cta = get_field('hero-homepage-cta',  $pageID);
-    $title = get_field('hero-homepage-title',  $pageID);
-    $images = [
-        "desktop" => [
-            "id" => get_field('hero-homepage-img-desktop', $pageID),
-            "size" => "full"
-        ],
-        "mobile" => [
-            "id" => get_field('hero-homepage-img-mobile', $pageID),
-            "size" => "full"
-        ],
-    ];
+    $fields = get_field('hero-homepage',  $pageID);
+
     $args = [
-        'title' => strip_tags($title, '<strong>'),
-        'intro' => get_field('hero-homepage-intro', $pageID),
-        'link' => [
-            'title' => $cta['title'],
-            'link' => $cta['url'],
-        ],
-        'images' =>  Strate_Helper::images($images),
+        'title' => $fields["title"],
+        'intro' => $fields["intro"],
+        'link' => $fields["link"],
+        'images' => Strate_Helper::images(get_field('block-image',  $pageID)),
     ];
 
     get_template_part('template-parts/heros/homepage', '', $args);

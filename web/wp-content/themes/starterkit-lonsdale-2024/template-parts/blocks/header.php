@@ -1,9 +1,7 @@
 <?php
 $classes = !empty($args["classes"]) ? " " . $args["classes"] : "";
 $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
-//console($args);
 ?>
-
 
 <header class="block-header<?= $classes; ?>" <?= $attributes ?>>
     <? component::title($args['title'], "title-1") ?>

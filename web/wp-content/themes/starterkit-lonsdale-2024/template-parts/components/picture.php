@@ -6,14 +6,11 @@ $lazy = !empty($args["lazy"]) ? ' loading="lazy"' : "";
 $alt = !empty($imgDesktop["alt"]) ? ' alt="' . $imgDesktop["alt"] . '"' : "";
 $classes = !empty($args["classes"]) ? ' class="' . $args["classes"] . '"' : "";
 
-
 $media = "";
 if (!empty($imgMobile)) {
     $media = ' media="(min-width:' . $breakpoint . 'px)"';
     $media_mobile = ' media="(max-width:' . ($breakpoint - 1) . 'px)"';
 }
-
-
 ?>
 
 <picture <?= $classes ?>>
