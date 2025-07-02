@@ -96,4 +96,6 @@ class block
         ];
         get_template_part('template-parts/blocks/header', '', $args);
     }
+    
+
 }

@@ -4,19 +4,19 @@ const postcss = require('postcss');
 const cssnested = require('postcss-nested');
 const cssCustomMedia = require('postcss-custom-media');
 const postcssGlobalData = require('@csstools/postcss-global-data');
+const atImport = require("postcss-import")
+
 const autoprefixer = require('autoprefixer');
 const uglifycss = require('uglifycss');
 const babel = require('@babel/core');
 const watch = require('node-watch');
 const isProd = process.argv[2] == '--prod' ? true : false;
 require('dotenv').config({ path: '.docker/.env' })
-
 const { optimize } = require('svgo');
 
 const src = 'assets/';
 const dist = `web/wp-content/themes/${process.env.WP_THEME_NAME}/`;
 
-let styles = [];
 let date = new Date();
 let version = `${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
 let hasError = false;
@@ -56,14 +56,10 @@ const core = {
         else fs.copySync(file, dist_name);
     },
     compile_syles(update = false) {
-        let str = '';
-
-        for (let file of styles) {
-            str += fs.readFileSync(file, 'utf8');
-        }
-
-        core.postcss(str, css => {
-            fs.writeFileSync(`${dist}assets/styles.css`, css);
+        const str = fs.readFileSync(`${src}css/app.css`, 'utf8')
+        core.postcss(str, (css, map) => {
+            fs.writeFileSync(`${dist}assets/styles.css`, css, () => true);
+            fs.writeFile(`${dist}assets/styles.css.map`, map.toString(), () => true)
             update && core.console('styles.css', 'update');
         }, 'styles.css');
     },
@@ -75,7 +71,6 @@ const core = {
                 if (stat && stat.isDirectory()) recursive(file);
                 else if (!/.DS_Store$/.test(file)) {
                     if (/\/css\//.test(file)) {
-                        styles.push(file);
                     } else {
                         const name = file.replace(`${__dirname}/`, '');
                         const filename = path.parse(name).base;
@@ -120,7 +115,10 @@ const core = {
             }),
             cssCustomMedia(),
             autoprefixer({ add: true })])
-            .process(str)
+            .use(atImport({
+                path: ["assets/css"],
+            }))
+            .process(str, { map: { inline: false, annotation: "styles.css.map" } })
             .catch(error => {
                 console.log(`\x1b[90m${error}\x1b[39m\x1b[23m`);
                 console.log(error.reason, 'line:', error.line, 'col', error.column);
@@ -128,7 +126,7 @@ const core = {
             })
             .then(result => {
                 if (result) {
-                    func(isProd ? uglifycss.processString(result.css) : result.css);
+                    func(isProd ? uglifycss.processString(result.css) : result.css, result.map);
                 }
             })
     },
@@ -180,7 +178,7 @@ watch(src, { recursive: true }, (evt, file) => {
     if (hasError) evt = 'error';
 
     if (folder === 'css') {
-        styles = [];
+
         core.dirScan(`${src}css`);
         core.compile_syles(true);
 

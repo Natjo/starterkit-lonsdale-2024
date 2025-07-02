@@ -21,6 +21,7 @@
         "postcss": "^8.5.6",
         "postcss-custom-media": "11.0.6",
         "postcss-nested": "^7.0.2",
+        "postcss-import": "16.1.1",
         "svgo": "4.0.0",
         "uglifycss": "^0.0.29"
     },
