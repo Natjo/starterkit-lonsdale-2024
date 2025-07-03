@@ -8,5 +8,5 @@ $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
 
     <? component::intro($args['text']) ?>
 
-    <? component::link($args['cta'], "btn btn-1") ?>
+    <? component::link($args['cta'], "cta btn btn-1") ?>
 </header>

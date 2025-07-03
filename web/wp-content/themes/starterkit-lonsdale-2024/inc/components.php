@@ -81,6 +81,35 @@ class component
         get_template_part('template-parts/components/text', '', $args);
     }
 }
+class card
+{
+    public static function news($values,  $classes = null, $attributes = null)
+    {
+        if (is_numeric($values)) {
+            $post = get_post($values);
+            $url = get_permalink($values);
+            $field = get_field("card-news", $values);
+            $title = $post->post_title;
+            $description = !empty($field["description"]) ? $field["description"] : "";
+            $images = !empty($field["block-image"]) ? Helper::images($field["block-image"], "400_236") : null;
+        } else {
+            $title = $values["title"];
+            $description = !empty($values["description"]) ? $values["description"] : "";
+            $images = !empty($values["images"]) ? $values["images"] : "";
+            $url = !empty($values["url"]) ? $values["url"] : "";
+        }
+
+        $args = [
+            "title" =>  $title,
+            "description" => $description,
+            "images" => $images,
+            "url" => $url,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/cards/card', 'news',  $args);
+    }
+}
 
 class block
 {
@@ -94,8 +123,16 @@ class block
             "classes" => $classes,
             "attributes" => $attributes
         ];
-        get_template_part('template-parts/blocks/header', '', $args);
+        get_template_part('template-parts/blocks/block', 'header', $args);
     }
-    
 
+    public static function search($fields, $classes = null, $attributes = null)
+    {
+        $args = [
+            "label" => $fields["label"],
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/blocks/block', 'search', $args);
+    }
 }

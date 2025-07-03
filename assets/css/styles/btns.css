@@ -1,19 +1,16 @@
 .btn {
     font-size: var(--font-size);
-    background-color: var(--color-1);
-    color: #fff;
+    background-color: var(--bg-color, var(--color-3));
+    color: var(--color, #fff);
     padding: 4px;
     box-sizing: border-box;
+    padding: 1rem 2rem;
+    transition: opacity .3s ease;
+    display: inline-block;
 
-    &.btn-1 {
-        background-color: var(--color-1);
-        color: #fff;
-    }
+    &.btn-1 {}
 
-    &.btn-2 {
-        background-color: var(--color-1);
-        color: #fff;
-    }
+    &.btn-2 {}
 
     &.outline {
         background: none;
@@ -24,5 +21,9 @@
     &.light {
         background: #fff;
         color: #000;
+    }
+
+    &:hover {
+        opacity: .8;
     }
 }

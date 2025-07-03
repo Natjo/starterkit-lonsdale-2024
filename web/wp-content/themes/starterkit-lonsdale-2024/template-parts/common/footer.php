@@ -1,5 +1,5 @@
 <footer id="footer" role="contentinfo">
-    <div class="container">
+    <div class="container-fluid">
 
         <small>© copyright lonsdale 2022</small>
 

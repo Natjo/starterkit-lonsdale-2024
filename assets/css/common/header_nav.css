@@ -5,7 +5,7 @@
     width: 100%;
     background: aliceblue;
 
-    .container {
+    .container-fluid {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -14,7 +14,6 @@
     }
 
     &.trig {
-
         --header-height: 50px;
     }
 
@@ -74,8 +73,10 @@
         }
 
         #nav-panel {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
             justify-self: end;
-            //grid-column: ctr;
             grid-row: 1;
         }
 
@@ -86,7 +87,8 @@
 
         .nav-links {
             display: flex;
-            gap: 5px;
+            gap: 1rem;
         }
+
     }
 }

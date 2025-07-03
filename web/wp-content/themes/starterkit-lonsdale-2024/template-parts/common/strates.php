@@ -6,13 +6,16 @@ if (isset($aStrates) && !empty($aStrates)) {
     foreach ($aStrates as $aStrate) {
         switch ($aStrate['acf_fc_layout']) {
             case 'strate-image':
-                get_template_part('template-parts/strates/image', '', Strate_Helper::image($aStrate));
+                get_template_part('template-parts/strates/strate', 'image', Strate_Helper::image($aStrate));
                 break;
             case 'strate-wysiwyg':
-                get_template_part('template-parts/strates/wysiwyg', '', Strate_Helper::wysiwyg($aStrate));
+                get_template_part('template-parts/strates/strate', 'wysiwyg', Strate_Helper::wysiwyg($aStrate));
                 break;
             case 'strate-text_image':
-                get_template_part('template-parts/strates/text_image', '', Strate_Helper::text_image($aStrate));
+                get_template_part('template-parts/strates/strate', 'text_image', Strate_Helper::text_image($aStrate));
+                break;
+            case 'strate-news':
+                get_template_part('template-parts/strates/strate', 'news', Strate_Helper::news($aStrate));
                 break;
         }
     }

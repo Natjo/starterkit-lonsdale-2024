@@ -1,0 +1,17 @@
+.card-news {
+    a {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    picture {
+        background-color: #f5f5f5;
+        order: -1;
+    }
+
+    img {
+        width: 100%;
+        height: auto
+    }
+}

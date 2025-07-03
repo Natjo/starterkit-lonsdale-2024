@@ -6,6 +6,8 @@
 
 <section <?= options("strate strate-image", $args) ?>>
     <div class="container">
-        <?php component::picture($args["images"], true); ?>
-    </div>
+        <?= block::header($args["header"]) ?>
+    </div> 
+    
+    <?php component::picture($args["images"], true); ?>
 </section>

@@ -1,7 +1,5 @@
 <?php
-
-class Strate_Helper
-{
+class Helper{
     public static function images($arr, $size_desktop = "full", $size_mobile = "full")
     {
         $images = [
@@ -9,7 +7,7 @@ class Strate_Helper
                 "id" => $arr["image-desktop"],
                 "size" => $size_desktop
             ]
-           
+
         ];
 
         if (!empty($arr["image-mobile"])) {
@@ -40,7 +38,10 @@ class Strate_Helper
 
         return  $args;
     }
+}
 
+class Strate_Helper
+{
     public static function strate_options($aStrate)
     {
         $args = [
@@ -77,7 +78,7 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
-            "text" =>  $aStrate["text"]
+              "text" =>  $aStrate["text"]
         ];
 
         return array_merge($fields, $options, $header);
@@ -90,7 +91,7 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
-            "images" => Strate_Helper::images($aStrate["block-image"]),
+            "images" => Helper::images($aStrate["block-image"]),
         ];
 
         return array_merge($fields, $options, $header);
@@ -103,10 +104,45 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
-            "images" => Strate_Helper::images($aStrate["block-image"], "full"),
-            "text" =>  $aStrate["text"]
+            "images" => Helper::images($aStrate["block-image"], "620_auto"),
+            "title" =>  $aStrate["title"],
+            "text" =>  $aStrate["text"],
+            "link" =>  $aStrate["link"]
         ];
 
         return array_merge($fields, $options, $header);
+    }
+
+    public static function news($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
+        $fields = [
+            "items" =>  $aStrate["items"],
+            "link" =>  $aStrate["link"],
+        ];
+
+        return array_merge($fields, $options, $header);
+    }
+}
+
+class hero
+{
+    public static function homepage()
+    {
+        $pageID = get_the_ID();
+
+        $fields = get_field('hero-homepage',  $pageID);
+
+        $args = [
+            'title' => $fields["title"],
+            'intro' => $fields["intro"],
+            'link' => $fields["link"],
+            'images' => Helper::images(get_field('block-image',  $pageID)),
+        ];
+
+        get_template_part('template-parts/heros/hero', 'homepage', $args);
     }
 }

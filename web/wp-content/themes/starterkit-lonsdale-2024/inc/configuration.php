@@ -27,7 +27,10 @@ function theme_setup()
     show_admin_bar(false);
 
     add_image_size('415_300', 415, 300, array('center', 'center'));
-   
+
+    add_image_size('400_236', 400, 236, array('center', 'center'));
+    add_image_size('620_auto', 620, 0, array('center', 'center'));
+    
 }
 
 
@@ -117,7 +120,7 @@ add_filter('wp_editor_set_quality', function ($arg) {
 });
 
 // empeche que l'image soit scaled si trop grande
-add_filter( 'big_image_size_threshold', '__return_false' );
+add_filter('big_image_size_threshold', '__return_false');
 
 /*  DISABLE GUTENBERG STYLE IN HEADER| WordPress 5.9 */
 function wps_deregister_styles()

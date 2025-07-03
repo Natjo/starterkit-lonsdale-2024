@@ -1,12 +1,19 @@
 #footer {
     background: antiquewhite;
 
-    .container {
+    .container-fluid {
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 60px;
     }
+
+    @media(--breakpoint-lg-down) {
+        .container-fluid  {
+            flex-direction: column;
+        }
+    }
+
 }
 
 #nav-footer {

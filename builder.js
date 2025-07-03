@@ -5,7 +5,7 @@ const cssnested = require('postcss-nested');
 const cssCustomMedia = require('postcss-custom-media');
 const postcssGlobalData = require('@csstools/postcss-global-data');
 const atImport = require("postcss-import")
-
+const parser = require('postcss-comment')
 const autoprefixer = require('autoprefixer');
 const uglifycss = require('uglifycss');
 const babel = require('@babel/core');
@@ -118,7 +118,7 @@ const core = {
             .use(atImport({
                 path: ["assets/css"],
             }))
-            .process(str, { map: { inline: false, annotation: "styles.css.map" } })
+            .process(str, {parser: parser, map: { inline: false, annotation: "styles.css.map" } })
             .catch(error => {
                 console.log(`\x1b[90m${error}\x1b[39m\x1b[23m`);
                 console.log(error.reason, 'line:', error.line, 'col', error.column);

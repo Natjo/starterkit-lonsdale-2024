@@ -1,3 +1,4 @@
+/* styles */
 @import "styles/variables.css";
 @import "styles/layout.css";
 @import "styles/btns.css";
@@ -12,12 +13,17 @@
 @import "common/footer.css";
 
 /* hero */
-@import "heros/homepage.css";
+@import "heros/hero-homepage.css";
+
+/* cards*/
+@import "cards/card-news.css";
 
 /* blocks */
-@import "blocks/header.css";
+@import "blocks/block-header.css";
+@import "blocks/block-search.css";
 
 /* strates */
-@import "strates/image.css";
-@import "strates/text_image.css";
-@import "strates/wysiwyg.css";
+@import "strates/strate-image.css";
+@import "strates/strate-text_image.css";
+@import "strates/strate-wysiwyg.css";
+@import "strates/strate-news.css";

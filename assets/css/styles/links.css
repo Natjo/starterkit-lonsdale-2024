@@ -1,9 +1,13 @@
 .link {
-    text-decoration: underline;
-    color: var(--color-2);
+    display: inline-block;
 
-    &.link-1 {
-        font-weight: 800;
+    &:hover {
+        text-decoration: underline;
     }
 
+    &.link-1 {}
+
+    &.link-2 {
+        font-weight: 600;
+    }
 }

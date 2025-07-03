@@ -28,6 +28,7 @@ body {
     margin-left: auto;
     padding-left: var(--ctr-offset);
     padding-right: var(--ctr-offset);
+    box-sizing: border-box;
 }
 
 .container-fluid {
@@ -44,9 +45,8 @@ main {
 /* strate */
 .strate {
     --margin: var(--margin-md);
-
     margin-bottom: var(--margin);
-
+ 
     &[class*="bg"] {
         padding-top: var(--margin-md);
         padding-bottom: var(--margin-md);
@@ -54,33 +54,42 @@ main {
 }
 
 /* margin */
-.margin-none{
+.margin-none {
     --margin: 0;
 }
-.margin-sm{
+
+.margin-sm {
     --margin: var(--margin-sm);
 }
-.margin-md{
-     --margin: var(--margin-md);
+
+.margin-md {
+    --margin: var(--margin-md);
 }
-.margin-lg{
+
+.margin-lg {
     --margin: var(--margin-lg);
 }
 
 /* bg */
 .bg-color-1 {
     background-color: var(--color-1);
+    color: var(--color-text);
+    --bg-color: var(--color-4);
+    --color: var(--color-text);
 }
+
 .bg-color-2 {
     background-color: var(--color-2);
-    color: #fff;
-
-    h2 {
-        color: #fff;
-    }
+    color: var(--color-text);
+    --bg-color: var(--color-3);
+    --color: #fff;
 }
+
 .bg-color-3 {
     background-color: var(--color-3);
+    color: #fff;
+    --bg-color: var(--color-2);
+    --color: var(--color-text);
 }
 
 /* quick access*/

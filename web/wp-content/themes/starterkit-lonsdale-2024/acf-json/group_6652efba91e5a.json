@@ -50,7 +50,8 @@
             "choices": {
                 "0": "Pas de background",
                 "color-1": "Rouge",
-                "color-2": "Green"
+                "color-2": "Green",
+                "color-3": "Bue"
             },
             "default_value": 0,
             "return_format": "value",
@@ -103,5 +104,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751027160
+    "modified": 1751556698
 }

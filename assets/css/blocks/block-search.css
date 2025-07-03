@@ -1,0 +1,42 @@
+.block-search {
+   display: grid;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   overflow: hidden;
+
+   input,
+   label,
+   button {
+      grid-area: 1 / 1;
+      height: 3.4rem;
+      box-sizing: border-box;
+      font-size: inherit;
+   }
+
+   label {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      pointer-events: none;
+   }
+
+   &:has(input:valid, input:focus) {
+      label {
+         opacity: 0;
+      }
+   }
+
+   input {
+      padding: 1rem 3.4rem 1rem 1rem;
+      border: none;
+      width: 20rem;
+   }
+
+   button {
+      justify-self: end;
+      width: 3.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+}

@@ -1,5 +1,0 @@
-.block-header {
-    &:not(:nth-last-child(1)) {
-        margin-bottom: var(--margin-md);
-    }
-}
