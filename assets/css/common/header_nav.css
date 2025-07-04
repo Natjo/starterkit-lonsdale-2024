@@ -5,7 +5,8 @@
     width: 100%;
     background: aliceblue;
 
-    .container-fluid {
+    .header-content {
+        grid-column: fluid;
         display: flex;
         justify-content: space-between;
         align-items: center;

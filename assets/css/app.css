@@ -8,6 +8,9 @@
 @import "styles/rte.css";
 @import "styles/titles.css";
 
+/* modules */
+@import "modules/slider.css";
+
 /* common */
 @import "common/header_nav.css";
 @import "common/footer.css";
@@ -27,3 +30,4 @@
 @import "strates/strate-text_image.css";
 @import "strates/strate-wysiwyg.css";
 @import "strates/strate-news.css";
+@import "strates/strate-slider.css";

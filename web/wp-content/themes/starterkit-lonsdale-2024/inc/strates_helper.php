@@ -1,5 +1,6 @@
 <?php
-class Helper{
+class Helper
+{
     public static function images($arr, $size_desktop = "full", $size_mobile = "full")
     {
         $images = [
@@ -78,7 +79,7 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
-              "text" =>  $aStrate["text"]
+            "text" =>  $aStrate["text"]
         ];
 
         return array_merge($fields, $options, $header);
@@ -122,6 +123,20 @@ class Strate_Helper
         $fields = [
             "items" =>  $aStrate["items"],
             "link" =>  $aStrate["link"],
+        ];
+
+        return array_merge($fields, $options, $header);
+    }
+
+    public static function slider($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
+        $fields = [
+            "card" =>  "news",
+            "items" => $aStrate["items"]
         ];
 
         return array_merge($fields, $options, $header);

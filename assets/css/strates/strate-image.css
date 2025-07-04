@@ -1,5 +1,8 @@
 .strate-image {
 
+    picture{
+        grid-column: full;
+    }
     img {
         width: 100%;
         height: auto

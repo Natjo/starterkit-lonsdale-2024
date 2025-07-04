@@ -3,11 +3,10 @@
 //console($args);
 ?>
 
-
 <section <?= options("strate strate-news", $args) ?>>
-    <div class="container">
-        <?= block::header($args["header"]) ?>
+    <?= block::header($args["header"]) ?>
 
+    <div class="strate-content">
         <ul>
             <?php foreach ($args["items"] as $item) : ?>
                 <li>
@@ -16,6 +15,6 @@
             <?php endforeach ?>
         </ul>
 
-        <?= component::link($args["link"], "cta btn btn-1");?>
+        <?= component::link($args["link"], "cta btn btn-1"); ?>
     </div>
 </section>

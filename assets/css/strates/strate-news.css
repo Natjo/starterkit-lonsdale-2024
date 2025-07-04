@@ -1,11 +1,11 @@
 .strate-news {
-
     ul {
         display: grid;
         gap: var(--gap);
         grid-template-columns: repeat(3, 1fr);
     }
-    .cta{
+
+    .cta {
         margin-top: 2rem;
     }
 }

@@ -1,7 +1,8 @@
 #footer {
     background: antiquewhite;
 
-    .container-fluid {
+    .footer-content {
+        grid-column: fluid;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -9,7 +10,7 @@
     }
 
     @media(--breakpoint-lg-down) {
-        .container-fluid  {
+        .footer-content  {
             flex-direction: column;
         }
     }

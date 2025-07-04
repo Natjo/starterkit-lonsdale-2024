@@ -115,6 +115,7 @@ class block
 {
     public static function header($fields, $classes = null, $attributes = null)
     {
+        if (empty($fields["title"]) && empty($fields["text"]) && empty($fields["link"])) return;
 
         $args = [
             "title" => $fields["title"],
@@ -134,5 +135,16 @@ class block
             "attributes" => $attributes
         ];
         get_template_part('template-parts/blocks/block', 'search', $args);
+    }
+
+    public static function slider($card, $items, $classes = null, $attributes = null)
+    {
+        $args = [
+            "card" => $card,
+            "items" => $items,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/blocks/block', 'slider', $args);
     }
 }

@@ -21,32 +21,28 @@ body {
     }
 }
 
-.container {
-    width: 100%;
-    max-width: var(--ctr-width);
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: var(--ctr-offset);
-    padding-right: var(--ctr-offset);
-    box-sizing: border-box;
-}
-
-.container-fluid {
-    padding-left: var(--ctr-offset);
-    padding-right: var(--ctr-offset);
-}
-
 main {
     margin-top: var(--header-height);
 }
 
+.hero,
+.strate,
+#header,
+#footer {
+    display: grid;
+    grid-template-columns: [full] var(--ctr-offset) [fluid] auto [ctr] calc(100% - var(--ctr-offset) - var(--ctr-offset)) [ctr-end] auto [fluid-end] var(--ctr-offset) [full-end];
+    align-items: start;
 
+    >* {
+        grid-column: ctr;
+    }
+}
 
 /* strate */
 .strate {
     --margin: var(--margin-md);
     margin-bottom: var(--margin);
- 
+
     &[class*="bg"] {
         padding-top: var(--margin-md);
         padding-bottom: var(--margin-md);

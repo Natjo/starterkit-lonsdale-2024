@@ -1,5 +1,5 @@
-<header class="hero-homepage">
-    <div class="container">
+<header class="hero hero-homepage">
+    <div class="hero-content">
         <?= component::title($args['title'], "title-1"); ?>
 
         <?= component::intro($args['intro']); ?>

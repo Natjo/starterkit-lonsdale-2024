@@ -3,11 +3,8 @@
 //console($args);
 ?>
 
-
 <section <?= options("strate strate-image", $args) ?>>
-    <div class="container">
-        <?= block::header($args["header"]) ?>
-    </div> 
-    
+    <?= block::header($args["header"]) ?>
+
     <?php component::picture($args["images"], true); ?>
 </section>

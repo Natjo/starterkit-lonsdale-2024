@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_630caad36485f",
-            "label": "",
+            "label": "Strates",
             "name": "strates",
             "aria-label": "",
             "type": "flexible_content",
@@ -144,6 +144,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_686788618f53f": {
+                    "key": "layout_686788618f53f",
+                    "name": "strate-slider",
+                    "label": "Slider news",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_686788758f542",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6867880164bc9"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -183,5 +215,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751552353
+    "modified": 1751622837
 }
