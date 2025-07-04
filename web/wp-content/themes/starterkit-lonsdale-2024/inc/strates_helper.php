@@ -3,6 +3,7 @@ class Helper
 {
     public static function images($arr, $size_desktop = "full", $size_mobile = "full")
     {
+        if(empty($arr)) return;
         $images = [
             "desktop" => [
                 "id" => $arr["image-desktop"],
@@ -48,6 +49,8 @@ class Strate_Helper
         $args = [
             "options" => [
                 "margin" => !empty($aStrate['strates-options-margin']) ? $aStrate['strates-options-margin'] : "",
+                "container" => !empty($aStrate['strates-options-container']) ? $aStrate['strates-options-container'] : "",
+                "padding" => !empty($aStrate['strates-options-padding']) ? $aStrate['strates-options-padding'] : "",
                 "background" => !empty($aStrate['strates-options-background']) ? $aStrate['strates-options-background'] : "",
                 "id" => !empty($aStrate['strates-options-id']) ? $aStrate['strates-options-id'] : "",
             ]
@@ -159,5 +162,19 @@ class hero
         ];
 
         get_template_part('template-parts/heros/hero', 'homepage', $args);
+    }
+        public static function flexible()
+    {
+        $pageID = get_the_ID();
+
+        $fields = get_field('hero-flexible',  $pageID);  
+
+        $args = [
+            'title' => $fields["title"],
+            'intro' => $fields["intro"],
+            'images' => Helper::images(get_field('block-image',  $pageID)),
+        ];
+
+        get_template_part('template-parts/heros/hero', 'flexible', $args);
     }
 }

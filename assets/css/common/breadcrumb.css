@@ -1,0 +1,8 @@
+#breadcrumb {
+   // margin-bottom: -100%;
+    
+   ol{
+        display: flex;;
+   }
+
+}

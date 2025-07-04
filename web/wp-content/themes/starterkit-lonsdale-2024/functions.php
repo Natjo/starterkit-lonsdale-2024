@@ -127,26 +127,52 @@ function mode()
 /* options des strates */
 function options($classes = "", $args)
 {
-    $margin = " margin-none";
-    if (!empty($args["options"]["margin"])) {
-        if ($args["options"]["margin"] == "md") {
-            $margin = "";
+
+
+    $container = "";
+    if (!empty($args["options"]["container"])) {
+        if ($args["options"]["container"] == "md") {
+            $container = "";
         } else {
-            $margin = !empty($args["options"]["margin"]) ? " margin-" . $args["options"]["margin"] : "";
+            $container = !empty($args["options"]["container"]) ? " ctr-" . $args["options"]["container"] : "";
         }
     }
 
-    $background = "";
-    if (!empty($args["options"]["background"])) {
-        $background =  !empty($args["options"]["background"]) ? " bg-" . $args["options"]["background"] : "";
-    }
-    
-    $id = "";
-    if (!empty($args["options"]["id"])) {
-        $id = ' id="'.$args["options"]["id"].'"';
+    $margin = " mb-none";
+    if (!empty($args["options"]["margin"]["bottom"])) {
+        if ($args["options"]["margin"]["bottom"] == "md") {
+            $margin = "";
+        } else {
+            $margin = !empty($args["options"]["margin"]["bottom"]) ? " mb-" . $args["options"]["margin"]["bottom"] : "";
+        }
     }
 
-    return 'class="' . $classes . $margin . $background . '"' . $id;
+    $marginTop = "";
+    if (!empty($args["options"]["margin"]["top"])) {
+        $marginTop = !empty($args["options"]["margin"]["top"]) ? " mt-" . $args["options"]["margin"]["top"] : "";
+    }
+
+    $background = "";
+    $padding = "";
+    if (!empty($args["options"]["background"])) {
+        $hasBackground = $args["options"]["background"]["hasBackground"];
+        if ($hasBackground) {
+            $background =   " bg-" . $args["options"]["background"]["color"];
+
+            if ($args["options"]["background"]["padding"] == "md") {
+                $padding = "";
+            } else {
+                $padding =   " pd-" . $args["options"]["background"]["padding"];
+            }
+        }
+    }
+
+    $id = "";
+    if (!empty($args["options"]["id"])) {
+        $id = ' id="' . $args["options"]["id"] . '"';
+    }
+
+    return 'class="' . $classes . $margin . $marginTop . $background . $padding . $container . '"' . $id;
 }
 
 function console($value)

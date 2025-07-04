@@ -1,10 +1,3 @@
-<div id="quick_access">
-    <div class="content">
-        <a href="#main">Accès au contenu principal</a>
-        <a href="#footer">Accès au pied de page</a>
-    </div>
-</div>
-
 <header id="header" role="banner" data-module="common/header-nav">
     <div class="header-content">
         <a href="<?= get_home_url() ?>" class="logo" aria-label="Aller à la page d'accueil">

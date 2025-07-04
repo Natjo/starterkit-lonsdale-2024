@@ -4,6 +4,7 @@
         grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: var(--gap);
+        grid-column: var(--ctr);
     }
 
     .rte {

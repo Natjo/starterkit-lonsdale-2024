@@ -14,9 +14,12 @@
 /* common */
 @import "common/header_nav.css";
 @import "common/footer.css";
+@import "common/quick_access.css";
+@import "common/breadcrumb.css";
 
 /* hero */
 @import "heros/hero-homepage.css";
+@import "heros/hero-flexible.css";
 
 /* cards*/
 @import "cards/card-news.css";

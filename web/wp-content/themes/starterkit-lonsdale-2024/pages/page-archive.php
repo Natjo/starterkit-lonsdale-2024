@@ -1,7 +1,7 @@
 <?php
 
 get_header();
-get_template_part('template-parts/common/block', '');
+get_template_part('template-parts/common/block');
 
 $card_tpl = "news";
 

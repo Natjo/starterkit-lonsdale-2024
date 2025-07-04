@@ -8,7 +8,7 @@
  */
 
 get_header();
-get_template_part('template-parts/common/header_nav', '');
+get_template_part('template-parts/common/header_nav');
 
 $card_tpl = "news";
 

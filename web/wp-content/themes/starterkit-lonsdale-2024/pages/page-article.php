@@ -5,7 +5,7 @@ get_template_part('template-parts/common/header_nav', '');
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-article">
-    <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
+    <?php get_template_part('template-parts/common/breadcrumb'); ?>
 
     <article>
         <?php
@@ -20,7 +20,12 @@ get_template_part('template-parts/common/header_nav', '');
         get_template_part('template-parts/heros/article', '', $args);
         ?>
 
-        <?php get_template_part('template-parts/common/strates', ''); ?>
+      <div class="layout-sidebar">
+        <div class="sidebar">sidebar</div>
+        <div class="content">
+            <?php get_template_part('template-parts/common/strates'); ?>
+        </div>
+    </div>
     </article>
 </main>
 

@@ -4,7 +4,7 @@ Template Name: Contact
 */
 
 get_header();
-get_template_part('template-parts/common/header_nav', '');
+get_template_part('template-parts/common/header_nav');
 
 $mail = formulaire_contact();
 $mail_send = !empty($mail) && empty($mail['error']) ? true : false;

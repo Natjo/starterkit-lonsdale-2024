@@ -1,0 +1,28 @@
+.hero-flexible {
+    align-items: center;
+    min-height: 25vh;
+    background-color: var(--color-2);
+ 
+    .hero-content{
+       // grid-column: fluid;
+        grid-row: 1;
+        z-index: 2; 
+        display: grid;
+        gap: 20px;
+        justify-items: start;
+    }
+
+    picture {
+        grid-row: 1;
+        grid-column: full;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
