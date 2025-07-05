@@ -1,6 +1,6 @@
 .strate-slider {
     .myslider {
-        grid-column: ctr / fluid;
+        grid-column: var(--ctr) / fluid;
 
         img {
             width: 100%;

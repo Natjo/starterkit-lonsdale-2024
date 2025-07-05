@@ -5,5 +5,5 @@
         <?= component::intro($args['intro']); ?>
     </div>
 
-    <?php component::picture($args["images"], "", true); ?>
+    <?php //component::picture($args["images"], "", true); ?>
 </header>

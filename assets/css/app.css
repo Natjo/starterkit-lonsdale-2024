@@ -20,6 +20,7 @@
 /* hero */
 @import "heros/hero-homepage.css";
 @import "heros/hero-flexible.css";
+@import "heros/hero-news.css";
 
 /* cards*/
 @import "cards/card-news.css";

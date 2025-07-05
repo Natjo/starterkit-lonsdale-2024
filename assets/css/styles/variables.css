@@ -19,41 +19,73 @@
     --color-valid: green;
     --color-focus: blue;
 
-    --layout-sidebar: [full] var(--ctr-offset) [fluid sidebar] 300px [sidebar-end] var(--gap) [ctr ctr-sm] 1fr [ctr-sm ctr-end fluid-end] var(--ctr-offset) [full-end];
+    --col: minmax(1vw, calc((1400px - (11 * var(--gap))) / 12));
 
-    --col: minmax(auto,calc((1400px - (11 * var(--gap))) /12 ));
-
-    --layout: [full] var(--ctr-offset) [fluid] 1fr [ctr] 
-        var(--col) 
-        var(--gap) 
+    --layout: 
+        [full] 
+        var(--ctr-offset) 
+        [fluid] 
+        1fr 
+        [ctr] 
+        var(--col) var(--gap) 
         [ctr-sm] 
-        var(--col) 
-        var(--gap)
-         [ctr-xsm] 
-        var(--col) 
-        var(--gap) 
-        var(--col) 
-        var(--gap) 
-        var(--col) 
-        var(--gap) 
-        var(--col) 
-        calc(var(--gap) / 2) 
+        var(--col) var(--gap)
+        var(--col) var(--gap) 
+        var(--col) var(--gap) 
+        var(--col) var(--gap) 
+        var(--col) calc(var(--gap) / 2) 
         [middle]
-        calc(var(--gap) / 2) 
-        var(--col) 
-        var(--gap) 
-        var(--col) 
-        var(--gap) 
-        var(--col) 
-        var(--gap) 
-        var(--col) 
-        [ctr-xsm-end] 
-        var(--gap)
-        var(--col) 
+        calc(var(--gap) / 2) var(--col) 
+        var(--gap) var(--col) 
+        var(--gap) var(--col) 
+        var(--gap) var(--col) 
+        var(--gap) var(--col) 
         [ctr-sm-end] 
-        var(--gap) 
+        var(--gap) var(--col) 
+        [ctr-end]
+        1fr
+        [fluid-end]
+        var(--ctr-offset)
+        [full-end];
+
+        --layout-sidebar: 
+        [full] 
+        var(--ctr-offset) 
+        [fluid] 
+        1fr 
+        [ctr] 
+        var(--col) var(--gap) 
+        [ctr-sm] 
+        var(--col) var(--gap)
         var(--col) 
-        [ctr-end] 1fr [fluid-end]  var(--ctr-offset) [full-end];
+        [sidebar-left-end]
+        var(--gap) 
+        var(--col) var(--gap) 
+               
+        var(--col) 
+        [middle]
+        var(--gap)
+        
+        var(--col) 
+
+        
+         var(--gap) var(--col) 
+
+
+
+        var(--gap) var(--col)
+        [ctr-sm-end] 
+        var(--gap) var(--col) 
+        [ctr-end ] var(--gap) 
+        [sidebar] 
+        var(--col) 
+        var(--gap) var(--col) 
+        var(--gap) var(--col) 
+        [sidebar-end]
+        1fr
+        [fluid-end]
+        var(--ctr-offset)
+        [full-end];
 }
 
 
@@ -63,9 +95,12 @@
         --header-height: 70px;
         --gap: 20px;
 
-        --margin-sm: 10px;
-        --margin-md: 10px;
-        --margin-lg: 20px;
+        --margin-xsm: 20px;
+        --margin-sm: 20px;
+        --margin-md: 40px;
+        --margin-lg: 60px;
+        --margin-xlg: 80px;
+
         --layout-sidebar: [full] var(--ctr-offset) [fluid sidebar ctr] 1fr [sidebar-end ctr-end fluid-end] var(--ctr-offset) [full-end];
     }
 }

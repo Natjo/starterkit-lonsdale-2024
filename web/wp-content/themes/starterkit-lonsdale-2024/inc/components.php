@@ -59,6 +59,17 @@ class component
         get_template_part('template-parts/components/intro', '', $args);
     }
 
+    public static function date($value, $classes = null, $attributes = null)
+    {
+        if (empty($value)) return;
+        $args = [
+            "value" => $value,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/date', '', $args);
+    }
+
     public static function title($title, $classes = null, $attributes = null)
     {
         if (empty($title)) return;
@@ -89,15 +100,20 @@ class card
             $post = get_post($values);
             $url = get_permalink($values);
             $field = get_field("card-news", $values);
+
+            $description = get_field('card-news-description',  $post->ID);
+            $image = get_field('card-news-image',  $post->ID);
             $title = $post->post_title;
-            $description = !empty($field["description"]) ? $field["description"] : "";
-            $images = !empty($field["block-image"]) ? Helper::images($field["block-image"], "400_236") : null;
+            $description = !empty($description) ? $description : "";
+            $images = !empty($image) ? Helper::images($image["block-image"], "400_236") : null;
         } else {
             $title = $values["title"];
             $description = !empty($values["description"]) ? $values["description"] : "";
             $images = !empty($values["images"]) ? $values["images"] : "";
             $url = !empty($values["url"]) ? $values["url"] : "";
         }
+
+        
 
         $args = [
             "title" =>  $title,

@@ -1,31 +1,28 @@
 <?php
 
 get_header();
-get_template_part('template-parts/common/header_nav', '');
+get_template_part('template-parts/common/header_nav');
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-article">
     <?php get_template_part('template-parts/common/breadcrumb'); ?>
 
     <article>
-        <?php
-        $args['title'] = get_the_title();
-        $args['date'] = get_the_date('d.m.Y');
-        $args['categories'] = lsd_get_the_terms_name($post->ID, 'Catégories');
-        $args['images'] = array(
-            'desktop' => lsd_get_featured($post->ID, 'medium'),
-            'width' => '590',
-            'height' => '491'
-        );
-        get_template_part('template-parts/heros/article', '', $args);
-        ?>
+        <?php hero::article(); ?>
 
-      <div class="layout-sidebar">
-        <div class="sidebar">sidebar</div>
-        <div class="content">
-            <?php get_template_part('template-parts/common/strates'); ?>
+        <div class="layout-sidebar">
+            <div class="sidebar">
+                <?php component::title("Ces articles pourraient vous interresser","title-2"); ?>  
+
+                <ul>
+                    <li><?php card::news(84); ?>  </li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <?php get_template_part('template-parts/common/strates'); ?>
+            </div>
         </div>
-    </div>
     </article>
 </main>
 

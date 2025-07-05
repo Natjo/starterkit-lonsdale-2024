@@ -17,9 +17,10 @@
                 "id": ""
             },
             "choices": {
-                "xsm": "X Small",
-                "sm": "Small",
-                "0": "Normal"
+                "full": "Full",
+                "fluid": "Fluid",
+                "0": "Normal",
+                "sm": "Small"
             },
             "default_value": 0,
             "return_format": "value",
@@ -49,39 +50,6 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_685e68aa2916b",
-                    "label": "Bottom",
-                    "name": "bottom",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "0": "Aucune",
-                        "xsm": "Très petit",
-                        "sm": "Petit",
-                        "md": "Moyen",
-                        "lg": "Large",
-                        "xlg": "Très large"
-                    },
-                    "default_value": "md",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0
-                },
-                {
                     "key": "field_6867e42ce376f",
                     "label": "Top",
                     "name": "top",
@@ -104,6 +72,39 @@
                         "xlg": "Très large"
                     },
                     "default_value": 0,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0
+                },
+                {
+                    "key": "field_685e68aa2916b",
+                    "label": "Bottom",
+                    "name": "bottom",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "0": "Aucune",
+                        "xsm": "Très petit",
+                        "sm": "Petit",
+                        "md": "Moyen",
+                        "lg": "Large",
+                        "xlg": "Très large"
+                    },
+                    "default_value": "md",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -273,5 +274,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751664973
+    "modified": 1751726192
 }

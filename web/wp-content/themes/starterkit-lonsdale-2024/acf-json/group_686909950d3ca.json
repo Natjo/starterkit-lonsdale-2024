@@ -1,11 +1,11 @@
 {
-    "key": "group_630cac1eca71f",
-    "title": "Hero - homepage",
+    "key": "group_686909950d3ca",
+    "title": "Hero - news",
     "fields": [
         {
-            "key": "field_685ebc69c9f42",
+            "key": "field_68690995143e2",
             "label": "Titre",
-            "name": "hero-homepage-title",
+            "name": "hero-news-title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -24,9 +24,9 @@
             "append": ""
         },
         {
-            "key": "field_685ebc7cc9f43",
+            "key": "field_68690995147f0",
             "label": "Intro",
-            "name": "hero-homepage-intro",
+            "name": "hero-news-intro",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -45,26 +45,9 @@
             "delay": 0
         },
         {
-            "key": "field_685ebc8ac9f44",
-            "label": "Lien",
-            "name": "hero-homepage-link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
-            "key": "field_685ebb3c55b39",
+            "key": "field_6869099514b9c",
             "label": "Image",
-            "name": "hero-homepage-image",
+            "name": "hero-news-image",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -87,9 +70,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "pages\/page-homepage.php"
+                "value": "news"
             }
         ]
     ],
@@ -102,5 +85,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751727372
+    "modified": 1751727260
 }

@@ -43,15 +43,17 @@ main {
 }
 
 .layout-flex {
-   // --layout: var(--layout-flex);
+    // --layout: var(--layout-flex);
 }
 
 .layout-sidebar {
     --layout: var(--layout-sidebar);
 
     .sidebar {
+        padding-top: 4rem;
         grid-column: sidebar;
         background-color: rgba(255, 255, 255, .5);
+        box-sizing: border-box;
     }
 
     .content {
@@ -79,7 +81,9 @@ main {
     margin-bottom: var(--margin);
     margin-top: var(--mt, 0);
 
-    --test: ctr-sm;
+    >* {
+        grid-column: var(--ctr);
+    }
 
     &[class*="bg"] {
         padding-top: var(--padding);
@@ -130,15 +134,18 @@ main {
 }
 
 /* container */
-.ctr-xsm {
-    --ctr: ctr-xsm;
-}
 
 .ctr-sm {
     --ctr: ctr-sm;
 }
 
+.ctr-fluid {
+    --ctr: fluid;
+}
 
+.ctr-full {
+    --ctr: full;
+}
 
 /* bg */
 .bg-color-1 {

@@ -1,5 +1,6 @@
 .strate-wysiwyg {
     .block-header {
         grid-column: ctr-sm;
+        grid-column: var(--ctr);
     }
 }

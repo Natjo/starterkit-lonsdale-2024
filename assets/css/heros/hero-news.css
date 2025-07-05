@@ -1,0 +1,26 @@
+.hero-news {
+    height: 50vh;
+    background-color: var(--color-4);
+    align-items: center;
+   
+    .hero-content {
+        grid-row: 1;
+        display: grid;
+        gap: 20px;
+        justify-items: start;
+        grid-column: ctr/middle;
+    }
+
+    picture {grid-row: 1;
+        grid-column: middle/full;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

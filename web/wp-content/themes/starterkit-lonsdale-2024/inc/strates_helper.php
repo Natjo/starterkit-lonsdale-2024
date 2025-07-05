@@ -3,7 +3,7 @@ class Helper
 {
     public static function images($arr, $size_desktop = "full", $size_mobile = "full")
     {
-        if(empty($arr)) return;
+        if (empty($arr)) return;
         $images = [
             "desktop" => [
                 "id" => $arr["image-desktop"],
@@ -152,29 +152,38 @@ class hero
     {
         $pageID = get_the_ID();
 
-        $fields = get_field('hero-homepage',  $pageID);
-
         $args = [
-            'title' => $fields["title"],
-            'intro' => $fields["intro"],
-            'link' => $fields["link"],
-            'images' => Helper::images(get_field('block-image',  $pageID)),
+            'title' => get_field('hero-homepage-title',  $pageID),
+            'intro' => get_field('hero-homepage-intro',  $pageID),
+            'link' => get_field('hero-homepage-link',  $pageID),
+            'images' => Helper::images(get_field('hero-homepage-image',  $pageID)['block-image']),
         ];
 
         get_template_part('template-parts/heros/hero', 'homepage', $args);
     }
-        public static function flexible()
+    public static function flexible()
     {
         $pageID = get_the_ID();
 
-        $fields = get_field('hero-flexible',  $pageID);  
-
         $args = [
-            'title' => $fields["title"],
-            'intro' => $fields["intro"],
-            'images' => Helper::images(get_field('block-image',  $pageID)),
+            'title' => get_field('hero-flexible-title',  $pageID),
+            'intro' => get_field('hero-flexible-intro',  $pageID),
+            'images' => Helper::images(get_field('hero-flexible-image',  $pageID)['block-image']),
         ];
 
         get_template_part('template-parts/heros/hero', 'flexible', $args);
+    }
+    public static function article()
+    {
+        $pageID = get_the_ID();
+
+        $args = [
+            'title' => get_field('hero-news-title',  $pageID),
+            'intro' => get_field('hero-news-intro',  $pageID),
+            'date' => get_the_date('d.m.Y'),
+            'images' => Helper::images(get_field('hero-news-image',  $pageID)['block-image']),
+        ];
+
+        get_template_part('template-parts/heros/hero', 'article', $args);
     }
 }
