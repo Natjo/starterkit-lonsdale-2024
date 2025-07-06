@@ -35,16 +35,13 @@ main {
     display: grid;
     grid-template-columns: var(--layout);
     align-items: start;
+    grid-auto-flow: column;
 
     >* {
         grid-column: ctr;
     }
-
 }
 
-.layout-flex {
-    // --layout: var(--layout-flex);
-}
 
 .layout-sidebar {
     --layout: var(--layout-sidebar);
@@ -76,18 +73,14 @@ main {
 /* strate */
 .strate {
     --ctr: ctr;
-    --margin: var(--margin-md);
-    --padding: var(--margin-md);
-    margin-bottom: var(--margin);
+    --mb: var(--margin-md);
+    --pd: var(--margin-md);
+    margin-bottom: var(--mb);
     margin-top: var(--mt, 0);
 
-    >* {
-        grid-column: var(--ctr);
-    }
-
     &[class*="bg"] {
-        padding-top: var(--padding);
-        padding-bottom: var(--padding);
+        padding-top: var(--pd);
+        padding-bottom: var(--pd);
     }
 }
 
@@ -97,15 +90,15 @@ main {
 }
 
 .mb-sm {
-    --margin: var(--margin-sm);
+    --mb: var(--margin-sm);
 }
 
 .mb-md {
-    --margin: var(--margin-md);
+    --mb: var(--margin-md);
 }
 
 .mb-lg {
-    --margin: var(--margin-lg);
+    --mb: var(--margin-lg);
 }
 
 .mt-sm {
@@ -122,15 +115,15 @@ main {
 
 /* padding */
 .pd-sm {
-    --padding: var(--margin-sm);
+    --pd: var(--margin-sm);
 }
 
 .pd-md {
-    --padding: var(--margin-md);
+    --pd: var(--margin-md);
 }
 
 .pd-lg {
-    --padding: var(--margin-lg);
+    --pd: var(--margin-lg);
 }
 
 /* container */

@@ -108,6 +108,8 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
+            "full" => $aStrate["full"],
+            "reverse" => $aStrate["reverse"],
             "images" => Helper::images($aStrate["block-image"], "620_auto"),
             "title" =>  $aStrate["title"],
             "text" =>  $aStrate["text"],

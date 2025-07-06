@@ -4,8 +4,9 @@ const postcss = require('postcss');
 const cssnested = require('postcss-nested');
 const cssCustomMedia = require('postcss-custom-media');
 const postcssGlobalData = require('@csstools/postcss-global-data');
-const atImport = require("postcss-import")
-const parser = require('postcss-comment')
+const atImport = require("postcss-import");
+const parser = require('postcss-comment');
+const postcssExtendRule = require('postcss-extend-rule');
 const autoprefixer = require('autoprefixer');
 const uglifycss = require('uglifycss');
 const babel = require('@babel/core');
@@ -109,7 +110,7 @@ const core = {
         fs.writeFileSync(dest, result);
     },
     postcss(str, func, name) {
-        postcss([cssnested,
+        postcss([cssnested,postcssExtendRule,
             postcssGlobalData({
                 files: [`${src}css/styles/customMedias.css`]
             }),

@@ -174,8 +174,14 @@ function init_remove_support()
  * TINY MCE
  */
 
+function wysiwyg_block_formats($args) {
+	$args['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5';
+	return $args;
+}
+add_filter('tiny_mce_before_init', 'wysiwyg_block_formats' );
+
 // tiny mce Formatage avec les <p>
-add_filter('tiny_mce_before_init', 'prevent_deleting_pTags');
+//add_filter('tiny_mce_before_init', 'prevent_deleting_pTags');
 function prevent_deleting_pTags($init)
 {
     $init['wpautop'] = false;
@@ -198,9 +204,9 @@ if (!function_exists('juiz_mce_before_init')) {
     {
         $style_formats = array(
             array(
-                'title' => 'Bouton',
-                'inline' => 'a',
-                'classes' => 'btn-1'
+                'title' => 'Intro',
+                'inline' => 'span',
+                'classes' => 'intro'
             ),
         );
         $styles['style_formats'] = json_encode($style_formats);
@@ -212,7 +218,7 @@ if (!function_exists('juiz_init_editor_styles')) {
     add_action('after_setup_theme', 'juiz_init_editor_styles');
     function juiz_init_editor_styles()
     {
-        add_editor_style('assets/css/app.css');
+        add_editor_style('assets/styles.css');
     }
 }
 

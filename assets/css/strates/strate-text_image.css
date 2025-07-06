@@ -1,10 +1,12 @@
 .strate-text_image {
+    align-items: center;
+
     .strate-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: var(--gap);
-        grid-column: var(--ctr);
+        grid-column: var(--ctr) / center-left;
+    }
+
+    picture {
+        grid-column: center-right / var(--ctr);
     }
 
     .rte {
@@ -18,5 +20,27 @@
 
     .cta {
         margin-top: 2rem;
+    }
+
+    &.full {
+        picture {
+            grid-column: center / full;
+        }
+    }
+
+    &.reverse {
+        .strate-content {
+            grid-column: center-right / var(--ctr);
+        }
+
+        picture {
+            grid-column: var(--ctr) /center;
+        }
+
+        &.full {
+            picture {
+                grid-column: full / center;
+            }
+        }
     }
 }

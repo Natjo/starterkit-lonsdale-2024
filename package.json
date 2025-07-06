@@ -23,6 +23,7 @@
         "postcss-nested": "^7.0.2",
         "postcss-import": "16.1.1",
         "postcss-comment": "2.0.0",
+        "postcss-extend-rule": "4.0.0",
         "svgo": "4.0.0",
         "uglifycss": "^0.0.29"
     },

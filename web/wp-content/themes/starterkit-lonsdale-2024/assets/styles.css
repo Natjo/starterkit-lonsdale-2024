@@ -34,9 +34,13 @@
         var(--col) var(--gap) 
         var(--col) var(--gap) 
         var(--col) var(--gap) 
-        var(--col) calc(var(--gap) / 2) 
-        [middle]
-        calc(var(--gap) / 2) var(--col) 
+        var(--col) 
+        [center-left] 
+        calc(var(--gap) / 2) 
+        [center]
+        calc(var(--gap) / 2)   
+        [center-right] 
+        var(--col) 
         var(--gap) var(--col) 
         var(--gap) var(--col) 
         var(--gap) var(--col) 
@@ -149,14 +153,11 @@ main {
     display: grid;
     grid-template-columns: var(--layout);
     align-items: start;
-
+    grid-auto-flow: column;
 }
 .hero >*, .strate >*, #header >*, #footer >*, #breadcrumb >*, .layout-sidebar >* {
         grid-column: ctr;
     }
-.layout-flex {
-    /* --layout: var(--layout-flex); */
-}
 .layout-sidebar {
     --layout: var(--layout-sidebar);
 }
@@ -183,30 +184,27 @@ main {
 /* strate */
 .strate {
     --ctr: ctr;
-    --margin: var(--margin-md);
-    --padding: var(--margin-md);
-    margin-bottom: var(--margin);
+    --mb: var(--margin-md);
+    --pd: var(--margin-md);
+    margin-bottom: var(--mb);
     margin-top: var(--mt, 0);
 }
-.strate >* {
-        grid-column: var(--ctr);
-    }
 .strate[class*="bg"] {
-        padding-top: var(--padding);
-        padding-bottom: var(--padding);
+        padding-top: var(--pd);
+        padding-bottom: var(--pd);
     }
 /* margin */
 .mb-none {
     --margin: 0;
 }
 .mb-sm {
-    --margin: var(--margin-sm);
+    --mb: var(--margin-sm);
 }
 .mb-md {
-    --margin: var(--margin-md);
+    --mb: var(--margin-md);
 }
 .mb-lg {
-    --margin: var(--margin-lg);
+    --mb: var(--margin-lg);
 }
 .mt-sm {
     --mt: var(--margin-sm);
@@ -219,13 +217,13 @@ main {
 }
 /* padding */
 .pd-sm {
-    --padding: var(--margin-sm);
+    --pd: var(--margin-sm);
 }
 .pd-md {
-    --padding: var(--margin-md);
+    --pd: var(--margin-md);
 }
 .pd-lg {
-    --padding: var(--margin-lg);
+    --pd: var(--margin-lg);
 }
 /* container */
 .ctr-sm {
@@ -395,58 +393,60 @@ button{
 }
 /* rich text */
 .rte h2 {
-        margin-bottom: 15px;
+        margin-bottom: 1.5rem;
+    }
+.rte h2 {
+    font-family: var(--font-2);
+    font-size: 4rem;
+    line-height: 1.1;
     }
 .rte h3 {
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
+    }
+.rte h3 {
+    font-family: var(--font-2);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
+    }
+.rte h4 {
+        margin-bottom: 1rem;
+    }
+.rte h4 {
+    font-family: var(--font-2);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    line-height: 1.25;
     }
 .rte p {
-        margin-bottom: 20px;
-        line-height: 140%;
-
+        margin-bottom: 2rem;
+        line-height: 1.9;
+    }
+.rte ul,
+    .rte ol {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+.rte ul li::marker, .rte ol li::marker {
+               /* color: var(--color-2); */
+                font-weight: 600
+            }
+.rte ul {
+        list-style: inside disc;
+    }
+.rte ol {
+        list-style: inside decimal;
     }
 .rte small {
         font-weight: 400;
     }
 .rte a {
         text-decoration: underline;
-        color: var(--color-2);
+        color: var(--color-text);
 
     }
-.rte ul {
-        margin-bottom: 20px;
-    }
-.rte ul li {
-            position: relative;
-            padding-left: 10px;
-        }
-.rte ul li:before {
-                content: "";
-                position: absolute;
-                display: block;
-                top: 6px;
-                left: 0;
-                width: 3px;
-                height: 15px;
-                background: var(--color-2);
-            }
-.rte ul li:not(:last-child) {
-                margin-bottom: 6px;
-            }
-.rte ol {
-        list-style-type: decimal;
-        margin-bottom: 20px;
-    }
-.rte ol li {
-            padding-left: 5px;
-            margin-left: 15px;
-        }
-.rte ol li::marker {
-                font-size: var(--font-size);
-            }
-.rte ol li:not(:last-child) {
-                margin-bottom: 6px;
-            }
 .rte *:nth-last-child(1) {
         margin-bottom: 0;
     }
@@ -476,9 +476,15 @@ button{
     margin-bottom: 20px;
     line-height: 1.25;
 }
-.intro{
+.intro {
     font-size: 2rem;
     line-height: 1.4;
+}
+time{
+    background-color: red;
+}
+.tag{
+     background-color: red;
 }
 /* modules */
 .slider{
@@ -746,14 +752,13 @@ button{
     align-items: center;
 }
 .hero-news .hero-content {
-        grid-row: 1;
         display: grid;
         gap: 20px;
         justify-items: start;
-        grid-column: ctr/middle;
+        grid-column: ctr/center-left;
     }
-.hero-news picture {grid-row: 1;
-        grid-column: middle/full;
+.hero-news picture {
+        grid-column: center/full;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -831,12 +836,14 @@ button{
         width: 100%;
         height: auto
     }
+.strate-text_image {
+    align-items: center;
+}
 .strate-text_image .strate-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: var(--gap);
-        grid-column: var(--ctr);
+        grid-column: var(--ctr) / center-left;
+    }
+.strate-text_image picture {
+        grid-column: center-right / var(--ctr);
     }
 .strate-text_image .rte {
         margin-top: 2rem;
@@ -848,6 +855,18 @@ button{
 .strate-text_image .cta {
         margin-top: 2rem;
     }
+.strate-text_image.full picture {
+            grid-column: center / full;
+        }
+.strate-text_image.reverse .strate-content {
+            grid-column: center-right / var(--ctr);
+        }
+.strate-text_image.reverse picture {
+            grid-column: var(--ctr) /center;
+        }
+.strate-text_image.reverse.full picture {
+                grid-column: full / center;
+            }
 .strate-wysiwyg .block-header {
         grid-column: ctr-sm;
         grid-column: var(--ctr);
@@ -901,4 +920,5 @@ button{
             --offset: 0px
     }
         }
+
 /*# sourceMappingURL=styles.css.map */

@@ -33,9 +33,13 @@
         var(--col) var(--gap) 
         var(--col) var(--gap) 
         var(--col) var(--gap) 
-        var(--col) calc(var(--gap) / 2) 
-        [middle]
-        calc(var(--gap) / 2) var(--col) 
+        var(--col) 
+        [center-left] 
+        calc(var(--gap) / 2) 
+        [center]
+        calc(var(--gap) / 2)   
+        [center-right] 
+        var(--col) 
         var(--gap) var(--col) 
         var(--gap) var(--col) 
         var(--gap) var(--col) 

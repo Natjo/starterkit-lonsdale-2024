@@ -1,17 +1,49 @@
 /* rich text */
 .rte {
+
+
     h2 {
-        margin-bottom: 15px;
+        margin-bottom: 1.5rem;
+        @extend .title-2;
     }
 
     h3 {
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
+        @extend .title-3;
+    }
+
+    h4 {
+        margin-bottom: 1rem;
+        @extend .title-4;
     }
 
     p {
-        margin-bottom: 20px;
-        line-height: 140%;
+        margin-bottom: 2rem;
+        line-height: 1.9;
+    }
 
+    ul,
+    ol {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        li {
+            &::marker {
+               // color: var(--color-2);
+                font-weight: 600
+            }
+        }
+    }
+
+    ul {
+        list-style: inside disc;
+    }
+
+
+    ol {
+        list-style: inside decimal;
     }
 
     small {
@@ -20,51 +52,11 @@
 
     a {
         text-decoration: underline;
-        color: var(--color-2);
+        color: var(--color-text);
 
     }
 
-    ul {
-        margin-bottom: 20px;
 
-        li {
-            position: relative;
-            padding-left: 10px;
-
-            &:before {
-                content: "";
-                position: absolute;
-                display: block;
-                top: 6px;
-                left: 0;
-                width: 3px;
-                height: 15px;
-                background: var(--color-2);
-            }
-
-            &:not(:last-child) {
-                margin-bottom: 6px;
-            }
-        }
-    }
-
-    ol {
-        list-style-type: decimal;
-        margin-bottom: 20px;
-
-        li {
-            padding-left: 5px;
-            margin-left: 15px;
-
-            &::marker {
-                font-size: var(--font-size);
-            }
-
-            &:not(:last-child) {
-                margin-bottom: 6px;
-            }
-        }
-    }
 
     *:nth-last-child(1) {
         margin-bottom: 0;
