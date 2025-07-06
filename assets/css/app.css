@@ -1,13 +1,18 @@
 /* styles */
 @import "styles/variables.css";
 @import "styles/layout.css";
-@import "styles/btns.css";
 @import "styles/fonts.css";
-@import "styles/links.css";
 @import "styles/reset.css";
+@import "styles/classes.css";
 @import "styles/rte.css";
-@import "styles/titles.css";
-@import "styles/components.css";
+
+/* components */
+@import "components/title.css";
+@import "components/link.css";
+@import "components/btn.css";
+@import "components/date.css";
+@import "components/tag.css";
+@import "components/intro.css";
 
 /* modules */
 @import "modules/slider.css";
