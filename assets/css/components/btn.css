@@ -1,7 +1,7 @@
 .btn {
     font-size: var(--font-size);
-    background-color: var(--bg-color, var(--color-3));
-    color: var(--color, #fff);
+    background-color: var(--bg, var(--theme-1));
+    color: var(--color, var(--theme-1-color));
     padding: 4px;
     box-sizing: border-box;
     padding: 1rem 2rem;
@@ -26,4 +26,6 @@
     &:hover {
         opacity: .8;
     }
+
+
 }

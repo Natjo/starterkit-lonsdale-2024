@@ -30,6 +30,7 @@
 
 /* cards*/
 @import "cards/card-news.css";
+@import "cards/card-flexible.css";
 
 /* blocks */
 @import "blocks/block-header.css";

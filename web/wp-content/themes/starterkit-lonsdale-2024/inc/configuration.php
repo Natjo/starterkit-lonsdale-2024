@@ -226,7 +226,7 @@ if (!function_exists('juiz_init_editor_styles')) {
 add_filter('tiny_mce_before_init', 'wpse_editor_styles_class');
 function wpse_editor_styles_class($settings)
 {
-    $settings['body_class'] = 'rte';
+    $settings['body_class'] = 'rte mce';
     return $settings;
 }
 

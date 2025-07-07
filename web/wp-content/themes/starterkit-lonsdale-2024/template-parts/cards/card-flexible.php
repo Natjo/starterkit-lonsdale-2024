@@ -1,6 +1,6 @@
-<div class="card-news">
+<div class="card-flexible <?= $args['theme'] ?>">
 	<a href="<?= $args["url"] ?>">
-		<?= component::title($args["hx"], $args['title'], "title-2") ?>
+		<h3><?= $args['title'] ?></h3>
 
 		<div class="desc"><?= $args['description'] ?></div>
 

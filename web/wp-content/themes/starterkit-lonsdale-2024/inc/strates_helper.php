@@ -182,7 +182,10 @@ class hero
         $args = [
             'title' => get_field('hero-news-title',  $pageID),
             'intro' => get_field('hero-news-intro',  $pageID),
-            'date' => get_the_date('d.m.Y'),
+            'date' => [
+                "value" => get_the_date('d.m.Y'),
+                "datetime" => get_the_date('Y-m-d'),
+            ],
             'images' => Helper::images(get_field('hero-news-image',  $pageID)['block-image']),
         ];
 

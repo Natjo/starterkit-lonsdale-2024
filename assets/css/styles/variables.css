@@ -4,16 +4,27 @@
 
     --ctr-width: 1400px;
 
-    --color-text: #080b1c;
+    --color-text: rgba(0, 0, 0, .8);
 
     --gray-light: #ECECEC;
     --gray: #ECECEC;
     --gray-dark: #ECECEC;
 
-    --color-1: #e1a66e;
-    --color-2: #b8d7d1;
-    --color-3: #5098a2;
+    --color-1: #ffd8d8;
+    --color-1-bis: #faa;
+    --color-2: #cff7ef;
+    --color-2-bis: #64bdab;
+    --color-3: #afebfd;
+    --color-3-bis: #43accc;
     --color-4: #f7e08a;
+    --color-4-bis: #c4a638;
+    --color-5: #e3212a;
+    --color-5-bis: #e3212a;
+
+    --theme-1: var(--color-text);
+    --theme-2: var(--color-1);
+    --theme-1-color: #fff;
+    --theme-2-color: var(--color-text);
 
     --color-error: red;
     --color-valid: green;
@@ -21,75 +32,11 @@
 
     --col: minmax(1vw, calc((1400px - (11 * var(--gap))) / 12));
 
-    --layout: 
-        [full] 
-        var(--ctr-offset) 
-        [fluid] 
-        1fr 
-        [ctr] 
-        var(--col) var(--gap) 
-        [ctr-sm] 
-        var(--col) var(--gap)
-        var(--col) var(--gap) 
-        var(--col) var(--gap) 
-        var(--col) var(--gap) 
-        var(--col) 
-        [center-left] 
-        calc(var(--gap) / 2) 
-        [center]
-        calc(var(--gap) / 2)   
-        [center-right] 
-        var(--col) 
-        var(--gap) var(--col) 
-        var(--gap) var(--col) 
-        var(--gap) var(--col) 
-        var(--gap) var(--col) 
-        [ctr-sm-end] 
-        var(--gap) var(--col) 
-        [ctr-end]
-        1fr
-        [fluid-end]
-        var(--ctr-offset)
-        [full-end];
+    --layout:
+        [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [center-left] calc(var(--gap) / 2) [center] calc(var(--gap) / 2) [center-right] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
 
-        --layout-sidebar: 
-        [full] 
-        var(--ctr-offset) 
-        [fluid] 
-        1fr 
-        [ctr] 
-        var(--col) var(--gap) 
-        [ctr-sm] 
-        var(--col) var(--gap)
-        var(--col) 
-        [sidebar-left-end]
-        var(--gap) 
-        var(--col) var(--gap) 
-               
-        var(--col) 
-        [middle]
-        var(--gap)
-        
-        var(--col) 
-
-        
-         var(--gap) var(--col) 
-
-
-
-        var(--gap) var(--col)
-        [ctr-sm-end] 
-        var(--gap) var(--col) 
-        [ctr-end ] var(--gap) 
-        [sidebar] 
-        var(--col) 
-        var(--gap) var(--col) 
-        var(--gap) var(--col) 
-        [sidebar-end]
-        1fr
-        [fluid-end]
-        var(--ctr-offset)
-        [full-end];
+    --layout-sidebar:
+        [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) [sidebar-left-end] var(--gap) var(--col) var(--gap) var(--col) [middle] var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] var(--gap) [sidebar] var(--col) var(--gap) var(--col) var(--gap) var(--col) [sidebar-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
 }
 
 

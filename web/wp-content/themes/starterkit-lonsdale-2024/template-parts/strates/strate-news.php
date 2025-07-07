@@ -1,6 +1,6 @@
 <?php
 
-//console($args);
+$card_hx = !empty($args["header"]["title"]) ? 3 : 2;
 ?>
 
 <section <?= options("strate strate-news", $args) ?>>
@@ -10,7 +10,7 @@
         <ul>
             <?php foreach ($args["items"] as $item) : ?>
                 <li>
-                    <?= card::news($item->ID) ?>
+                    <?= card::news($item->ID, ["hx" => $card_hx]) ?>
                 </li>
             <?php endforeach ?>
         </ul>

@@ -27,8 +27,8 @@
 
     <?php wp_head(); ?>
 
-    <link rel='stylesheet' href='<?= THEME; ?>assets/styles.css?v=<?= VERSION; ?>' />
+    <link rel='stylesheet' href='<?= THEME_ASSETS; ?>styles.css?v=<?= VERSION; ?>' />
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(theme()); ?>>
     <?php get_template_part('template-parts/common/quick_access'); ?>

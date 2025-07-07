@@ -179,7 +179,9 @@
                     "choices": {
                         "color-1": "Rouge",
                         "color-2": "Green",
-                        "color-3": "Bue"
+                        "color-3": "Bue",
+                        "color-4": "aze",
+                        "color-5": "dsf"
                     },
                     "default_value": "color-1",
                     "return_format": "value",
@@ -274,5 +276,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751726192
+    "modified": 1751811176
 }

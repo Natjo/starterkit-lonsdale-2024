@@ -1,7 +1,6 @@
-
 /* margin */
 .mb-none {
-    --margin: 0;
+    --mb: 0;
 }
 
 .mb-sm {
@@ -58,21 +57,83 @@
 /* bg */
 .bg-color-1 {
     background-color: var(--color-1);
-    color: var(--color-text);
-    --bg-color: var(--color-4);
+
+    --theme-1: var(--color-text);
+    --theme-2: var(--color-text);
+
+    --bg: var(--color-1-bis);
     --color: var(--color-text);
 }
 
 .bg-color-2 {
     background-color: var(--color-2);
-    color: var(--color-text);
-    --bg-color: var(--color-3);
+
+    --theme-1: var(--color-text);
+    --theme-2: var(--color-text);
+
+    --bg: var(--color-2-bis);
     --color: #fff;
 }
 
 .bg-color-3 {
     background-color: var(--color-3);
+
+    --theme-1: var(--color-text);
+    --theme-2: var(--color-text);
+
+    --bg: var(--color-3-bis);
+    --color: #fff;
+}
+
+.bg-color-4 {
+    background-color: var(--color-4);
+
+    --theme-1: var(--color-text);
+    --theme-2: var(--color-text);
+
+    --bg: var(--color-4-bis);
+    --color: #fff;
+}
+
+.bg-color-5 {
+    background-color: var(--color-5);
     color: #fff;
-    --bg-color: var(--color-2);
+
+    --theme-1: var(--color-text);
+    --theme-2: var(--color-text);
+
+    --bg: #fff;
     --color: var(--color-text);
+}
+
+/* theme */
+.theme-color-1 {
+    --theme-1: var(--color-1-bis);
+    --theme-2: var(--color-1);
+    --theme-1-color: #fff;
+    --theme-2-color: var(--color-text);
+}
+.theme-color-2 {
+    --theme-1: var(--color-2-bis);
+    --theme-2: var(--color-2);
+    --theme-1-color: #fff;
+    --theme-2-color: var(--color-text);
+}
+.theme-color-4 {
+    --theme-1: var(--color-4-bis);
+    --theme-2: var(--color-4);
+    --theme-1-color: #fff;
+    --theme-2-color: var(--color-text);
+}
+
+.theme-color-5 {
+    --theme-1: var(--color-5-bis);
+    --theme-2: var(--color-5);
+    --theme-1-color: #fff;
+    --theme-2-color: #fff;
+}
+
+/* admin editor */
+.mce {
+    padding: 20px;
 }

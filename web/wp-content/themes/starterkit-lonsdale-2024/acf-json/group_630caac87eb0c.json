@@ -47,7 +47,7 @@
                         }
                     ],
                     "min": "",
-                    "max": "2"
+                    "max": ""
                 },
                 "layout_68668b82b77ae": {
                     "key": "layout_68668b82b77ae",
@@ -215,5 +215,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751799973
+    "modified": 1751811071
 }

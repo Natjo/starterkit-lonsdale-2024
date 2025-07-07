@@ -1,13 +1,13 @@
 {
-    "key": "group_686909950d3ca",
-    "title": "Hero - news",
+    "key": "group_686bc788d046c",
+    "title": "Card - flexible",
     "fields": [
         {
-            "key": "field_68690995143e2",
-            "label": "Titre",
-            "name": "hero-news-title",
+            "key": "field_686bc788d74e7",
+            "label": "Description",
+            "name": "card-flexible-description",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -19,35 +19,14 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
-            "key": "field_68690995147f0",
-            "label": "Intro",
-            "name": "hero-news-intro",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_6869099514b9c",
+            "key": "field_686bc788d787f",
             "label": "Image",
-            "name": "hero-news-image",
+            "name": "card-flexible-image",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -70,9 +49,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "news"
+                "value": "pages\/page-flexible.php"
             }
         ]
     ],
@@ -85,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751890849
+    "modified": 1751895258
 }

@@ -31,7 +31,7 @@
 
         li {
             &::marker {
-               // color: var(--color-2);
+                color: var(--theme-1, var(--color-text));
                 font-weight: 600
             }
         }
@@ -53,10 +53,39 @@
     a {
         text-decoration: underline;
         color: var(--color-text);
-
     }
 
+    blockquote {
+        quotes: "\201C" "\201D" "\2018" "\2019";
+        max-width: 80rem;
+        margin: 0 auto 2rem;
+        text-align: center;
 
+        &::before,
+        &::after {
+            color: var(--theme-1);
+            font-size: 6rem;
+            vertical-align: -2rem;
+            display: inline-block;
+            line-height: 0;
+        }
+
+        &::before {
+            content: open-quote;
+            margin-right: 1rem;
+        }
+
+        &::after {
+            content: close-quote;
+            margin-left: 1rem;
+        }
+
+        p {
+            font-size: 2.6rem;
+            display: inline;
+            line-height: 1.4;
+        }
+    }
 
     *:nth-last-child(1) {
         margin-bottom: 0;

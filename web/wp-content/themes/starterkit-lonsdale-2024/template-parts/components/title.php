@@ -1,6 +1,7 @@
 <?php
 $classes = !empty($args["classes"]) ? " " . $args["classes"] : "";
 $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
+$hx = "h" . $args["hx"];
 ?>
 
-<h1 class="title<?= $classes; ?>" <?= $attributes ?>><?= $args['title']; ?></h1>
+<<?= $hx; ?> class="title<?= $classes; ?>" <?= $attributes ?>><?= $args['title']; ?></<?= $hx; ?>>

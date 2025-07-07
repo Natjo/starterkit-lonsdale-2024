@@ -4,9 +4,9 @@ $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
 ?>
 
 <header class="block-header<?= $classes; ?>" <?= $attributes ?>>
-    <? component::title($args['title'], "title-1") ?>
+    <? component::title(2, $args['title'], "title-1") ?>
 
-    <? component::intro($args['text']) ?>
+    <? component::intro($args['text'],"rte") ?>
 
     <? component::link($args['cta'], "cta btn btn-1") ?>
 </header>

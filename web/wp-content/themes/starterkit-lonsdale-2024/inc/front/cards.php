@@ -2,31 +2,59 @@
 
 class card
 {
-    public static function news($values,  $classes = null, $attributes = null)
+    public static function base($card, $post, $args)
     {
-        if (is_numeric($values)) {
-            $post = get_post($values);
-            $url = get_permalink($values);
-            $description = get_field('card-news-description',  $post->ID);
-            $image = get_field('card-news-image',  $post->ID);
-            $title = $post->post_title;
+        $size = $args["sizes"];
+        $classes = !empty($args["classes"]) ? $args["classes"] : "";
+        $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
+        $hx = !empty($args["hx"]) ? $args["hx"] : 3;
+
+        if (is_numeric($post)) {
+            $post = get_post($post);
+            $theme = get_field('page-theme',  $post->ID);
+            $url = get_permalink($post);
+            $description = get_field($card . '-description',  $post->ID);
+            $image = get_field($card . '-image',  $post->ID);
+            $title = !empty($post->post_title) ? $post->post_title :  "";
+            if (get_field($card . '-title',  $post->ID)) {
+                $title = get_field($card . '-title',  $post->ID);
+            }
             $description = !empty($description) ? $description : "";
-            $images = !empty($image) ? Helper::images($image["block-image"], "400_236") : null;
+            $images = !empty($image) ? Helper::images($image["block-image"], $size) : null;
         } else {
-            $title = $values["title"];
-            $description = !empty($values["description"]) ? $values["description"] : "";
-            $images = !empty($values["images"]) ? $values["images"] : "";
-            $url = !empty($values["url"]) ? $values["url"] : "";
+            $title = !empty($post["title"]) ? $post["title"] : "";
+            $description = !empty($post["description"]) ? $post["description"] : "";
+            $images = !empty($post["images"]) ? $post["images"] : "";
+            $url = !empty($post["url"]) ? $post["url"] : "";
+            $theme = !empty($post["theme"]) ? $post["theme"] : "";
         }
 
-        $args = [
-            "title" =>  $title,
+        $args1 = [
+            "theme" => $theme,
+            "hx" => $hx,
+            "title" => $title,
             "description" => $description,
             "images" => $images,
             "url" => $url,
             "classes" => $classes,
             "attributes" => $attributes
         ];
-        get_template_part('template-parts/cards/card', 'news',  $args);
+
+        get_template_part('template-parts/cards/' . $card, 'nws',  $args1);
+    }
+
+
+    public static function news($post, $args = [])
+    {
+        $sizes = "400_236";
+
+        card::base("card-news", $post, array_merge($args, ["sizes" => $sizes]));
+    }
+
+    public static function flexible($post, $args = [])
+    {
+        $sizes = "400_236";
+
+        card::base("card-flexible", $post, array_merge($args, ["sizes" => $sizes]));
     }
 }

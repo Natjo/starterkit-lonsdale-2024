@@ -59,28 +59,32 @@ class component
         get_template_part('template-parts/components/intro', '', $args);
     }
 
-    public static function date($value, $classes = null, $attributes = null)
+    public static function date($obj, $classes = null, $attributes = null)
     {
-        if (empty($value)) return;
+        if (empty($obj)) return;
         $args = [
-            "value" => $value,
+            "value" => $obj["value"],
+            "datetime" => $obj["datetime"],
             "classes" => $classes,
             "attributes" => $attributes
         ];
         get_template_part('template-parts/components/date', '', $args);
     }
 
-    public static function title($title, $classes = null, $attributes = null)
+    public static function title($hx, $title, $classes = null, $attributes = null)
     {
         if (empty($title)) return;
+
         $args = [
+            "hx" => $hx,
             "title" => $title,
             "classes" => $classes,
             "attributes" => $attributes
         ];
+
         get_template_part('template-parts/components/title', '', $args);
     }
-
+    
     public static function text($text, $classes = null, $attributes = null)
     {
         if (empty($text)) return;

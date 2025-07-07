@@ -4,7 +4,7 @@ define('THEME_ASSETS', get_template_directory_uri() . '/assets/');
 define('THEME_URL', get_template_directory_uri() . '/');
 define('HOME_URL', get_home_url());
 define('AJAX_URL', admin_url('admin-ajax.php'));
-define('THEME', "/wp-content/themes/" . get_template() . "/");
+
 define('VERSION', file_get_contents(get_template_directory() . "/assets/version.txt"));
 
 if (ENV_PROD) {
@@ -182,4 +182,12 @@ function console($value)
     echo '<pre><code>';
     print_r($value);
     echo '</code></pre>';
+}
+
+
+function theme()
+{
+    if (!empty(get_field('page-theme',  get_the_ID()))) {
+        return get_field('page-theme',  get_the_ID());
+    }
 }

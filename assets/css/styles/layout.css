@@ -11,6 +11,7 @@ body {
     color: var(--color-text);
     line-height: 1;
     overflow-anchor: none;
+    color-scheme: only light;
 
     &.hasPopin {
         height: 100vh;
@@ -49,8 +50,12 @@ main {
     .sidebar {
         padding-top: 4rem;
         grid-column: sidebar;
-        background-color: rgba(255, 255, 255, .5);
         box-sizing: border-box;
+
+        ul{
+            display:grid;
+            gap: 1rem;
+        }
     }
 
     .content {

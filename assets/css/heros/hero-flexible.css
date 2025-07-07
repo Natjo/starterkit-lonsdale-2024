@@ -1,7 +1,11 @@
 .hero-flexible {
     align-items: center;
     min-height: 25vh;
-    background-color: var(--color-2);
+    background-color: var(--theme-2);
+
+    h1{
+        color: var(--theme-2-color);
+    }
  
     .hero-content{
        // grid-column: fluid;
