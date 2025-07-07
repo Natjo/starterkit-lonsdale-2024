@@ -12,8 +12,9 @@
          <?php foreach ($args["items"] as $item) : ?>
              <div class="item">
                  <?php
-                    $card = $args["card"];
-                    card::$card($item);
+                    $card = $item["card"]["name"];
+                    $sizes = !empty($item["card"]["sizes"]) ? ["sizes" => $item["card"]["sizes"]]  : [];
+                    card::$card($item["id"], $sizes);
                     ?>
              </div>
          <?php endforeach ?>

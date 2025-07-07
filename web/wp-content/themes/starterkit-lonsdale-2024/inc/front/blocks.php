@@ -26,14 +26,13 @@ class block
         get_template_part('template-parts/blocks/block', 'search', $args);
     }
 
-    public static function slider($card, $items, $classes = null, $attributes = null)
+    public static function slider($items, $classes = null, $attributes = null)
     {
         $args = [
-            "card" => $card,
             "items" => $items,
             "classes" => $classes,
             "attributes" => $attributes
-        ];
+        ]; 
         get_template_part('template-parts/blocks/block', 'slider', $args);
     }
 }

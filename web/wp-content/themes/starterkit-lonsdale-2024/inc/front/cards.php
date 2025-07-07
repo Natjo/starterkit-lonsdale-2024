@@ -2,7 +2,7 @@
 
 class card
 {
-    public static function base($card, $post, $args)
+    private static function base($card, $post, $args)
     {
         $size = $args["sizes"];
         $classes = !empty($args["classes"]) ? $args["classes"] : "";
@@ -43,18 +43,17 @@ class card
         get_template_part('template-parts/cards/' . $card, 'nws',  $args1);
     }
 
-
     public static function news($post, $args = [])
     {
         $sizes = "400_236";
 
-        card::base("card-news", $post, array_merge($args, ["sizes" => $sizes]));
+        card::base("card-news", $post, array_merge(["sizes" => $sizes], $args));
     }
 
     public static function flexible($post, $args = [])
     {
         $sizes = "400_236";
 
-        card::base("card-flexible", $post, array_merge($args, ["sizes" => $sizes]));
+        card::base("card-flexible", $post, array_merge(["sizes" => $sizes], $args));
     }
 }
