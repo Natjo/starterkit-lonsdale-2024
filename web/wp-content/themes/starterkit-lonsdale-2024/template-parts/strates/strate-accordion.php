@@ -6,6 +6,6 @@ $column = $args["column"] ? ' column' : '';
 
     <?= block::header($args["header"]) ?>
 
-    <?= component::accordion($args["items"], "strate-content") ?>
+    <?= component::accordion($args["items"]) ?>
 
 </section>

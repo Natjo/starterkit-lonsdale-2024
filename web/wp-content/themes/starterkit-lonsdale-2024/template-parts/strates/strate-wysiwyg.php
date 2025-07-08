@@ -6,6 +6,5 @@ $column = $args["column"] ? ' column' : '';
 
     <?= block::header($args["header"]) ?>
 
-    <?= component::text($args["text"], "strate-content") ?>
-
+    <?= component::text($args["text"]) ?>
 </section>

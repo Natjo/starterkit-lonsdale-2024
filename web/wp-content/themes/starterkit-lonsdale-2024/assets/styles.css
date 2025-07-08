@@ -143,14 +143,6 @@ main {
 .strate >* {
         grid-column: var(--ctr);
     }
-.strate.column .block-header {
-            grid-column: var(--ctr) / col-left;
-            position: sticky;
-            top: var(--header-height);
-        }
-.strate.column .strate-content {
-            grid-column: col-right / var(--ctr);
-        }
 .strate[class*="bg"] {
         padding-top: var(--pd);
         padding-bottom: var(--pd);
@@ -565,6 +557,34 @@ time{
 .accordion .details .details-content[aria-hidden="false"] {
                 grid-template-rows: 1fr;
             }
+.blockquote {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    text-align: center;
+}
+.blockquote p {
+        font-size: 2.6rem;
+        display: inline;
+        line-height: 1.4;
+    }
+.blockquote p::before,
+    .blockquote p::after {
+        color: var(--theme-1);
+        font-size: 6rem;
+        vertical-align: -2rem;
+        display: inline-block;
+        line-height: 0;
+    }
+.blockquote p::before {
+        content: open-quote;
+        margin-right: 1rem;
+    }
+.blockquote p::after {
+        content: close-quote;
+        margin-left: 1rem;
+    }
+.blockquote cite{
+        color: #ccc;
+    }
 /* modules */
 .slider{
     display: grid;
@@ -977,7 +997,7 @@ time{
             position: sticky;
             top: var(--header-height);
         }
-.strate-wysiwyg.column .strate-content {
+.strate-wysiwyg.column .rte {
             grid-column: col-right / var(--ctr);
         }
 .strate-news .block-header{
@@ -1029,9 +1049,12 @@ time{
             --offset: 0px
     }
         }
-.strate-accordion {
-
-
-  
-}
+.strate-accordion.column .block-header {
+            grid-column: var(--ctr) / col-left;
+            position: sticky;
+            top: var(--header-height);
+        }
+.strate-accordion.column .accordion {
+            grid-column: col-right / var(--ctr);
+        }
 /*# sourceMappingURL=styles.css.map */

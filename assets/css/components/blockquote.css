@@ -1,0 +1,30 @@
+.blockquote {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+    text-align: center;
+
+    p {
+        font-size: 2.6rem;
+        display: inline;
+        line-height: 1.4;
+            &::before,
+    &::after {
+        color: var(--theme-1);
+        font-size: 6rem;
+        vertical-align: -2rem;
+        display: inline-block;
+        line-height: 0;
+    }
+        &::before {
+        content: open-quote;
+        margin-right: 1rem;
+    }
+
+    &::after {
+        content: close-quote;
+        margin-left: 1rem;
+    }
+    }
+    cite{
+        color: #ccc;
+    }
+}

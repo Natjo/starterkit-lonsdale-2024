@@ -88,18 +88,7 @@ main {
         grid-column: var(--ctr);
     }
 
-    &.column {
-        .block-header {
-            grid-column: var(--ctr) / col-left;
-            position: sticky;
-            top: var(--header-height);
-        }
 
-        .strate-content {
-            grid-column: col-right / var(--ctr);
-        }
-
-    }
 
     &[class*="bg"] {
         padding-top: var(--pd);

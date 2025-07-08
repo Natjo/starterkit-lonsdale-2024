@@ -84,7 +84,7 @@ class component
 
         get_template_part('template-parts/components/title', '', $args);
     }
-    
+
     public static function text($text, $classes = null, $attributes = null)
     {
         if (empty($text)) return;
@@ -94,6 +94,18 @@ class component
             "attributes" => $attributes
         ];
         get_template_part('template-parts/components/text', '', $args);
+    }
+
+    public static function blockquote($text, $classes = null, $attributes = null)
+    {
+        if (empty($text)) return;
+        $args = [
+            "text" => $text,
+            "text" => $text,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/blockquote', '', $args);
     }
 
     public static function accordion($items, $classes = null, $attributes = null)

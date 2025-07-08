@@ -1,5 +1,16 @@
 .strate-accordion {
 
 
-  
+    &.column {
+        .block-header {
+            grid-column: var(--ctr) / col-left;
+            position: sticky;
+            top: var(--header-height);
+        }
+
+        .accordion {
+            grid-column: col-right / var(--ctr);
+        }
+
+    }
 }
