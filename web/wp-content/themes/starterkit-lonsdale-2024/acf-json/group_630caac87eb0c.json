@@ -20,7 +20,7 @@
                 "layout_6866782dd38da": {
                     "key": "layout_6866782dd38da",
                     "name": "strate-wysiwyg",
-                    "label": "Wysiwyg",
+                    "label": "Text",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -39,6 +39,38 @@
                             },
                             "clone": [
                                 "group_6866778cbb4a4"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_686d33bb5a202": {
+                    "key": "layout_686d33bb5a202",
+                    "name": "strate-quote",
+                    "label": "Citation",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_686d33bb5a204",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_686d3350a19eb"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -208,6 +240,71 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_686d392fd78ea": {
+                    "key": "layout_686d392fd78ea",
+                    "name": "strate-separator",
+                    "label": "Separator",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_686d3a9822cb5",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_686824e7e91d0",
+                                "field_6868258ad727d"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_686d3e80bb762": {
+                    "key": "layout_686d3e80bb762",
+                    "name": "strate-blocks",
+                    "label": "Blocks flexibles",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_686d3e80bb764",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_686d3e1f07d59"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -247,5 +344,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751962967
+    "modified": 1751990266
 }

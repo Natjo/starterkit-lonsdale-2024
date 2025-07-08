@@ -1,9 +1,9 @@
 {
-    "key": "group_6866778cbb4a4",
-    "title": "Strate - Text",
+    "key": "group_686d3350a19eb",
+    "title": "Strate - Citation",
     "fields": [
         {
-            "key": "field_6866841f6c89b",
+            "key": "field_686d3350a8f5c",
             "label": "Contenu",
             "name": "",
             "aria-label": "",
@@ -21,32 +21,11 @@
             "selected": 0
         },
         {
-            "key": "field_686ce5efb5739",
-            "label": "Disposition en colonne",
-            "name": "column",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_68668028c8dc6",
+            "key": "field_686d3350a9767",
             "label": "Texte",
             "name": "text",
             "aria-label": "",
-            "type": "wysiwyg",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,14 +35,95 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "br"
         },
         {
-            "key": "field_68668437a7e58",
+            "key": "field_686d344d5d838",
+            "label": "Auteur",
+            "name": "cite",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_686d336d59f52",
+                    "label": "Nom",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_686d339259f53",
+                    "label": "Prenom",
+                    "name": "last_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_686d339e59f54",
+                    "label": "Fonction",
+                    "name": "function",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_686d3350a9b53",
             "label": "Header",
             "name": "",
             "aria-label": "",
@@ -81,7 +141,7 @@
             "selected": 0
         },
         {
-            "key": "field_68668442a7e59",
+            "key": "field_686d3350a9f3a",
             "label": "Header",
             "name": "header",
             "aria-label": "",
@@ -103,7 +163,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_6866848bcbfa3",
+            "key": "field_686d3350aa323",
             "label": "Options",
             "name": "",
             "aria-label": "",
@@ -121,7 +181,7 @@
             "selected": 0
         },
         {
-            "key": "field_68668498cbfa4",
+            "key": "field_686d3350aa70a",
             "label": "Options",
             "name": "options",
             "aria-label": "",
@@ -161,5 +221,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751986958
+    "modified": 1751988629
 }

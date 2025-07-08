@@ -6,6 +6,7 @@
             grid-column: var(--ctr) / col-left;
             position: sticky;
             top: var(--header-height);
+            margin-bottom: 0;
         }
 
         .accordion {

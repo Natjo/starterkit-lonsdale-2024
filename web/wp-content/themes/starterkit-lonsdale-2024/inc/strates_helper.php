@@ -89,6 +89,45 @@ class Strate_Helper
         return array_merge($fields, $options, $header);
     }
 
+    public static function quote($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
+        $fields = [
+            "quote" => [
+                "text" => $aStrate["text"],
+                "cite" => $aStrate["cite"]
+            ],
+        ];
+
+        return array_merge($fields, $options, $header);
+    }
+
+
+    public static function separator($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
+        $fields = [];
+
+        return array_merge($fields, $options, $header);
+    }
+
+    public static function blocks($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
+        $fields = [];
+console($aStrate);
+        return array_merge($fields, $options, $header);
+    }
+
     public static function image($aStrate)
     {
         $options = Strate_Helper::strate_options($aStrate);

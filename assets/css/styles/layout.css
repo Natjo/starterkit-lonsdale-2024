@@ -95,3 +95,9 @@ main {
         padding-bottom: var(--pd);
     }
 }
+
+hr{
+    border: none;
+    border-top: 1px solid var(--theme-1);
+    width: 100%;
+}

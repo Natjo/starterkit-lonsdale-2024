@@ -96,12 +96,12 @@ class component
         get_template_part('template-parts/components/text', '', $args);
     }
 
-    public static function blockquote($text, $classes = null, $attributes = null)
+    public static function blockquote($arr, $classes = null, $attributes = null)
     {
-        if (empty($text)) return;
+        if (empty($arr)) return;
         $args = [
-            "text" => $text,
-            "text" => $text,
+            "text" => $arr["text"],
+            "cite" => $arr["cite"],
             "classes" => $classes,
             "attributes" => $attributes
         ];

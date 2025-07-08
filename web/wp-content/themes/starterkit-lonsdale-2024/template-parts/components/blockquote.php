@@ -1,14 +1,14 @@
 <?php
 $classes = !empty($args["classes"]) ? $args["classes"] : "";
 $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
+
 ?>
   
 <blockquote class="blockquote">
     <p>
-        Words can be like X-rays, if you use them properly—they’ll go through
-        anything. You read and you’re pierced.
+       <?= $args["text"] ?>
     </p>
 
-    <footer><cite>William Shakespeare, Hamlet</cite></footer>
+    <footer><cite><?= $args["cite"]["name"] ?> <?= $args["cite"]["last_name"] ?>, <?= $args["cite"]["function"] ?></cite></footer>
 
 </blockquote>

@@ -23,6 +23,15 @@ if (isset($aStrates) && !empty($aStrates)) {
             case 'strate-accordion':
                 get_template_part('template-parts/strates/strate', 'accordion', Strate_Helper::accordion($aStrate));
                 break;
+            case 'strate-quote':
+                get_template_part('template-parts/strates/strate', 'quote', Strate_Helper::quote($aStrate));
+                break;
+            case 'strate-separator':
+                get_template_part('template-parts/strates/strate', 'separator', Strate_Helper::separator($aStrate));
+                break;
+                    case 'strate-blocks':
+                get_template_part('template-parts/strates/strate', 'blocks', Strate_Helper::blocks($aStrate));
+                break;
         }
     }
 }
