@@ -1,9 +1,9 @@
 <?php
-$classes = !empty($args["classes"]) ? $args["classes"] : "";
+$classes = !empty($args["classes"]) ? " " . $args["classes"] : "";
 $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
 ?>
 
-<div class="accordion" data-module="components/accordion">
+<div class="accordion<?= $classes ?>" data-module="components/accordion">
     <?php foreach ($args["items"] as $item) : ?>
         <?php $uniqid = uniqid(); ?>
         <div class="details">

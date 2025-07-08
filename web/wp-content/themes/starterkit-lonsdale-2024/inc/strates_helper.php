@@ -82,6 +82,7 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
+            "column" => $aStrate["column"],
             "text" =>  $aStrate["text"]
         ];
 
@@ -159,10 +160,12 @@ class Strate_Helper
 
         $header = Strate_Helper::strate_header($aStrate);
 
-        $items["items"] = $aStrate["items"];
 
-       
+        $fields = [
+            "column" => $aStrate["column"],
+            "items" => $aStrate["items"],
+        ];
 
-        return array_merge($items, $options, $header);
+        return array_merge($fields, $options, $header);
     }
 }

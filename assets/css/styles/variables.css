@@ -33,7 +33,7 @@
     --col: minmax(1vw, calc((1400px - (11 * var(--gap))) / 12));
 
     --layout:
-        [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [center-left] calc(var(--gap) / 2) [center] calc(var(--gap) / 2) [center-right] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
+        [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [col-left] var(--gap) [col-right] var(--col) [center-left] calc(var(--gap) / 2) [center] calc(var(--gap) / 2) [center-right] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
 
     --layout-sidebar:
         [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) [sidebar-left-end] var(--gap) var(--col) var(--gap) var(--col) [middle] var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] var(--gap) [sidebar] var(--col) var(--gap) var(--col) var(--gap) var(--col) [sidebar-end] 1fr [fluid-end] var(--ctr-offset) [full-end];

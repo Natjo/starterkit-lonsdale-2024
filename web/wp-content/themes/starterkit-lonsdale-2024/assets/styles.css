@@ -34,7 +34,7 @@
     --col: minmax(1vw, calc((1400px - (11 * var(--gap))) / 12));
 
     --layout:
-        [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [center-left] calc(var(--gap) / 2) [center] calc(var(--gap) / 2) [center-right] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
+        [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [col-left] var(--gap) [col-right] var(--col) [center-left] calc(var(--gap) / 2) [center] calc(var(--gap) / 2) [center-right] var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
 
     --layout-sidebar:
         [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) [sidebar-left-end] var(--gap) var(--col) var(--gap) var(--col) [middle] var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] var(--gap) [sidebar] var(--col) var(--gap) var(--col) var(--gap) var(--col) [sidebar-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
@@ -106,9 +106,6 @@ main {
 .hero >*, .strate >*, #header >*, #footer >*, #breadcrumb >*, .layout-sidebar >* {
         grid-column: ctr;
     }
-.strate >* {
-        grid-column: var(--ctr);
-    }
 .layout-sidebar {
     --layout: var(--layout-sidebar);
 }
@@ -143,6 +140,17 @@ main {
     margin-bottom: var(--mb);
     margin-top: var(--mt, 0);
 }
+.strate >* {
+        grid-column: var(--ctr);
+    }
+.strate.column .block-header {
+            grid-column: var(--ctr) / col-left;
+            position: sticky;
+            top: var(--header-height);
+        }
+.strate.column .strate-content {
+            grid-column: col-right / var(--ctr);
+        }
 .strate[class*="bg"] {
         padding-top: var(--pd);
         padding-bottom: var(--pd);
@@ -964,10 +972,14 @@ time{
 .strate-text_image.reverse.full picture {
                 grid-column: full / center;
             }
-.strate-wysiwyg .block-header {
-        grid-column: ctr-sm;
-        grid-column: var(--ctr);
-    }
+.strate-wysiwyg.column .block-header {
+            grid-column: var(--ctr) / col-left;
+            position: sticky;
+            top: var(--header-height);
+        }
+.strate-wysiwyg.column .strate-content {
+            grid-column: col-right / var(--ctr);
+        }
 .strate-news .block-header{
         display: grid;
        /* grid-template-columns: repeat(12,1fr);
@@ -1017,12 +1029,9 @@ time{
             --offset: 0px
     }
         }
-.strate-accordion .block-header{
-        grid-column: var(--ctr) / center-left ;
-        position:sticky;
-        top: var(--header-height);
-    }
-.strate-accordion .accordion{
-        grid-column: center-right / var(--ctr);
-    }
+.strate-accordion {
+
+
+  
+}
 /*# sourceMappingURL=styles.css.map */

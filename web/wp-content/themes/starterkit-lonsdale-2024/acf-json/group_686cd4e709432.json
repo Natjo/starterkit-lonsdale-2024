@@ -21,8 +21,29 @@
             "selected": 0
         },
         {
+            "key": "field_686ce42a0fe01",
+            "label": "Dsposition en colonne",
+            "name": "column",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_686cd4e70f9c7",
-            "label": "",
+            "label": "Items",
             "name": "items",
             "aria-label": "",
             "type": "repeater",
@@ -187,5 +208,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751965451
+    "modified": 1751966867
 }

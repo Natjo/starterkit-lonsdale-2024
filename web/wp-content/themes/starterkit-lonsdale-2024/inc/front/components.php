@@ -98,7 +98,7 @@ class component
 
     public static function accordion($items, $classes = null, $attributes = null)
     {
-       // if (empty($text)) return;
+        if (empty($items)) return;
         $args = [
             "items" => $items,
             "classes" => $classes,
