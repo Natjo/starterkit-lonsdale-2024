@@ -13,6 +13,7 @@
 @import "components/date.css";
 @import "components/tag.css";
 @import "components/intro.css";
+@import "components/accordion.css";
 
 /* modules */
 @import "modules/slider.css";
@@ -42,3 +43,4 @@
 @import "strates/strate-wysiwyg.css";
 @import "strates/strate-news.css";
 @import "strates/strate-slider.css";
+@import "strates/strate-accordion.css";

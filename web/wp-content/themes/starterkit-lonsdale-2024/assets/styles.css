@@ -106,6 +106,9 @@ main {
 .hero >*, .strate >*, #header >*, #footer >*, #breadcrumb >*, .layout-sidebar >* {
         grid-column: ctr;
     }
+.strate >* {
+        grid-column: var(--ctr);
+    }
 .layout-sidebar {
     --layout: var(--layout-sidebar);
 }
@@ -114,8 +117,8 @@ main {
         grid-column: sidebar;
         box-sizing: border-box;
     }
-.layout-sidebar .sidebar ul{
-            display:grid;
+.layout-sidebar .sidebar ul {
+            display: grid;
             gap: 1rem;
         }
 .layout-sidebar .content {
@@ -526,6 +529,34 @@ time{
     font-size: 2rem;
     line-height: 1.4;
 }
+.accordion .details .summary {
+            background-color: var(--theme-1);
+            color:  var(--theme-1-color);
+            width: 100%;
+            text-align: left;
+            padding: 2rem;
+            border-bottom: 1px solid #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  
+            font-weight: 600;
+        }
+.accordion .details .details-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows .3s;
+            overflow: clip;
+	background: color-mix(in srgb, var(--theme-1) 5%, transparent);
+        }
+.accordion .details .details-content .text {
+                overflow: hidden;
+                padding: 10px;
+                box-sizing: border-box; 
+                font-size: 1.8rem;
+            }
+.accordion .details .details-content[aria-hidden="false"] {
+                grid-template-rows: 1fr;
+            }
 /* modules */
 .slider{
     display: grid;
@@ -731,11 +762,13 @@ time{
    position: absolute;
    width: 100%;
    margin-top: 2rem;
-
 }
 #breadcrumb ol {
       display: flex;
       gap: 1rem;
+   }
+.theme-color-5 #breadcrumb{
+      color:#fff;
    }
 /* hero */
 .hero-homepage {
@@ -894,7 +927,7 @@ time{
    }
 /* strates */
 .strate-image picture{
-       
+       grid-column: var(--ctr);
     }
 .strate-image img {
         width: 100%;
@@ -984,5 +1017,12 @@ time{
             --offset: 0px
     }
         }
-
+.strate-accordion .block-header{
+        grid-column: var(--ctr) / center-left ;
+        position:sticky;
+        top: var(--header-height);
+    }
+.strate-accordion .accordion{
+        grid-column: center-right / var(--ctr);
+    }
 /*# sourceMappingURL=styles.css.map */

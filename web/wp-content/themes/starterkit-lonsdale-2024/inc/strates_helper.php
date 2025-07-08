@@ -152,4 +152,17 @@ class Strate_Helper
 
         return array_merge($items, $options, $header);
     }
+
+    public static function accordion($aStrate)
+    {
+        $options = Strate_Helper::strate_options($aStrate);
+
+        $header = Strate_Helper::strate_header($aStrate);
+
+        $items["items"] = $aStrate["items"];
+
+       
+
+        return array_merge($items, $options, $header);
+    }
 }

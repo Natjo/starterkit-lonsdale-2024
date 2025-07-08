@@ -1,0 +1,12 @@
+.strate-accordion {
+
+    .block-header{
+        grid-column: var(--ctr) / center-left ;
+        position:sticky;
+        top: var(--header-height);
+    }
+
+    .accordion{
+        grid-column: center-right / var(--ctr);
+    }
+}

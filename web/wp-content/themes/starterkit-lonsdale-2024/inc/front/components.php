@@ -95,4 +95,15 @@ class component
         ];
         get_template_part('template-parts/components/text', '', $args);
     }
+
+    public static function accordion($items, $classes = null, $attributes = null)
+    {
+       // if (empty($text)) return;
+        $args = [
+            "items" => $items,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/accordion', '', $args);
+    }
 }

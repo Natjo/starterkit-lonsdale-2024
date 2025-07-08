@@ -20,6 +20,9 @@ if (isset($aStrates) && !empty($aStrates)) {
             case 'strate-slider':
                 get_template_part('template-parts/strates/strate', 'slider', Strate_Helper::slider($aStrate));
                 break;
+            case 'strate-accordion':
+                get_template_part('template-parts/strates/strate', 'accordion', Strate_Helper::accordion($aStrate));
+                break;
         }
     }
 }

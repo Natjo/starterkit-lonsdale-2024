@@ -1,7 +1,7 @@
 .strate-image {
 
     picture{
-       
+       grid-column: var(--ctr);
     }
     img {
         width: 100%;

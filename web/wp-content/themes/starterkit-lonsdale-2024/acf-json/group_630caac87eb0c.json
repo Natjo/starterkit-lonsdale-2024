@@ -176,6 +176,38 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_686cd53c3722d": {
+                    "key": "layout_686cd53c3722d",
+                    "name": "strate-accordion",
+                    "label": "Accordion",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_686cd53c3722f",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_686cd4e709432"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -215,5 +247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751811071
+    "modified": 1751962967
 }

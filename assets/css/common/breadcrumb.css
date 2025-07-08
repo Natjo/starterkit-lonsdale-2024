@@ -8,4 +8,7 @@
       gap: 1rem;
    }
 
+   .theme-color-5 &{
+      color:#fff;
+   }
 }

@@ -43,6 +43,12 @@ main {
     }
 }
 
+.strate {
+    >* {
+        grid-column: var(--ctr);
+    }
+}
+
 
 .layout-sidebar {
     --layout: var(--layout-sidebar);
@@ -52,8 +58,8 @@ main {
         grid-column: sidebar;
         box-sizing: border-box;
 
-        ul{
-            display:grid;
+        ul {
+            display: grid;
             gap: 1rem;
         }
     }
