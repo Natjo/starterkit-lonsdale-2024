@@ -10,12 +10,14 @@
 
     &.btn-1 {}
 
-    &.btn-2 {}
-
-    &.outline {
-        background: none;
+    &.btn-2 {
+  background: none;
         color: #000;
         border: 1px solid #000;
+    }
+
+    &.outline {
+      
     }
 
     &.light {

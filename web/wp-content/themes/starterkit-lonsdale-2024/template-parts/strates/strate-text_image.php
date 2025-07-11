@@ -7,7 +7,6 @@ $hx = !empty($args["header"]["title"]) ? 3 : 2;
     <?= block::header($args["header"]) ?>
 
     <div class="strate-content">
-
         <?= component::title($hx, $args["title"], "title-1") ?>
 
         <?= component::text($args["text"]) ?>

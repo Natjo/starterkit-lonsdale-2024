@@ -71,6 +71,7 @@ class Strate_Helper
 
         return $args;
     }
+    
 
     /**
      * 

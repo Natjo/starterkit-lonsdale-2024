@@ -1,11 +1,11 @@
 {
     "key": "group_686d42da3ae7c",
-    "title": "Block - accordion",
+    "title": "component - accordion",
     "fields": [
         {
             "key": "field_686d42da416b2",
             "label": "",
-            "name": "block-accordion-items",
+            "name": "accordion-items",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -89,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751991701
+    "modified": 1752054927
 }

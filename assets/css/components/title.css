@@ -8,17 +8,14 @@
     font-size: 4rem;
     line-height: 1.1;
     color: var(--theme-1, var(--color-text));
-
 }
 .title-3 {
     font-family: var(--font-2);
     font-size: 3rem;
-    margin-bottom: 20px;
     line-height: 1.25;
 }
 .title-4 {
     font-family: var(--font-2);
     font-size: 1.8rem;
-    margin-bottom: 20px;
     line-height: 1.25;
 }

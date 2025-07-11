@@ -118,4 +118,15 @@ class component
         ];
         get_template_part('template-parts/components/accordion', '', $args);
     }
+
+    public static function pushes($items, $classes = null, $attributes = null)
+    {
+        if (empty($items)) return;
+        $args = [
+            "items" => $items,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/pushes', '', $args);
+    }
 }

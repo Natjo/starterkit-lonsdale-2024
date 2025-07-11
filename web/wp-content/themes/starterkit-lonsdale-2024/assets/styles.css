@@ -389,7 +389,6 @@ button{
 .rte h3 {
     font-family: var(--font-2);
     font-size: 3rem;
-    margin-bottom: 20px;
     line-height: 1.25;
     }
 .rte h4 {
@@ -398,7 +397,6 @@ button{
 .rte h4 {
     font-family: var(--font-2);
     font-size: 1.8rem;
-    margin-bottom: 20px;
     line-height: 1.25;
     }
 .rte p {
@@ -474,18 +472,15 @@ button{
     font-size: 4rem;
     line-height: 1.1;
     color: var(--theme-1, var(--color-text));
-
 }
 .title-3 {
     font-family: var(--font-2);
     font-size: 3rem;
-    margin-bottom: 20px;
     line-height: 1.25;
 }
 .title-4 {
     font-family: var(--font-2);
     font-size: 1.8rem;
-    margin-bottom: 20px;
     line-height: 1.25;
 }
 .link {
@@ -511,11 +506,13 @@ button{
 
 }
 .btn.btn-1 {}
-.btn.btn-2 {}
-.btn.outline {
-        background: none;
+.btn.btn-2 {
+  background: none;
         color: #000;
         border: 1px solid #000;
+    }
+.btn.outline {
+      
     }
 .btn.light {
         background: #fff;

@@ -16,6 +16,23 @@ class block
         get_template_part('template-parts/blocks/block', 'header', $args);
     }
 
+    public static function sidebar($classes = null, $attributes = null)
+    {
+        $name = "sidebar-news";
+        $pageID = get_the_ID();
+
+        // console($field);
+        // if (empty($fields["title"]) && empty($fields["text"]) && empty($fields["link"])) return;
+        //console('fdsdsd');
+        $args = [
+            //  "title" => $fields["title"],
+            "blocks" =>  get_field($name . "-blocks", $pageID)["blocks"],
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/blocks/block', 'sidebar', $args);
+    }
+
     public static function search($fields, $classes = null, $attributes = null)
     {
         $args = [
@@ -32,7 +49,7 @@ class block
             "items" => $items,
             "classes" => $classes,
             "attributes" => $attributes
-        ]; 
+        ];
         get_template_part('template-parts/blocks/block', 'slider', $args);
     }
 }
