@@ -105,9 +105,9 @@
             "ui": 1
         },
         {
-            "key": "field_68668ef791f2a",
-            "label": "",
-            "name": "",
+            "key": "field_687a57f5689d5",
+            "label": "Image",
+            "name": "images",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -119,9 +119,9 @@
                 "id": ""
             },
             "clone": [
-                "group_6652f6a5f1175"
+                "group_686e504e17464"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
@@ -242,5 +242,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751800244
+    "modified": 1752848734
 }

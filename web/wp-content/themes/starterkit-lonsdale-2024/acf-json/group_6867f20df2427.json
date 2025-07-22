@@ -46,8 +46,8 @@
         },
         {
             "key": "field_6867f20e08920",
-            "label": "hero flexible Images",
-            "name": "hero-flexible-image",
+            "label": "Image",
+            "name": "hero-flexible-images",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -59,12 +59,12 @@
                 "id": ""
             },
             "clone": [
-                "group_6652f6a5f1175"
+                "group_686e504e17464"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
-            "prefix_name": 0
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -73,6 +73,13 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "pages\/page-flexible.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "pages\/page-actualites.php"
             }
         ]
     ],
@@ -85,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751727164
+    "modified": 1752908657
 }

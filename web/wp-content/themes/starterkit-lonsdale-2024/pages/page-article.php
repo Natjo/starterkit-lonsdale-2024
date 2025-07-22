@@ -11,11 +11,12 @@ get_template_part('template-parts/common/header_nav');
         <?php hero::article(); ?>
 
         <div class="layout-sidebar">
-
-            <?php block::sidebar(); ?>
+            <div class="sidebar">
+                <?php component::blocks("sidebar-news") ; ?>
+            </div>
 
             <div class="content">
-                <?php get_template_part('template-parts/common/strates'); ?>
+                <?php Strate_Helper::strates();?>
             </div>
         </div>
     </article>

@@ -3,9 +3,8 @@
 //console($args);
 ?>
 
-
 <section <?= options("strate strate-slider", $args) ?> data-module="strates/slider">
-    <?= block::header($args["header"]) ?>
+    <?= component::header($args["header"]) ?>
 
-    <?= block::slider( $args["items"], "myslider") ?>
+    <?= component::slider($args["items"], "myslider") ?>
 </section>

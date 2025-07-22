@@ -1,4 +1,3 @@
-/* eslint-disable */
 import Slider from '../modules/slider.js';
 
 export default (el) => {

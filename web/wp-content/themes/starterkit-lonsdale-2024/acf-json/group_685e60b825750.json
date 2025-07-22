@@ -1,11 +1,11 @@
 {
     "key": "group_685e60b825750",
-    "title": "Block - header",
+    "title": "component - header",
     "fields": [
         {
             "key": "field_685e60b8466ba",
             "label": "Titre",
-            "name": "block-header-title",
+            "name": "header-title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -26,7 +26,7 @@
         {
             "key": "field_685e60e1466bb",
             "label": "Texte",
-            "name": "block-header-text",
+            "name": "header-text",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -47,7 +47,7 @@
         {
             "key": "field_685e663982f76",
             "label": "Lien",
-            "name": "block-header-link",
+            "name": "header-link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -80,5 +80,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751989785
+    "modified": 1752848065
 }

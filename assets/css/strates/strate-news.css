@@ -1,5 +1,5 @@
 .strate-news {
-    .block-header{
+    .header{
         display: grid;
        /* grid-template-columns: repeat(12,1fr);
         gap: var(--gap);

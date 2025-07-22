@@ -20,7 +20,7 @@
                 ?>
             </nav>
 
-           <?= block::search(["label"=> "Recherche"]) ?>
+           <?= component::search(["label"=> "Recherche"]) ?>
         </div>
     </div>
 </header>

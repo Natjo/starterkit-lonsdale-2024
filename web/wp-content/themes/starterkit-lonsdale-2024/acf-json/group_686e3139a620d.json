@@ -1,6 +1,6 @@
 {
     "key": "group_686e3139a620d",
-    "title": "Blocks - flexibles",
+    "title": "Blocks",
     "fields": [
         {
             "key": "field_686e313a4fe94",
@@ -218,9 +218,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "post"
+                "value": "pages\/page-sitemap.php"
             }
         ]
     ],
@@ -233,5 +233,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752062228
+    "modified": 1752906041
 }

@@ -4,7 +4,7 @@ $card_hx = !empty($args["header"]["title"]) ? 3 : 2;
 ?>
 
 <section <?= options("strate strate-news", $args) ?>>
-    <?= block::header($args["header"]) ?>
+    <?= component::header($args["header"]) ?>
 
     <div class="strate-content">
         <ul>

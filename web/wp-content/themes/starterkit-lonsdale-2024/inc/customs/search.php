@@ -34,8 +34,8 @@ function getCptNews($params = [])
     if ($queryArticles->have_posts()) {
         while ($queryArticles->have_posts()) {
             $queryArticles->the_post();
-            $rowId = get_the_ID();
-            $terms =  lsd_get_the_terms_name($rowId, 'Catégories');
+            /* $rowId = get_the_ID();
+           $terms =  lsd_get_the_terms_name($rowId, 'Catégories');
             $items[] = [
                 'is_h2' => true,
                 'title' => get_the_title(),
@@ -50,7 +50,8 @@ function getCptNews($params = [])
                     'width' => 415,
                     'height' => 300
                 )
-            ];
+            ];*/
+           // $items[] = get_the_ID() ;
         }
         wp_reset_postdata();
     }
@@ -78,22 +79,7 @@ function getSearchCptNews($filters, $paged = 1, $itemPerPage = -1,  $tax_query =
         if ($queryArticles->have_posts()) {
             while ($queryArticles->have_posts()) {
                 $queryArticles->the_post();
-                $rowId = get_the_ID();
-                $terms =  lsd_get_the_terms_name($rowId, 'Catégories');
-                $items[] = [
-                    'is_h2' => true,
-                    'title' => get_the_title(),
-                    'date' => get_the_date('d.m.Y'),
-                    'tag' => !empty($terms) ? $terms[0] : "",
-                    'text' =>  get_field('card-news-desc', $rowId),
-                    'link' =>  get_the_permalink($rowId),
-                    'images' => array(
-                        //'desktop' => lsd_get_thumb($rowId, 'medium'),
-                        'desktop' => lsd_get_featured($rowId, '415_300'),
-                        'width' => 415,
-                        'height' => 300
-                    )
-                ];
+                $items[] = get_the_ID() ;
             }
             wp_reset_postdata();
         }
@@ -188,8 +174,8 @@ function pager($pager, $query = null)
         }
 
         //
-        $pictoPrev = '<div class="picto-btn-1 left">' . icon("arrow-down", 19, 19) . '</div>';
-        $pictoNext = '<div class="picto-btn-1 right">' . icon("arrow-down", 19, 19) . '</div>';
+        $pictoPrev = '<div class="picto-btn-1 left">' . component::icon("arrow-down", 19, 19) . '</div>';
+        $pictoNext = '<div class="picto-btn-1 right">' . component::icon("arrow-down", 19, 19) . '</div>';
         echo '<div class="pager">';
         echo $prev >= 1 ? '<a rel="prev" href="' . $query . $prev . '" class="btn-1 prev">' . $pictoPrev . '</a>' : '<button class="btn-1 prev disabled">' . $pictoPrev . '</button>';
         for ($i = 0; $i < count($arr); $i++) {

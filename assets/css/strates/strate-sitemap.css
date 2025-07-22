@@ -1,0 +1,11 @@
+.strate-sitemap {
+   ul{
+        display: grid;
+        gap: 2rem;
+
+        ul{
+            margin-left:2rem;
+            margin-top:2rem;
+        }
+   }
+}

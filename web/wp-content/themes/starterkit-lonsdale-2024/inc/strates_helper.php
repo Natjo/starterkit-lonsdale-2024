@@ -63,15 +63,20 @@ class Strate_Helper
     {
         $args = [
             "header" => [
-                "title" => !empty($aStrate["block-header-title"]) ? $aStrate["block-header-title"] : "",
-                "text" => !empty($aStrate["block-header-text"]) ? $aStrate["block-header-text"] : "",
-                "link" => !empty($aStrate["block-header-link"]) ? $aStrate["block-header-link"] : ""
+                "title" => !empty($aStrate["header-title"]) ? $aStrate["header-title"] : "",
+                "text" => !empty($aStrate["header-text"]) ? $aStrate["header-text"] : "",
+                "link" => !empty($aStrate["header-link"]) ? $aStrate["header-link"] : ""
             ]
         ];
 
         return $args;
     }
-    
+    public static function strates()
+    {
+       
+get_template_part('template-parts/common/strates');
+       
+    }
 
     /**
      * 
@@ -125,7 +130,7 @@ class Strate_Helper
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [];
-console($aStrate);
+
         return array_merge($fields, $options, $header);
     }
 
@@ -136,7 +141,7 @@ console($aStrate);
         $header = Strate_Helper::strate_header($aStrate);
 
         $fields = [
-            "images" => Helper::images($aStrate["block-image"]),
+            "images" => Helper::images($aStrate["images"]),
         ];
 
         return array_merge($fields, $options, $header);
@@ -151,7 +156,7 @@ console($aStrate);
         $fields = [
             "full" => $aStrate["full"],
             "reverse" => $aStrate["reverse"],
-            "images" => Helper::images($aStrate["block-image"], "620_auto"),
+            "images" => Helper::images($aStrate["images"], "620_auto"),
             "title" =>  $aStrate["title"],
             "text" =>  $aStrate["text"],
             "link" =>  $aStrate["link"]

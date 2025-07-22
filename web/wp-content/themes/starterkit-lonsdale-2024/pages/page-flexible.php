@@ -13,7 +13,7 @@ get_template_part('template-parts/common/header_nav');
     <?php hero::flexible(); ?>
 
     <div class="layout-flex">
-        <?php get_template_part('template-parts/common/strates'); ?>
+        <?php Strate_Helper::strates();?>
     </div>
 </main>
 

@@ -4,7 +4,7 @@ $column = $args["column"] ? ' column' : '';
 ?>
 <section <?= options("strate strate-wysiwyg" . $column, $args) ?>>
 
-    <?= block::header($args["header"]) ?>
+    <?= component::header($args["header"]) ?>
 
     <?= component::text($args["text"]) ?>
 </section>

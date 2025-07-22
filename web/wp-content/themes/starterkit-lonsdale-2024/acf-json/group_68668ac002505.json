@@ -22,8 +22,8 @@
         },
         {
             "key": "field_68668aee1dae3",
-            "label": "Block image",
-            "name": "",
+            "label": "Image",
+            "name": "images",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -35,9 +35,9 @@
                 "id": ""
             },
             "clone": [
-                "group_6652f6a5f1175"
+                "group_686e504e17464"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 0
@@ -141,5 +141,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751552064
+    "modified": 1752907604
 }

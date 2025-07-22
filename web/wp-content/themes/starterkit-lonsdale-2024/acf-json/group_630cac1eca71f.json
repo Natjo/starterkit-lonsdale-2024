@@ -64,7 +64,7 @@
         {
             "key": "field_685ebb3c55b39",
             "label": "Image",
-            "name": "hero-homepage-image",
+            "name": "hero-homepage-images",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -76,12 +76,12 @@
                 "id": ""
             },
             "clone": [
-                "group_6652f6a5f1175"
+                "group_686e504e17464"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
-            "prefix_name": 0
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -102,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751727372
+    "modified": 1752907389
 }

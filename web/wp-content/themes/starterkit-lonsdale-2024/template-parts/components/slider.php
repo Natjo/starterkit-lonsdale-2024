@@ -4,9 +4,8 @@
     ?>
 
  <div class="slider<?= $classes ?>">
-
-     <button class="slider-btn prev">prev</button>
-     <button class="slider-btn next">next</button>
+     <button class="slider-btn prev btn btn-1">prev</button>
+     <button class="slider-btn next btn btn-1">next</button>
 
      <div class="slider-content" role="list">
          <?php foreach ($args["items"] as $item) : ?>

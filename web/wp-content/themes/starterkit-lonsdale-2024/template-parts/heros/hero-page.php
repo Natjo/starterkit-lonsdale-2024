@@ -1,7 +1,7 @@
-<header class="hero-page">
-    <div class="container">
-        <?php if (!empty($args['title'])) : ?>
-            <h1 class="title-1"><?= $args['title']; ?></h1>
-        <?php endif; ?>
+<header class="hero hero-page">
+    <div class="hero-content">
+        <?= component::title(1, $args['title'], "title-1"); ?>
+
+        <?= component::intro($args['intro']); ?>
     </div>
 </header>

@@ -22,7 +22,7 @@
         },
         {
             "key": "field_6866907d4be6a",
-            "label": "Composants",
+            "label": "Pushs",
             "name": "items",
             "aria-label": "",
             "type": "relationship",
@@ -164,5 +164,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751552272
+    "modified": 1752850737
 }

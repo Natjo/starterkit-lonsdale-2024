@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -42,7 +42,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -58,9 +58,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "post"
+                "value": "pages\/page-sitemap.php"
             }
         ]
     ],
@@ -73,5 +73,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752060097
+    "modified": 1752905829
 }

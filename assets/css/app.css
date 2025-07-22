@@ -5,6 +5,7 @@
 @import "styles/reset.css";
 @import "styles/classes.css";
 @import "styles/rte.css";
+@import "styles/form.css";
 
 /* components */
 @import "components/title.css";
@@ -15,6 +16,8 @@
 @import "components/intro.css";
 @import "components/accordion.css";
 @import "components/blockquote.css";
+@import "components/header.css";
+@import "components/search.css";
 
 /* modules */
 @import "modules/slider.css";
@@ -29,14 +32,11 @@
 @import "heros/hero-homepage.css";
 @import "heros/hero-flexible.css";
 @import "heros/hero-news.css";
+@import "heros/hero-page.css";
 
 /* cards*/
 @import "cards/card-news.css";
 @import "cards/card-flexible.css";
-
-/* blocks */
-@import "blocks/block-header.css";
-@import "blocks/block-search.css";
 
 /* strates */
 @import "strates/strate-image.css";
@@ -45,3 +45,7 @@
 @import "strates/strate-news.css";
 @import "strates/strate-slider.css";
 @import "strates/strate-accordion.css";
+
+@import "strates/strate-results.css";
+@import "strates/strate-sitemap.css";
+@import "strates/strate-contact.css";

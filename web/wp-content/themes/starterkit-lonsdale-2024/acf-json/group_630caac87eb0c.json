@@ -1,6 +1,6 @@
 {
     "key": "group_630caac87eb0c",
-    "title": "Contenus Flexible",
+    "title": "Strates",
     "fields": [
         {
             "key": "field_630caad36485f",
@@ -344,5 +344,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751990266
+    "modified": 1752850879
 }

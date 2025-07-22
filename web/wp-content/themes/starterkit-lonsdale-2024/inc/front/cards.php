@@ -14,13 +14,13 @@ class card
             $theme = get_field('page-theme',  $post->ID);
             $url = get_permalink($post);
             $description = get_field($card . '-description',  $post->ID);
-            $image = get_field($card . '-image',  $post->ID);
+            $image = get_field($card . '-images',  $post->ID);
             $title = !empty($post->post_title) ? $post->post_title :  "";
             if (get_field($card . '-title',  $post->ID)) {
                 $title = get_field($card . '-title',  $post->ID);
             }
             $description = !empty($description) ? $description : "";
-            $images = !empty($image) ? Helper::images($image["block-image"], $size) : null;
+            $images = !empty($image) ? Helper::images($image, $size) : null;
         } else {
             $title = !empty($post["title"]) ? $post["title"] : "";
             $description = !empty($post["description"]) ? $post["description"] : "";

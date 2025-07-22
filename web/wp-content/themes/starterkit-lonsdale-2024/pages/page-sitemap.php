@@ -10,20 +10,15 @@ get_template_part('template-parts/common/header_nav');
 <main id="main" role="main" tabindex="-1" class="page-sitemap">
     <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
 
-    <?php
-    $args['title'] = "Plan du site";
-    get_template_part('template-parts/heros/page', '', $args);
-    ?>
+    <?php hero::page(); ?>
 
-    <section>
-        <div class="container">
-            <ul>
-                <?php wp_list_pages(array(
-                    'title_li' => '',
-                ));
-                ?>
-            </ul>
-        </div>
+    <section class="strate strate-sitemap">
+        <ul>
+            <?php wp_list_pages(array(
+                'title_li' => '',
+            ));
+            ?>
+        </ul>
     </section>
 </main>
 

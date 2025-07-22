@@ -2,7 +2,7 @@
 
 
     &.column {
-        .block-header {
+        .header {
             grid-column: var(--ctr) / col-left;
             position: sticky;
             top: var(--header-height);

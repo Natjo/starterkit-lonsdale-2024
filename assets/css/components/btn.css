@@ -7,6 +7,10 @@
     padding: 1rem 2rem;
     transition: opacity .3s ease;
     display: inline-block;
+    
+	&[aria-disabled=true]{
+		opacity: .5;
+	}
 
     &.btn-1 {}
 

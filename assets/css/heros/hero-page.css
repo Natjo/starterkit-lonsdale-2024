@@ -1,0 +1,17 @@
+.hero-page {
+    align-items: center;
+    min-height: 25vh;
+   
+
+
+ 
+    .hero-content{
+       // grid-column: fluid;
+        grid-row: 1;
+        z-index: 2; 
+        display: grid;
+        gap: 20px;
+        justify-items: start;
+    }
+
+}

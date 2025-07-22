@@ -28,7 +28,6 @@ if (!ENV_LOCAL) {
 require_once(__DIR__ . '/inc/methods.php');
 require_once(__DIR__ . '/inc/front/components.php');
 require_once(__DIR__ . '/inc/front/cards.php');
-require_once(__DIR__ . '/inc/front/blocks.php');
 require_once(__DIR__ . '/inc/ajax-methods.php');
 require_once(__DIR__ . '/inc/strates_helper.php');
 require_once(__DIR__ . '/inc/heros_helper.php');

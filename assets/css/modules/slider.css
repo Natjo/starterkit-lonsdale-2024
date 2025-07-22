@@ -60,15 +60,9 @@
 
 .slider-btn {
 	cursor: pointer;
-	background: #f5f5f5;
-	border: 1px solid black;
-	margin: 0;
     grid-row: 2;
     grid-column: 1;
-    
-	&[aria-disabled=true]{
-		opacity: .5;
-	}
+
     &.hide{
         display: none;
     }

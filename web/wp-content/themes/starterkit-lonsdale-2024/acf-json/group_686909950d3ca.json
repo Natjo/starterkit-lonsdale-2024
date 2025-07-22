@@ -47,7 +47,7 @@
         {
             "key": "field_6869099514b9c",
             "label": "Image",
-            "name": "hero-news-image",
+            "name": "hero-news-images",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -59,12 +59,12 @@
                 "id": ""
             },
             "clone": [
-                "group_6652f6a5f1175"
+                "group_686e504e17464"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
-            "prefix_name": 0
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -85,5 +85,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1751890849
+    "modified": 1752905788
 }

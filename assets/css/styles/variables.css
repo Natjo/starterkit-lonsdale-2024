@@ -6,9 +6,9 @@
 
     --color-text: rgba(0, 0, 0, .8);
 
-    --gray-light: #ECECEC;
-    --gray: #ECECEC;
-    --gray-dark: #ECECEC;
+    --color-gray-light: #ECECEC;
+    --color-gray: #ccc;
+    --color-gray-dark: #ECECEC;
 
     --color-1: #ffd8d8;
     --color-1-bis: #faa;

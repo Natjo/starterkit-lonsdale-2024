@@ -12,7 +12,7 @@ $argsPosts = getSearchCptNews(["s" => $currentSearch], $paged, $postsPerPage);
 
 ?>
 
-<main id="main" role="main" tabindex="-1" class="page-archive">
+<!-- <main id="main" role="main" tabindex="-1" class="page-archive">
     <?php
         $args['title'] = get_the_title();
         get_template_part('template-parts/heros/page', '', $args);
@@ -32,6 +32,6 @@ $argsPosts = getSearchCptNews(["s" => $currentSearch], $paged, $postsPerPage);
         </div>
     </section>
 </main>
-
+ -->
 <?php
 get_footer();

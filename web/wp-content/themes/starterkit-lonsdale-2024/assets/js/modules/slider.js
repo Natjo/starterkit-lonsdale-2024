@@ -101,13 +101,18 @@ function Slider(slider) {
     oldscrollLeft = content.scrollLeft;
     goto();
   };
-  const mouseDown = val => {
+  const mouseDown = (val, button) => {
+    if (button != 0) return false;
     dateStart = new Date();
-    swipe(true);
     oldscrollLeft = content.scrollLeft;
     scrollLeft = val + content.scrollLeft;
     cancelAnimationFrame(req);
     window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mousemove', () => {
+      swipe(true);
+    }, {
+      once: true
+    });
     window.addEventListener('mouseup', mouseUp);
     return false;
   };
@@ -129,7 +134,7 @@ function Slider(slider) {
     window.addEventListener('load', () => {
       resize();
     });
-    content.onmousedown = e => mouseDown(e.clientX);
+    content.onmousedown = e => mouseDown(e.clientX, e.button);
     content.addEventListener('scroll', onscroll, {
       passive: true
     });

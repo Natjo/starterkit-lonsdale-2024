@@ -1,11 +1,19 @@
 .strate-slider {
     .myslider {
         grid-column: var(--ctr) / fluid;
+        grid-template-columns: subgrid;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .slider-content {
+           grid-column: var(--ctr) / fluid;
+        }
+        .slider-btn {
+            grid-column: var(--ctr);
         }
 
         @media (max-width: 599px) {

@@ -10,7 +10,6 @@
 get_header();
 get_template_part('template-parts/common/header_nav');
 
-$card_tpl = "news";
 
 $currentSearch = get_query_var('s');
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
@@ -21,8 +20,8 @@ $totalPosts = $argsPosts['pager']['total_posts'];
 
 ?>
 
-<main id="main" role="main" tabindex="-1" class="page-search">
-    <header>
+<main id="main" role="main" tabindex="-1">
+     <header>
         <div class="container">
 
             <br><br><br><br><br>
@@ -43,14 +42,15 @@ $totalPosts = $argsPosts['pager']['total_posts'];
                 <div> Merci de saisire une recherche</div>
             <?php endif; ?>
         </div>
-    </header>
+    </header> 
 
     <section>
         <div class="container">
             <ul class="list">
                 <?php if (!empty($argsPosts['items'])) : ?>
                     <?php foreach ($argsPosts['items'] as $item) : ?>
-                        <?php get_template_part('template-parts/cards/card', $card_tpl, $item); ?>
+                        <li><?php card::news($item); ?></li>
+                        
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>

@@ -2,6 +2,14 @@
 
 class component
 {
+    public static function blocks($name)
+    {
+        $args = [
+            "name" => $name
+        ];
+        get_template_part('template-parts/common/blocks', "", $args);
+    }
+
     public static function picture($images, $lazy = false, $classes = "", $breakpoint = 768)
     {
         if (!empty($images)) {
@@ -128,5 +136,39 @@ class component
             "attributes" => $attributes
         ];
         get_template_part('template-parts/components/pushes', '', $args);
+    }
+
+    public static function slider($items, $classes = null, $attributes = null)
+    {
+        $args = [
+            "items" => $items,
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/slider', '', $args);
+    }
+
+    public static function search($fields, $classes = null, $attributes = null)
+    {
+        $args = [
+            "label" => $fields["label"],
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/search', '', $args);
+    }
+
+    public static function header($fields, $classes = null, $attributes = null)
+    {
+        if (empty($fields["title"]) && empty($fields["text"]) && empty($fields["link"])) return;
+
+        $args = [
+            "title" => $fields["title"],
+            "text" => $fields["text"],
+            "cta" => $fields["link"],
+            "classes" => $classes,
+            "attributes" => $attributes
+        ];
+        get_template_part('template-parts/components/header', '', $args);
     }
 }

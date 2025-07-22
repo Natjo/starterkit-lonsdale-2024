@@ -12,12 +12,9 @@ $mail_error = !empty($mail['error']) ? true : false;
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-contact">
-    <?php
-    $args['title'] = "Contact";
-    get_template_part('template-parts/heros/page', '', $args);
-    ?>
+    <?php hero::flexible(); ?>
 
-    <section data-view="form-contact" data-module="strates/contact">
+    <section class="strate strate-contact" data-view="form-contact" data-module="strates/contact">
         <?php if ($mail_send === true) : ?>
             <div class="msg valid">
                 message envoyé
@@ -50,17 +47,17 @@ $mail_error = !empty($mail['error']) ? true : false;
                         </div>
 
                         <div class="field">
-                            <label for="contact-name">Nom*</label>
+                            <label class="placeholder" for="contact-name">Nom*</label>
                             <input name="contact-name" type="text" id="contact-name" required aria-describedby="error-name">
                         </div>
 
                         <div class="field">
-                            <label for="contact-email">Email*</label>
+                            <label class="placeholder" for="contact-email">Email*</label>
                             <input name="contact-email" type="email" id="contact-email" required aria-describedby="error-email">
                         </div>
 
                         <div class="field">
-                            <label for="contact-msg">Votre message*</label>
+                            <label class="placeholder" for="contact-msg">Votre message*</label>
                             <textarea name="contact-msg" id="contact-msg" required aria-describedby="error-msg"></textarea>
                         </div>
 
@@ -70,7 +67,7 @@ $mail_error = !empty($mail['error']) ? true : false;
                         </div>
 
                         <div class="action">
-                            <button type="submit" class="btn-1">Envoyer</button>
+                            <button type="submit" class="btn btn-1">Envoyer</button>
                         </div>
                     </fieldset>
                 </div>

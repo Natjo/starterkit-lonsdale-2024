@@ -1,8 +1,12 @@
 <?php
 
-?>
-<div class="sidebar">
-    <?php foreach ($args["blocks"] as $block) {
+$pageId = isset($args["page_id"]) ? $args["page_id"] : get_the_ID();
+$aBlocks = get_field($args["name"], $pageId)["blocks"];
+
+if (isset($aBlocks) && !empty($aBlocks)) {
+
+    foreach ($aBlocks as $block) {
+
         switch ($block['acf_fc_layout']) {
             case 'title':
                 component::title($block["title-hx"], $block["title-title"], "title " . $block["title-style"]);
@@ -16,11 +20,11 @@
                 break;
             case 'image':
                 // console($block["image-desktop"]);
-                $block_image = [
+                /*  $block_image = [
                     "desktop" => [
                         "id" => $block["image-desktop"]["ID"]
                     ]
-                ];
+                ];*/
                 //  $images =  Helper::images($aStrate["block-image"], "620_auto");
                 //component::text($block["text-text"]);
                 break;
@@ -39,5 +43,4 @@
                 break;
         }
     }
-    ?>
-</div>
+}
