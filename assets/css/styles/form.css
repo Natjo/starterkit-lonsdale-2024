@@ -12,13 +12,13 @@
     .field {
         display: grid;
         grid-column: span 12;
-  
+
         &[aria-invalid="true"] label:after {
             color: var(--color-error);
         }
     }
 
-    label { 
+    label {
         &.placeholder {
             color: red !important;
             display: flex;
@@ -29,7 +29,10 @@
             height: 6rem;
             pointer-events: none;
             z-index: 1;
-            padding: 0 .4rem;
+
+            font-size: 1.4rem;
+            padding: 0 .4rem 3.4rem;
+            opacity: 1;
         }
     }
 
@@ -58,42 +61,11 @@
         border: 1px solid var(--color-gray);
         background: none;
 
-    
-
-        /* &:focus {
-            border: 1px solid rgba(0, 0, 0, 0);
-            border-bottom: 1px solid var(--color-1);
-        }*/
-
-        /*&:not(:required)~label {
-            opacity:.5;
-            font-size: 1.2rem;
-            padding-bottom: 2rem;
-        }*/
-
-        &:focus~label,
-        &:required:valid~label,
-        &:not(:empty)~label {
-            font-size: 1.4rem;
-            padding-bottom: 2.8rem;
-            opacity: .8
+        &:placeholder-shown:not(:focus) ~ .placeholder{
+            font-size: 1.6rem ;
+            padding-bottom: 0rem ;
+            opacity: 1 ;
         }
-
-        &.notempty {
-            &~label {
-                font-size: 1.4rem;
-                padding-bottom: 2.8rem;
-                opacity: .8
-            }
-        }
-
-        /* &:not(:focus):not(:invalid) {
-            border-bottom: 1px solid green;
-        }*/
-
-        /*  &:hover {
-            border: 1px solid var(--color-3) !important;
-        }*/
     }
 
     .msg {
@@ -236,7 +208,7 @@
         padding: 0;
         color: var(--color-text);
         border: 1px solid var(--color-gray);
-       padding: 0 .4rem;
+        padding: 0 .4rem;
 
         option {
             color: var(--color-text);

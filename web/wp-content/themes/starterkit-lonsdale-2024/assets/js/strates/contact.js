@@ -1,4 +1,4 @@
-import formValidate from '../modules/formValidate.js?v=6615386';
+import formValidate from '../modules/formValidate.js?v=637531';
 export default el => {
   const form = el.querySelector('form');
   if (form) {

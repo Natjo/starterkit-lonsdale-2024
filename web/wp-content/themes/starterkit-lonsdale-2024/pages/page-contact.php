@@ -47,18 +47,19 @@ $mail_error = !empty($mail['error']) ? true : false;
                         </div>
 
                         <div class="field">
-                            <label class="placeholder" for="contact-name">Nom*</label>
-                            <input name="contact-name" type="text" id="contact-name" required aria-describedby="error-name">
+
+                            <input name="contact-name" type="text" id="contact-name" placeholder="" required aria-describedby="error-name" required>
+                            <label class="placeholder" for="contact-name">Nom</label>
                         </div>
 
                         <div class="field">
-                            <label class="placeholder" for="contact-email">Email*</label>
-                            <input name="contact-email" type="email" id="contact-email" required aria-describedby="error-email">
+                            <input name="contact-email" type="email" id="contact-email" placeholder="" required aria-describedby="error-email">
+                            <label class="placeholder" for="contact-email">Email</label>
                         </div>
 
                         <div class="field">
-                            <label class="placeholder" for="contact-msg">Votre message*</label>
-                            <textarea name="contact-msg" id="contact-msg" required aria-describedby="error-msg"></textarea>
+                            <textarea name="contact-msg" id="contact-msg" placeholder="" aria-describedby="error-msg"></textarea>
+                            <label class="placeholder" for="contact-msg">Votre message</label>
                         </div>
 
                         <div class="field checkbox">

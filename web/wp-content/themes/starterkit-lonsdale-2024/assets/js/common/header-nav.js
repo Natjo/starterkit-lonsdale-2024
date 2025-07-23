@@ -1,4 +1,4 @@
-import { ParamsData } from '../app.js?v=6615386';
+import { ParamsData } from '../app.js?v=637531';
 export default header => {
   const clicktouch = 'ontouchstart' in document.activeElement ? 'touchstart' : 'click';
   const btn_nav = document.getElementById('btn-nav');

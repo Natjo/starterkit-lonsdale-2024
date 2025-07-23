@@ -486,7 +486,10 @@ button{
             height: 6rem;
             pointer-events: none;
             z-index: 1;
-            padding: 0 .4rem;
+
+            font-size: 1.4rem;
+            padding: 0 .4rem 3.4rem;
+            opacity: 1;
         }
 .form [required]~label:after {
         content: '*';
@@ -511,61 +514,17 @@ button{
         border: none;
         border: 1px solid var(--color-gray);
         background: none;
-
-    
-
-        /* &:focus {
-            border: 1px solid rgba(0, 0, 0, 0);
-            border-bottom: 1px solid var(--color-1);
-        }*/
-
-        /*&:not(:required)~label {
-            opacity:.5;
-            font-size: 1.2rem;
-            padding-bottom: 2rem;
-        }*/
-
-        /* &:not(:focus):not(:invalid) {
-            border-bottom: 1px solid green;
-        }*/
-
-        /*  &:hover {
-            border: 1px solid var(--color-3) !important;
-        }*/
     }
-.form [type="text"]:focus~label,
-        .form [type="text"]:required:valid~label,
-        .form [type="text"]:not(:empty)~label,
-        .form [type="email"]:focus~label,
-        .form [type="email"]:required:valid~label,
-        .form [type="email"]:not(:empty)~label,
-        .form [type="password"]:focus~label,
-        .form [type="password"]:required:valid~label,
-        .form [type="password"]:not(:empty)~label,
-        .form [type="tel"]:focus~label,
-        .form [type="tel"]:required:valid~label,
-        .form [type="tel"]:not(:empty)~label,
-        .form [type="date"]:focus~label,
-        .form [type="date"]:required:valid~label,
-        .form [type="date"]:not(:empty)~label,
-        .form [type="number"]:focus~label,
-        .form [type="number"]:required:valid~label,
-        .form [type="number"]:not(:empty)~label,
-        .form [type="url"]:focus~label,
-        .form [type="url"]:required:valid~label,
-        .form [type="url"]:not(:empty)~label,
-        .form textarea:focus~label,
-        .form textarea:required:valid~label,
-        .form textarea:not(:empty)~label {
-            font-size: 1.4rem;
-            padding-bottom: 2.8rem;
-            opacity: .8
+.form [type="text"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="email"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="password"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="tel"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="date"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="number"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="url"]:-moz-placeholder:not(:focus) ~ .placeholder, .form textarea:-moz-placeholder:not(:focus) ~ .placeholder{
+            font-size: 1.6rem ;
+            padding-bottom: 0rem ;
+            opacity: 1 ;
         }
-.form [type="text"].notempty~label, .form [type="email"].notempty~label, .form [type="password"].notempty~label, .form [type="tel"].notempty~label, .form [type="date"].notempty~label, .form [type="number"].notempty~label, .form [type="url"].notempty~label, .form textarea.notempty~label {
-                font-size: 1.4rem;
-                padding-bottom: 2.8rem;
-                opacity: .8
-            }
+.form [type="text"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="email"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="password"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="tel"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="date"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="number"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="url"]:placeholder-shown:not(:focus) ~ .placeholder,.form textarea:placeholder-shown:not(:focus) ~ .placeholder{
+            font-size: 1.6rem ;
+            padding-bottom: 0rem ;
+            opacity: 1 ;
+        }
 .form .msg {
         display: none;
         align-items: center;
@@ -690,7 +649,7 @@ button{
         padding: 0;
         color: var(--color-text);
         border: 1px solid var(--color-gray);
-       padding: 0 .4rem;
+        padding: 0 .4rem;
     }
 .form select option {
             color: var(--color-text);
