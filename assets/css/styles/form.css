@@ -12,6 +12,7 @@
     .field {
         display: grid;
         grid-column: span 12;
+        position: relative;
 
         &[aria-invalid="true"] label:after {
             color: var(--color-error);
@@ -19,8 +20,9 @@
     }
 
     label {
+        font-weight:600;
+        margin-bottom:1rem;
         &.placeholder {
-            color: red !important;
             display: flex;
             align-items: center;
             transition: all .24s ease;
@@ -60,14 +62,22 @@
         border: none;
         border: 1px solid var(--color-gray);
         background: none;
+        padding-top: 1.4rem;
 
-        &:placeholder-shown:not(:focus) ~ .placeholder{
-            font-size: 1.6rem ;
-            padding-bottom: 0rem ;
-            opacity: 1 ;
+        &:placeholder-shown:not(:focus) {
+            &~.placeholder {
+                font-size: 1.6rem;
+                padding-bottom: 0rem;
+                opacity: .8;
+            }
         }
     }
+.invalid-msg{
+    font-size:1.4rem;
+  position:absolute;
+  top:100%;
 
+}
     .msg {
         display: none;
         align-items: center;
@@ -102,14 +112,24 @@
     textarea {
         min-height: 160px;
         resize: vertical;
-        padding-top: 1.8rem;
+        padding-top: 2.2rem;
     }
 
     .checkbox,
     .radio {
         display: flex;
         align-items: center;
+		&[role="group"]{
+			display: block;
 
+			ul{
+				display: grid;
+				grid-gap: 10px;
+			}
+			li{
+				display: flex;
+			}
+		}
         label {
             cursor: pointer;
             align-items: center;
@@ -271,7 +291,7 @@
         }
 
         &[aria-invalid="true"]:not(:focus) {
-            border-bottom: 1px solid var(--color-error) !important;
+            border: 1px solid var(--color-error) !important;
         }
 
         &[aria-invalid="true"]:not(:focus)~.error-msg {

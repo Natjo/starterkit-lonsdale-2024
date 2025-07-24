@@ -472,12 +472,16 @@ button{
 .form .field {
         display: grid;
         grid-column: span 12;
+        position: relative;
     }
 .form .field[aria-invalid="true"] label:after {
             color: var(--color-error);
         }
+.form label {
+        font-weight:600;
+        margin-bottom:1rem;
+    }
 .form label.placeholder {
-            color: red !important;
             display: flex;
             align-items: center;
             transition: all .24s ease;
@@ -514,17 +518,24 @@ button{
         border: none;
         border: 1px solid var(--color-gray);
         background: none;
+        padding-top: 1.4rem;
     }
-.form [type="text"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="email"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="password"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="tel"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="date"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="number"]:-moz-placeholder:not(:focus) ~ .placeholder, .form [type="url"]:-moz-placeholder:not(:focus) ~ .placeholder, .form textarea:-moz-placeholder:not(:focus) ~ .placeholder{
-            font-size: 1.6rem ;
-            padding-bottom: 0rem ;
-            opacity: 1 ;
-        }
-.form [type="text"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="email"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="password"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="tel"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="date"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="number"]:placeholder-shown:not(:focus) ~ .placeholder,.form [type="url"]:placeholder-shown:not(:focus) ~ .placeholder,.form textarea:placeholder-shown:not(:focus) ~ .placeholder{
-            font-size: 1.6rem ;
-            padding-bottom: 0rem ;
-            opacity: 1 ;
-        }
+.form [type="text"]:-moz-placeholder:not(:focus)~.placeholder, .form [type="email"]:-moz-placeholder:not(:focus)~.placeholder, .form [type="password"]:-moz-placeholder:not(:focus)~.placeholder, .form [type="tel"]:-moz-placeholder:not(:focus)~.placeholder, .form [type="date"]:-moz-placeholder:not(:focus)~.placeholder, .form [type="number"]:-moz-placeholder:not(:focus)~.placeholder, .form [type="url"]:-moz-placeholder:not(:focus)~.placeholder, .form textarea:-moz-placeholder:not(:focus)~.placeholder {
+                font-size: 1.6rem;
+                padding-bottom: 0rem;
+                opacity: .8;
+            }
+.form [type="text"]:placeholder-shown:not(:focus)~.placeholder, .form [type="email"]:placeholder-shown:not(:focus)~.placeholder, .form [type="password"]:placeholder-shown:not(:focus)~.placeholder, .form [type="tel"]:placeholder-shown:not(:focus)~.placeholder, .form [type="date"]:placeholder-shown:not(:focus)~.placeholder, .form [type="number"]:placeholder-shown:not(:focus)~.placeholder, .form [type="url"]:placeholder-shown:not(:focus)~.placeholder, .form textarea:placeholder-shown:not(:focus)~.placeholder {
+                font-size: 1.6rem;
+                padding-bottom: 0rem;
+                opacity: .8;
+            }
+.form .invalid-msg{
+    font-size:1.4rem;
+  position:absolute;
+  top:100%;
+
+}
 .form .msg {
         display: none;
         align-items: center;
@@ -554,13 +565,23 @@ button{
 .form textarea {
         min-height: 160px;
         resize: vertical;
-        padding-top: 1.8rem;
+        padding-top: 2.2rem;
     }
 .form .checkbox,
     .form .radio {
         display: flex;
         align-items: center;
     }
+.form .checkbox[role="group"],.form .radio[role="group"]{
+			display: block;
+		}
+.form .checkbox[role="group"] ul,.form .radio[role="group"] ul{
+				display: grid;
+				grid-gap: 10px;
+			}
+.form .checkbox[role="group"] li,.form .radio[role="group"] li{
+				display: flex;
+			}
 .form .checkbox label, .form .radio label {
             cursor: pointer;
             align-items: center;
@@ -702,7 +723,7 @@ button{
             outline: none;
         }
 .form input[aria-invalid="true"]:not(:focus), .form select[aria-invalid="true"]:not(:focus), .form button[aria-invalid="true"]:not(:focus), .form textarea[aria-invalid="true"]:not(:focus) {
-            border-bottom: 1px solid var(--color-error) !important;
+            border: 1px solid var(--color-error) !important;
         }
 .form input[aria-invalid="true"]:not(:focus)~.error-msg, .form select[aria-invalid="true"]:not(:focus)~.error-msg, .form button[aria-invalid="true"]:not(:focus)~.error-msg, .form textarea[aria-invalid="true"]:not(:focus)~.error-msg {
             visibility: visible;
