@@ -15,7 +15,7 @@ class hero
 
         get_template_part('template-parts/heros/hero', 'homepage', $args);
     }
-   
+
     public static function flexible()
     {
         $pageID = get_the_ID();
@@ -29,18 +29,19 @@ class hero
         get_template_part('template-parts/heros/hero', 'flexible', $args);
     }
 
-        public static function page()
+    public static function page()
     {
         $pageID = get_the_ID();
 
         $args = [
+            // 'title' => get_the_title($pageID),
             'title' => get_field('hero-page-title',  $pageID),
             'intro' => get_field('hero-page-intro',  $pageID),
         ];
 
         get_template_part('template-parts/heros/hero', 'page', $args);
     }
-   
+
     public static function article()
     {
         $pageID = get_the_ID();

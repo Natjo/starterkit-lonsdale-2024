@@ -147,6 +147,13 @@ main {
         padding-top: var(--pd);
         padding-bottom: var(--pd);
     }
+.hero {
+    --ctr: ctr;
+
+}
+.hero >* {
+        grid-column: var(--ctr);
+    }
 hr{
     border: none;
     border-top: 1px solid var(--theme-1);
@@ -471,15 +478,16 @@ button{
         }
 .form .field {
         display: grid;
-        grid-column: span 12;
+        grid-column: 1 / -1;
         position: relative;
     }
 .form .field[aria-invalid="true"] label:after {
             color: var(--color-error);
         }
 .form label {
-        font-weight:600;
-        margin-bottom:1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        display: block;
     }
 .form label.placeholder {
             display: flex;
@@ -492,9 +500,16 @@ button{
             z-index: 1;
 
             font-size: 1.4rem;
-            padding: 0 .4rem 3.4rem;
+            padding: 0 1rem 3.4rem;
             opacity: 1;
+            margin: 0;
         }
+.form .invalid-msg {
+        font-size: 1.4rem;
+        position: absolute;
+        top: calc(100% + .5rem);
+        color: var(--color-error)
+    }
 .form [required]~label:after {
         content: '*';
     }
@@ -513,7 +528,7 @@ button{
         width: 100%;
         grid-area: 1/1;
         height: 6rem;
-        padding: 0 .4rem;
+        padding: 0 1rem;
         transition: all .3s ease;
         border: none;
         border: 1px solid var(--color-gray);
@@ -530,59 +545,28 @@ button{
                 padding-bottom: 0rem;
                 opacity: .8;
             }
-.form .invalid-msg{
-    font-size:1.4rem;
-  position:absolute;
-  top:100%;
-
-}
-.form .msg {
-        display: none;
-        align-items: center;
-        border: 1px solid var(--color);
-        height: 5rem;
-        padding: 1rem 2rem;
-        box-sizing: border-box;
-        border-radius: 1rem 0 0;
-        margin-bottom: 3rem;
-        color: var(--color-text);
-        scroll-margin: 10rem;
-    }
-.form .msg.show {
-            display: flex;
-        }
-.form .msg .picto {
-            background-color: var(--color);
-            border-radius: 50%;
-            margin-right: 1rem;
-        }
-.form .msg-error {
-            --color: var(--color-error);
-        }
-.form .msg-valid {
-            --color: var(--color-valid);
-        }
 .form textarea {
         min-height: 160px;
         resize: vertical;
         padding-top: 2.2rem;
     }
+/* Radio / Checkbox */
 .form .checkbox,
     .form .radio {
         display: flex;
         align-items: center;
     }
-.form .checkbox[role="group"],.form .radio[role="group"]{
-			display: block;
-		}
-.form .checkbox[role="group"] ul,.form .radio[role="group"] ul{
-				display: grid;
-				grid-gap: 10px;
-			}
-.form .checkbox[role="group"] li,.form .radio[role="group"] li{
-				display: flex;
-			}
-.form .checkbox label, .form .radio label {
+.form .checkbox[role="group"], .form .radio[role="group"] {
+            display: block;
+        }
+.form .checkbox[role="group"] ul, .form .radio[role="group"] ul {
+                display: grid;
+                grid-gap: 10px;
+            }
+.form .checkbox[role="group"] li, .form .radio[role="group"] li {
+                display: flex;
+            }
+.form .checkbox input~label, .form .radio input~label {
             cursor: pointer;
             align-items: center;
             margin: 0;
@@ -632,6 +616,7 @@ button{
 .form input[type="radio"]::before {
             border-radius: 50%;
         }
+/* Select */
 .form .select label {
             grid-column: 1;
             grid-row: 1;
@@ -644,9 +629,6 @@ button{
 .form .select select {
             grid-row: 2;
             grid-column: 1;
-        }
-.form .select .error-msg {
-            grid-column: 2/-1;
         }
 .form .select .icon {
             fill: var(--color-gray);
@@ -670,7 +652,7 @@ button{
         padding: 0;
         color: var(--color-text);
         border: 1px solid var(--color-gray);
-        padding: 0 .4rem;
+        padding: 0 1rem;
     }
 .form select option {
             color: var(--color-text);
@@ -685,12 +667,12 @@ button{
 .form select::-ms-expand {
             display: none;
         }
+/* Action */
 .form .action {
-        grid-column: span 12;
+        grid-column: span 2;
         display: flex;
         justify-content: space-between;
         margin-top: 2rem;
-
     }
 .form [type="submit"] {
         border: none;
@@ -704,15 +686,30 @@ button{
         opacity: 0.5;
         pointer-events: none;
     }
-.form .error-msg {
-        color: var(--color-error);
-        margin-top: .5rem;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        font-size: 1.4rem;
-        visibility: hidden;
+.form .msg {
+        display: none;
+        align-items: center;
+        border: 1px solid var(--color);
+        height: 5rem;
+        padding: 1rem;
+        box-sizing: border-box;
+        color: var(--color,var(--color-text));
+        scroll-margin: 10rem;
     }
+.form .msg.show {
+            display: flex;
+        }
+.form .msg .picto {
+            background-color: var(--color);
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+.form .msg.error {
+            --color: var(--color-error);
+        }
+.form .msg.valid {
+            --color: var(--color-valid);
+        }
 .form input,
     .form select,
     .form button,
@@ -721,12 +718,10 @@ button{
     }
 .form input:focus, .form select:focus, .form button:focus, .form textarea:focus {
             outline: none;
+            border: 1px solid var(--color-focus) !important;
         }
 .form input[aria-invalid="true"]:not(:focus), .form select[aria-invalid="true"]:not(:focus), .form button[aria-invalid="true"]:not(:focus), .form textarea[aria-invalid="true"]:not(:focus) {
             border: 1px solid var(--color-error) !important;
-        }
-.form input[aria-invalid="true"]:not(:focus)~.error-msg, .form select[aria-invalid="true"]:not(:focus)~.error-msg, .form button[aria-invalid="true"]:not(:focus)~.error-msg, .form textarea[aria-invalid="true"]:not(:focus)~.error-msg {
-            visibility: visible;
         }
 .form input[type="checkbox"][aria-invalid="true"]:not(:focus), .form select[type="checkbox"][aria-invalid="true"]:not(:focus), .form button[type="checkbox"][aria-invalid="true"]:not(:focus), .form textarea[type="checkbox"][aria-invalid="true"]:not(:focus) {
             border: 1px solid var(--color-error) !important;
@@ -751,7 +746,7 @@ button{
         font-family: inherit;
         opacity: 1;
         font-weight: 300;
-        color: var(--color-gray-light);
+        /* color: var(--color-gray); */
         font-size: inherit;
     }
 .form input::placeholder {
@@ -759,7 +754,7 @@ button{
         font-family: inherit;
         opacity: 1;
         font-weight: 300;
-        color: var(--color-gray-light);
+        /* color: var(--color-gray); */
         font-size: inherit;
     }
 @media (max-width: 1280px) {
@@ -774,11 +769,19 @@ button{
     }
 @media (min-width: 1281px) {
         .form fieldset {
-            grid-template-columns: repeat(12, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-column-gap: 2rem;
             grid-row-gap: 3rem;
+            align-content: start;
         }
 
+        .form .right {
+            grid-column: 2;
+        }
+
+        .form .left {
+            grid-column: 1;
+        }
     }
 /* components */
 .title-1 {
@@ -1240,7 +1243,8 @@ time{
     }
 .hero-page {
     align-items: center;
-    min-height: 25vh;
+   padding-top: 6rem;
+   padding-bottom: 6rem;
 
 }
 .hero-page .hero-content{
@@ -1397,11 +1401,19 @@ time{
         }
 .strate-results {
     --ctr: ctr-sm;
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
 }
 .strate-results .list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: var(--gap)
+    }
+.strate-results .pager{
+        margin-top: 2rem;
+        justify-self: center;
+        display: flex;
+        gap: 1rem;
     }
 .strate-sitemap ul{
         display: grid;
@@ -1412,8 +1424,11 @@ time{
             margin-top:2rem;
         }
 .strate-contact {
-    --ctr: ctr-sm;
 
-  
 }
+/* pages */
+.page-contact .hero-content,
+    .page-contact .strate {
+        --ctr: ctr-sm;
+    }
 /*# sourceMappingURL=styles.css.map */

@@ -221,6 +221,11 @@
                 "param": "page_template",
                 "operator": "==",
                 "value": "pages\/page-sitemap.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "pages\/page-sitemap.php"
             }
         ]
     ],
@@ -233,5 +238,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752906041
+    "modified": 1753688521
 }

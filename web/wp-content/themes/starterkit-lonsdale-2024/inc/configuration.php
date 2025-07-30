@@ -161,9 +161,9 @@ function init_remove_support()
     if (isset($post_id)) {
         $template_file = get_post_meta($post_id, '_wp_page_template', true);
     }
-    if ('default' !== $template_file) {
+  //  if ('default' !== $template_file) {
         remove_post_type_support("page", 'editor');
-    }
+  //  }
 }
 
 

@@ -88,12 +88,20 @@ main {
         grid-column: var(--ctr);
     }
 
-
-
     &[class*="bg"] {
         padding-top: var(--pd);
         padding-bottom: var(--pd);
     }
+}
+
+.hero {
+    --ctr: ctr;
+
+
+    >* {
+        grid-column: var(--ctr);
+    }
+
 }
 
 hr{

@@ -49,3 +49,6 @@
 @import "strates/strate-results.css";
 @import "strates/strate-sitemap.css";
 @import "strates/strate-contact.css";
+
+/* pages */
+@import "pages/page-contact.css";

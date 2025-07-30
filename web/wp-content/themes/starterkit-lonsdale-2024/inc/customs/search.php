@@ -174,16 +174,16 @@ function pager($pager, $query = null)
         }
 
         //
-        $pictoPrev = '<div class="picto-btn-1 left">' . component::icon("arrow-down", 19, 19) . '</div>';
-        $pictoNext = '<div class="picto-btn-1 right">' . component::icon("arrow-down", 19, 19) . '</div>';
+     
+
         echo '<div class="pager">';
-        echo $prev >= 1 ? '<a rel="prev" href="' . $query . $prev . '" class="btn-1 prev">' . $pictoPrev . '</a>' : '<button class="btn-1 prev disabled">' . $pictoPrev . '</button>';
+        echo $prev >= 1 ? '<a rel="prev" href="' . $query . $prev . '" class="btn-1 prev">' . component::icon("arrow-left", 9, 14) . '</a>' : '<button class="btn-1 prev disabled">' . component::icon("arrow-left", 9, 14) . '</button>';
         for ($i = 0; $i < count($arr); $i++) {
             $index = $arr[$i];
             $active = ($index === $page) ? ' class="active"' : '';
             echo ($index === null) ?  "<span>...</span>" :  '<a href="' . $query . $index . '"' . $active . '>' . $index . '</a>';
         }
-        echo $next <= $total ? '<a rel="next" href="' . $query  . $next . '" class="btn-1 next">' . $pictoNext . '</a>' : '<button class="btn-1 next disabled">' . $pictoNext . '</button>';
+        echo $next <= $total ? '<a rel="next" href="' . $query  . $next . '" class="btn-1 next">' . component::icon("arrow-right", 9, 14) . '</a>' : '<button class="btn-1 next disabled">' . component::icon("arrow-right", 9, 14) . '</button>';
         echo '</div>';
     }
 }

@@ -1,1 +1,1 @@
-<?php echo get_template_part('pages/page', 'simple'); ?>
+<?php echo get_template_part('pages/page', 'default'); ?>

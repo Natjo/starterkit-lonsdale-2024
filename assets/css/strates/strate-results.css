@@ -1,9 +1,18 @@
 .strate-results {
     --ctr: ctr-sm;
+    margin-top: var(--margin-md);
+    margin-bottom: var(--margin-md);
 
     .list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: var(--gap)
+    }
+
+    .pager{
+        margin-top: 2rem;
+        justify-self: center;
+        display: flex;
+        gap: 1rem;
     }
 }

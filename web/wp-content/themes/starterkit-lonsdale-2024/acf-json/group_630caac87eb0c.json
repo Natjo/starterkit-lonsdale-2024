@@ -333,6 +333,13 @@
                 "operator": "==",
                 "value": "pages\/page-flexible.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
         ]
     ],
     "menu_order": 0,
@@ -344,5 +351,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752850879
+    "modified": 1753689913
 }

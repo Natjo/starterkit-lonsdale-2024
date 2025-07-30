@@ -1,11 +1,32 @@
 {
-    "key": "group_686e4efad9dbd",
-    "title": "component - text",
+    "key": "group_688a3bf633a6a",
+    "title": "Hero - page",
     "fields": [
         {
-            "key": "field_686e4efae37e7",
-            "label": "",
-            "name": "text-text",
+            "key": "field_688a3bf63bf87",
+            "label": "Titre",
+            "name": "hero-page-title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_688a3bf63c341",
+            "label": "Intro",
+            "name": "hero-page-intro",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -29,23 +50,18 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            },
-            {
-                "param": "post_type",
-                "operator": "!=",
-                "value": "post"
+                "value": "page"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753688897
+    "modified": 1753889828
 }
