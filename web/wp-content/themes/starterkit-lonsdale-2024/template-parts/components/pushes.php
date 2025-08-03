@@ -12,7 +12,6 @@ $attributes = !empty($args["attributes"]) ? $args["attributes"] : "";
                 if (get_page_template_slug($item->ID) == "pages/page-flexible.php") {
                     $post_type = "flexible";
                 }
-                //console(get_page_template_slug($item->ID)); 
                 ?>
                 <?php
 

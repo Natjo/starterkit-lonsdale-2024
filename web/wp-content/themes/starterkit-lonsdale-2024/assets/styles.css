@@ -921,41 +921,50 @@ time{
 .header .cta {
         margin-top: 3rem;
     }
-.search {
+.block-search {
    display: grid;
    border: 1px solid #ccc;
    border-radius: 10px;
    overflow: hidden;
 }
-.search input,
-   .search label,
-   .search button {
+.block-search input,
+   .block-search label,
+   .block-search button {
       grid-area: 1 / 1;
       height: 3.4rem;
       box-sizing: border-box;
       font-size: inherit;
    }
-.search label {
+.block-search label {
       display: flex;
       align-items: center;
       padding: 1rem;
       pointer-events: none;
    }
-.search:has(input:valid, input:focus) label {
+.block-search:has(input:valid, input:focus) label {
          opacity: 0;
       }
-.search input {
+.block-search input {
       padding: 1rem 3.4rem 1rem 1rem;
       border: none;
       width: 20rem;
    }
-.search button {
+.block-search button {
       justify-self: end;
       width: 3.4rem;
       display: flex;
       align-items: center;
       justify-content: center;
    }
+.pagination {
+    margin-top: 2rem;
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+}
+.pagination .active{
+        font-weight: 800;
+    }
 /* modules */
 .slider{
     display: grid;
@@ -1408,12 +1417,6 @@ time{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: var(--gap)
-    }
-.strate-results .pager{
-        margin-top: 2rem;
-        justify-self: center;
-        display: flex;
-        gap: 1rem;
     }
 .strate-sitemap ul{
         display: grid;

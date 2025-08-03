@@ -18,6 +18,7 @@
 @import "components/blockquote.css";
 @import "components/header.css";
 @import "components/search.css";
+@import "components/pagination.css";
 
 /* modules */
 @import "modules/slider.css";

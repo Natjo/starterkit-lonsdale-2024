@@ -13,7 +13,7 @@ get_template_part('template-parts/common/header_nav', '');
 
     <?php hero::flexible(); ?>
 
-    <?php get_template_part('template-parts/strates/strate', 'results'); ?>
+    <?php strate::results('news'); ?>
 </main>
 
 <?php

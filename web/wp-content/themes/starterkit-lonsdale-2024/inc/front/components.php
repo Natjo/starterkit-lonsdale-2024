@@ -171,4 +171,15 @@ class component
         ];
         get_template_part('template-parts/components/header', '', $args);
     }
+
+    public static function pagination($pager, $query = null)
+    {
+
+        $args = [
+            "pager" => $pager,
+            "query" =>$query
+        ];
+
+        get_template_part('template-parts/components/pagination', "", $args);
+    }
 }

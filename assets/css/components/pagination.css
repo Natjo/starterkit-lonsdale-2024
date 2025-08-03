@@ -1,0 +1,10 @@
+.pagination {
+    margin-top: 2rem;
+    justify-self: center;
+    display: flex;
+    gap: 1rem;
+
+    .active{
+        font-weight: 800;
+    }
+}

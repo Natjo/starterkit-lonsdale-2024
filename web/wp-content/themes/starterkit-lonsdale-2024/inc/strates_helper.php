@@ -73,9 +73,8 @@ class Strate_Helper
     }
     public static function strates()
     {
-       
-get_template_part('template-parts/common/strates');
-       
+
+        get_template_part('template-parts/common/strates');
     }
 
     /**
@@ -212,5 +211,23 @@ get_template_part('template-parts/common/strates');
         ];
 
         return array_merge($fields, $options, $header);
+    }
+}
+
+
+class strate
+{
+    public static function results($post_type,$paged = 1, $query = null)
+    {
+    
+        $cpts = new getCpts($post_type,$paged, $query);
+
+        $fields = [
+            "cpts" => $cpts,
+        ];
+
+        $args = array_merge($fields);
+
+        get_template_part('template-parts/strates/strate', 'results',$args);
     }
 }
