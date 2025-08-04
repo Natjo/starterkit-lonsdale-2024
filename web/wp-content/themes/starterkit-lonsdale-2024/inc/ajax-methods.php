@@ -18,8 +18,16 @@ function results_callback()
 {
     checkNonce('results_nonce');
 
+
     ob_start();
-    strate::results('news',$_POST["paged"],$_POST["query"]);
+    $args = [
+        "paged" => $_POST["paged"],
+        "query" => $_POST["query"],
+        "type" => $_POST["type"],
+    ];
+
+    strate::results('news', $args);
+
     $response['content'] = ob_get_clean();
 
     $response['msg'] = "Message envoyé  vec succès";

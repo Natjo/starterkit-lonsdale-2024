@@ -1,22 +1,34 @@
 <?php
+$type = $args["type"];
 $cpts = $args["cpts"];
 $items = $cpts->items;
 $pager = $cpts->pager;
 $query = $cpts->query;
 
-if ($query > 0) {
-    $url = "?s=" . $query . "&paged=";
-} else {
-    $url = get_post_field('post_name') . "/page/";
-}
+$post_id = url_to_postid(wp_get_referer());
+$post_name = get_post_field('post_name', $post_id);
 
+if ($query > 0) {
+    if($type == "pagination"){
+         $url =  "/" . "?s=" . $query . "&paged=";
+    }else{
+        $url =  "/" . "?s=" . $query ;
+    }
+   
+} else {
+    $url =  "/" . $post_name . "/page/";
+}
 ?>
 
-<section class="strate strate-results" data-module="strates/results" data-url="<?= $url ?>" data-query="<?= $query ?>" data-nonce="<?= wp_create_nonce("results_nonce"); ?>">
+<section class="strate strate-results" data-module="strates/results"
+    data-type="<?= $type ?>"
+    data-total_pages="<?= $pager["total_pages"] ?>"
+    data-paged="<?= $pager["current_page"] ?>"
+    data-url="<?= $url ?>"
+    data-query="<?= $query ?>"
+    data-nonce="<?= wp_create_nonce("results_nonce"); ?>">
     <?php if ($query > 0) : ?>
         <header>
-            <?php component::search(["label" => "Search"]); ?>
-
             <?php
             $total_posts = $pager['total_posts'];
             if ($total_posts > -1) : ?>
@@ -26,6 +38,7 @@ if ($query > 0) {
                 if ($total_posts) {
                     $title = $total_posts . " résultat" . $plurial . " correspondent à votre recherche " . $search;
                 } else {
+                    $query = "Search";
                     $title = "Aucun article correspond à votre recherche " . $search;
                 }
                 ?>
@@ -33,6 +46,8 @@ if ($query > 0) {
             <?php else : ?>
                 <div>Saisir une recherche</div>
             <?php endif ?>
+
+            <?php component::search(["label" => $query]); ?>
         </header>
     <?php endif ?>
 
@@ -45,5 +60,11 @@ if ($query > 0) {
         <?php endif; ?>
     </ul>
 
-    <?php component::pagination($pager, "/" . $url); ?>
+    <?php if ($type == "more" && $total_posts > 0) : ?>
+        <button class="btn-more btn btn-1">more</button>
+    <?php endif; ?>
+
+    <?php if ($type == "pagination") : ?>
+        <?php component::pagination($pager, $url); ?>
+    <?php endif; ?>
 </section>

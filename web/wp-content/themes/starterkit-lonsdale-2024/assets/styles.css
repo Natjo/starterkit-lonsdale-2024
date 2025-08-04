@@ -1413,11 +1413,32 @@ time{
     margin-top: var(--margin-md);
     margin-bottom: var(--margin-md);
 }
+.strate-results header {
+        padding-top: var(--margin-md);
+        padding-bottom: var(--margin-md);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+.strate-results header h1 {
+            margin-bottom: 2rem;
+        }
+.strate-results header .block-search {
+            margin-bottom: 2rem;
+        }
 .strate-results .list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: var(--gap)
     }
+.strate-results .btn-more {
+        justify-self: center;
+        transition: opacity .3s ease;
+    }
+.strate-results .btn-more.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
 .strate-sitemap ul{
         display: grid;
         gap: 2rem;

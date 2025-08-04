@@ -12,10 +12,10 @@ get_template_part('template-parts/common/header_nav');
 
 ?>
 
-<main id="main" role="main" tabindex="-1" >
+<main id="main" role="main" tabindex="-1">
     <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
 
-    <?php strate::results('news'); ?>
+    <?php strate::results('news', ["type" => "more"]); ?>
 </main>
 
 <?php

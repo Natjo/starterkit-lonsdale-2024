@@ -217,17 +217,21 @@ class Strate_Helper
 
 class strate
 {
-    public static function results($post_type,$paged = 1, $query = null)
+    public static function results($post_type, $options = [])
     {
-    
-        $cpts = new getCpts($post_type,$paged, $query);
+        $paged = !empty($options["paged"]) ? $options["paged"] : 1;
+        $query = !empty($options["query"]) ? $options["query"] : null;
+
+        $cpts = new getCpts($post_type, $paged, $query);
 
         $fields = [
+            "post_name" => get_post_field('post_name'),
             "cpts" => $cpts,
+            "type" => !empty($options["type"]) ? $options["type"] : "pagination"
         ];
-
+    
         $args = array_merge($fields);
 
-        get_template_part('template-parts/strates/strate', 'results',$args);
+        get_template_part('template-parts/strates/strate', 'results', $args);
     }
 }

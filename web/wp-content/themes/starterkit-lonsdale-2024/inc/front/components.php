@@ -177,7 +177,7 @@ class component
 
         $args = [
             "pager" => $pager,
-            "query" =>$query
+            "query" => $query
         ];
 
         get_template_part('template-parts/components/pagination', "", $args);

@@ -3,9 +3,35 @@
     margin-top: var(--margin-md);
     margin-bottom: var(--margin-md);
 
+    header {
+        padding-top: var(--margin-md);
+        padding-bottom: var(--margin-md);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        .block-search {
+            margin-bottom: 2rem;
+        }
+    }
+
     .list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: var(--gap)
+    }
+
+    .btn-more {
+        justify-self: center;
+        transition: opacity .3s ease;
+
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 }

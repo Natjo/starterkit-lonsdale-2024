@@ -54,7 +54,7 @@ if ($total > 1) {
     echo $prev >= 1 ? '<a rel="prev" href="' . $query . $prev . '" class="btn-1 prev">' . component::icon("arrow-left", 9, 14) . '</a>' : '<button class="btn-1 prev disabled">' . component::icon("arrow-left", 9, 14) . '</button>';
     for ($i = 0; $i < count($arr); $i++) {
         $index = $arr[$i];
-        $active = ($index == $page) ? ' class="active"' : 'poo';
+        $active = ($index == $page) ? ' class="active"' : '';
         echo ($index === null) ?  "<span>...</span>" :  '<a href="' . $query . $index . '"' . $active . '>' . $index . '</a>';
     }
     echo $next <= $total ? '<a rel="next" href="' . $query  . $next . '" class="btn-1 next">' . component::icon("arrow-right", 9, 14) . '</a>' : '<button class="btn-1 next disabled">' . component::icon("arrow-right", 9, 14) . '</button>';
