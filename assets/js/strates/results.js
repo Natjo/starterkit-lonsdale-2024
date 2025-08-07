@@ -47,7 +47,7 @@ export default (el) => {
     }
 
     const pushstate = () => {
-        window.history.pushState({ "paged": paged }, `page${paged}`, `${el.dataset.url}${paged}`);
+       if(type == "pagination") window.history.pushState({ "paged": paged }, `page${paged}`, `${el.dataset.url}${paged}`);
     }
 
     // pagination links ajax

@@ -617,6 +617,10 @@ button{
             border-radius: 50%;
         }
 /* Select */
+.form .select {
+        min-width: 200px;
+
+    }
 .form .select label {
             grid-column: 1;
             grid-row: 1;
@@ -1415,7 +1419,7 @@ time{
 }
 .strate-results header {
         padding-top: var(--margin-md);
-        padding-bottom: var(--margin-md);
+        padding-bottom: var(--margin-xsm);
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -1426,6 +1430,15 @@ time{
 .strate-results header .block-search {
             margin-bottom: 2rem;
         }
+.strate-results .filters{
+        margin-bottom: 2rem;
+         padding-bottom: var(--margin-md);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        border: 1px solid #ccc;
+        padding: 1rem;
+    }
 .strate-results .list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;

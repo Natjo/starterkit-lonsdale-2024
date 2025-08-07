@@ -12,9 +12,6 @@ toogle_status.checked = Boolean(main.getAttribute('data-static'));
 
 btn_generate.onclick = () => {
     document.getElementById('pages').classList.add('disabled');
-    if (document.querySelector('.es-notification')) {
-        document.querySelector('.es-notification').remove();
-    }
 
     // set haschange to true if page/post is edited
     btn_generate.classList.add('loading');
@@ -23,15 +20,22 @@ btn_generate.onclick = () => {
     data.append('nonce', nonce);
     data.append('status', toogle_status.checked);
     const xhr = new XMLHttpRequest();
-  
-    xhr.open("post", ajax_url, true);  
+
+    xhr.open("post", ajax_url, true);
     //xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
     xhr.onload = () => {
         btn_generate.classList.remove('loading');
         document.getElementById('pages').classList.remove('disabled');
-document.querySelector(".es-notice").remove();
-        
+        if (document.querySelector('.es-notice')) {
+            document.querySelector(".es-notice").remove();
+        }
+        if (document.querySelector('.es-notification')) {
+            document.querySelector('.es-notification').remove();
+        }
+        if (document.querySelector('.es-btn_error')) {
+            document.querySelector('.es-btn_error').remove();
+        }
 
         const response = JSON.parse(xhr.responseText);
         // pages_result.innerHTML = response.markup;
@@ -110,7 +114,7 @@ relative.addEventListener('keypress', (e) => {
 });
 relative.onblur = () => {
     let value = relative.innerText;
-   
+
     if (value.charAt(0) === '/') {
         value = value.substring(1)
     }

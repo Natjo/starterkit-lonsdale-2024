@@ -1,4 +1,4 @@
-import { ParamsData } from '../app.js?v=71153434';
+import { ParamsData } from '../app.js?v=7411319';
 export default el => {
   const btn_more = el.querySelector(".btn-more");
   const list = el.querySelector(".list");
@@ -42,7 +42,7 @@ export default el => {
     xhr.send(formData);
   };
   const pushstate = () => {
-    window.history.pushState({
+    if (type == "pagination") window.history.pushState({
       "paged": paged
     }, `page${paged}`, `${el.dataset.url}${paged}`);
   };

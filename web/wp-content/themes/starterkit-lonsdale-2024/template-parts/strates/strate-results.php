@@ -9,12 +9,11 @@ $post_id = url_to_postid(wp_get_referer());
 $post_name = get_post_field('post_name', $post_id);
 
 if ($query > 0) {
-    if($type == "pagination"){
-         $url =  "/" . "?s=" . $query . "&paged=";
-    }else{
-        $url =  "/" . "?s=" . $query ;
+    if ($type == "pagination") {
+        $url =  "/" . "?s=" . $query . "&paged=";
+    } else {
+        $url =  "/" . "?s=" . $query;
     }
-   
 } else {
     $url =  "/" . $post_name . "/page/";
 }
@@ -50,6 +49,21 @@ if ($query > 0) {
             <?php component::search(["label" => $query]); ?>
         </header>
     <?php endif ?>
+
+    <form action="" class="filters form">
+        <fieldset>
+            <div class="field select">
+                <select name="" id="">
+                    <option value="">Mr</option>
+                    <option value="">Ms</option>
+                </select>
+            </div>
+            <div class="field checkbox">
+                <input id="pop" type="checkbox">
+                <label for="pop">rouge</label>
+            </div>
+        </fieldset>
+    </form>
 
     <ul class="list">
         <?php if (!empty($items)) : ?>

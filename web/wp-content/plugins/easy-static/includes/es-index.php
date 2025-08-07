@@ -42,11 +42,13 @@ if (strpos($index, '/* easy-static */') !== false) {
     fclose($myfile);
 }
 
+
 ?>
 
 <link rel='stylesheet' id='wp-block-library-css' href="<?= wp_guess_url() ?>/wp-content/plugins/easy-static/styles.css" media='all' />
 <div class="wrap" id="es-main" data-static="<?= $isStatic ? true : false; ?>" data-nonce="<?= $nonce ?>" data-ajaxurl="<?= AJAX_URL ?>">
-    <h1>Static website</h1>
+    <h1>Easy Static</h1>
+    <p>Generate static website with WordPress</p>
 
     <?php if (!empty($haschange) && !empty($isStatic)) : ?>
         <div class="es-notice notice-warning">

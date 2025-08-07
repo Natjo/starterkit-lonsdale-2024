@@ -43,9 +43,9 @@ function sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight,
     }
     if ($sc_quality == 1) { //best
         $sc_compression = 80;
-        $sc_blur = 0.96;
+        $sc_blur = 0.97;
         $sc_radius = 1;
-        $sc_sigma = .8;
+        $sc_sigma = .7;
     }
 
     $image = new Imagick($originalFilepath);

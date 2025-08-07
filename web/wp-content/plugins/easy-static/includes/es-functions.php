@@ -9,12 +9,25 @@ function mfp_Add_My_Admin_Link()
 
     add_menu_page(
         'Easy static', // Title of the page
-        $haschange && $isStatic ?  'Easy static <span class="awaiting-mod es-notification">!</span>' : 'Easy static', // Text to show on the menu link
+        ($haschange && $isStatic) ?  'Easy static <span class="awaiting-mod es-notification">⚠</span>' : 'Easy static', // Text to show on the menu link
         'manage_options', // Capability requirement to see the link
         'easy-static/includes/es-index.php', // The 'slug' - file to display when clicking the link
         '',
         'dashicons-text-page',
     );
+}
+if($haschange && $isStatic){
+    add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
+}
+
+function toolbar_link_to_mypage( $wp_admin_bar ) {
+    $args = array(
+        'id'    => 'easy_static',
+        'title' => 'Easy static : <b>⚠ Must regnerate!</b>',
+        'href'  => 'admin.php?page=easy-static%2Fincludes%2Fes-index.php',
+        'meta'  => array( 'class' => 'es-btn_error' )
+    );
+    $wp_admin_bar->add_node( $args );
 }
 
 

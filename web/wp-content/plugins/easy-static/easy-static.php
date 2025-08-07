@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy static
 Description: Generate static site
-Version: 1.4.2
+Version: 1.4.3
 Author: Martin Jonathan
 */
 
@@ -12,7 +12,7 @@ global $table;
 global $haschange;
 global $isStatic;
 global $isminify;
-
+global $is_es_active;
 //$url = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['SERVER_NAME'];
 
 // Create table easystatic if not exist
@@ -29,7 +29,7 @@ if (!$wpdb->get_var("SHOW TABLES LIKE '$table'") == $table) {
     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
 }
-
+$is_es_active = is_plugin_active('easy-static/easy-static.php');
 // Create options
 $easy_static_active = $wpdb->get_results("SELECT * FROM " . $table . " WHERE option = 'active'");
 if (empty($easy_static_active)) {
@@ -109,11 +109,12 @@ add_action('save_post', 'wpdocs_notify_subscribers', 10, 3);
 function wpdocs_notify_subscribers($post_id, $post, $update)
 {
     global $easy_static_active;
-
+    global $is_es_active;
     //print_r($post);
     //echo $post->post_name;
 
-    if ($easy_static_active[0]->value) {
+    if ($is_es_active) {
+        // if ($easy_static_active[0]->value) {
         if ($post->post_type == "page" || $post->post_type == "post") {
             if ($post->static_active) {
                 hasChanged();
@@ -121,6 +122,7 @@ function wpdocs_notify_subscribers($post_id, $post, $update)
         }
     }
 }
+
 
 add_action('check_admin_referer', 'check_nav_menu_updates', 11, 1);
 function check_nav_menu_updates($action)
@@ -143,3 +145,11 @@ function clear_advert_main_transient($post_id)
     }
 }
 add_action('acf/save_post', 'clear_advert_main_transient', 20);
+
+// css common admin
+function commoncss()
+{
+    wp_register_style('mein-plugin', plugins_url('common.css', __FILE__));
+    wp_enqueue_style('mein-plugin');
+}
+if (is_admin()) add_action('init', 'commoncss');

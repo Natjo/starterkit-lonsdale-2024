@@ -1,5 +1,5 @@
-import formValidate from '../modules/formValidate.js?v=71153434';
-import { ParamsData } from '../app.js?v=71153434';
+import formValidate from '../modules/formValidate.js?v=7411319';
+import { ParamsData } from '../app.js?v=7411319';
 export default el => {
   const form = el.querySelector('form');
   const status_msg = el.querySelector('.msg');
