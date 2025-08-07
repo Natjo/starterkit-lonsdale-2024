@@ -9,7 +9,7 @@
 
      <div class="slider-content" role="list">
          <?php foreach ($args["items"] as $item) : ?>
-             <div class="item">
+             <div class="item" role="listitem">
                  <?php
                     $card = $item["card"]["name"];
                     $sizes = !empty($item["card"]["sizes"]) ? ["sizes" => $item["card"]["sizes"]]  : [];

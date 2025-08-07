@@ -1,3 +1,1 @@
-export default el => {
-  console.log("hero home");
-};
+export default el=>{console.log("hero home")};

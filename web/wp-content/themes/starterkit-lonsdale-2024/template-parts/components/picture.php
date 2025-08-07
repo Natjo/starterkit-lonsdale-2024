@@ -3,7 +3,7 @@ $imgMobile = !empty($args['mobile']) ? $args['mobile'] : null;
 $imgDesktop = !empty($args['desktop']) ? $args['desktop'] : null;
 $breakpoint = $args['breakpoint'];
 $lazy = !empty($args["lazy"]) ? ' loading="lazy"' : "";
-$alt = !empty($imgDesktop["alt"]) ? ' alt="' . $imgDesktop["alt"] . '"' : "";
+$alt = !empty($imgDesktop["alt"]) ? ' alt="' . $imgDesktop["alt"] . '"' : 'alt=""';
 $classes = !empty($args["classes"]) ? ' class="' . $args["classes"] . '"' : "";
 
 $media = "";

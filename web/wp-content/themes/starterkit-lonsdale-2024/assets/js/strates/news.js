@@ -1,6 +1,1 @@
-import Slider from '../modules/slider.js?v=7411319';
-export default el => {
-  const slider = el.querySelector(".slider");
-  const myslider = new Slider(slider);
-  myslider.enable();
-};
+import Slider from"../modules/slider.js?v=74135653";export default el=>{const slider=el.querySelector(".slider");const myslider=new Slider(slider);myslider.enable()};
