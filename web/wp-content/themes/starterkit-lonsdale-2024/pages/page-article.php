@@ -12,11 +12,11 @@ get_template_part('template-parts/common/header_nav');
 
         <div class="layout-sidebar">
             <div class="sidebar">
-                <?php component::blocks("sidebar-news") ; ?>
+                <?php component::blocks("sidebar-news"); ?>
             </div>
 
             <div class="content">
-                <?php Strate_Helper::strates();?>
+                <?php Strate_Helper::strates(); ?>
             </div>
         </div>
     </article>

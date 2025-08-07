@@ -227,7 +227,7 @@ class strate
         $fields = [
             "post_name" => get_post_field('post_name'),
             "cpts" => $cpts,
-            "type" => !empty($options["type"]) ? $options["type"] : "pagination"
+            "type" => !empty($options["type"]) ? $options["type"] : "pagination"//infinite
         ];
     
         $args = array_merge($fields);
