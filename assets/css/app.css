@@ -6,6 +6,7 @@
 @import "styles/classes.css";
 @import "styles/rte.css";
 @import "styles/form.css";
+@import "styles/print.css" print;
 
 /* components */
 @import "components/title.css";

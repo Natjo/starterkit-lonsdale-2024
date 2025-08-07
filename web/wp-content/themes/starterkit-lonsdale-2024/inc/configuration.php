@@ -341,3 +341,6 @@ function remove_page_class($wp_list_pages)
     $replace_with = '<li>';
     return preg_replace($pattern, $replace_with, $wp_list_pages);
 }
+
+//Disable Speculative Loading
+add_filter( 'wp_speculation_rules_configuration', '__return_null' );

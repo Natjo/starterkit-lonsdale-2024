@@ -27,10 +27,11 @@ const observer = new IntersectionObserver(items => items.forEach(e => {
 modules.forEach(module => observer.observe(module))
 
 // Add print.css
+/*
 window.addEventListener('load', () => {
 	const link = document.createElement('link');
 	link.rel = 'stylesheet';
 	link.media = 'print';
 	link.href = `${ParamsData.theme_url}/assets/print.css?v=${ParamsData.version}`;
 	document.head.appendChild(link);
-});
+});*/

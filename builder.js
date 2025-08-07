@@ -32,13 +32,6 @@ const core = {
                 console.log(error);
             }
         }
-        else if (ext == '.css') {
-            const str = fs.readFileSync(file, 'utf8')
-            this.postcss(str, css => {
-                fs.ensureDirSync(path.dirname(dist_name));
-                fs.writeFileSync(dist_name, css);
-            }, 'print.css');
-        }
         else if (ext == '.svg') {
             if (isProd) {
                 const svgString = fs.readFileSync(file, 'utf8');
