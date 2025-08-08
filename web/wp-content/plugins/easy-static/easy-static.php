@@ -115,11 +115,11 @@ function wpdocs_notify_subscribers($post_id, $post, $update)
 
     if ($is_es_active) {
         // if ($easy_static_active[0]->value) {
-        if ($post->post_type == "page" || $post->post_type == "post") {
+       // if ($post->post_type == "page" || $post->post_type == "post") {
             if ($post->static_active) {
                 hasChanged();
             }
-        }
+       // }
     }
 }
 

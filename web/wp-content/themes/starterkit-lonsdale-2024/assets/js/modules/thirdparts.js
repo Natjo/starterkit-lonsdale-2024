@@ -1,1 +1,2 @@
-const thirdParts=el=>{};export default thirdParts;
+const thirdParts = el => {};
+export default thirdParts;

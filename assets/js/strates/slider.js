@@ -1,4 +1,4 @@
-import Slider from '../modules/slider';
+import Slider from '../modules/slider.js';
 
 export default (el) => {
     const slider = el.querySelector(".slider");
