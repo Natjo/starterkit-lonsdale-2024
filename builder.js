@@ -12,7 +12,6 @@ const uglifycss = require('uglifycss');
 const babel = require('@babel/core');
 const watch = require('node-watch');
 const isProd = process.argv[2] == '--prod' ? true : false;
-require('dotenv').config({ path: '.docker/.env' })
 const { optimize } = require('svgo');
 
 const src = 'assets/';

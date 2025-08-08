@@ -1,4 +1,4 @@
-import { ParamsData } from '../app.js.js?v=75142';
+import { ParamsData } from '../app.js.js?v=75148';
 export default el => {
   const btn_more = el.querySelector(".btn-more");
   const list = el.querySelector(".list");
