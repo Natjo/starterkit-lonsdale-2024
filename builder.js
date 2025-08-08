@@ -19,7 +19,8 @@ const src = 'assets/';
 const dist = `web/wp-content/themes/${process.env.WP_THEME_NAME}/`;
 
 let date = new Date();
-let version = `${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+//let version = `${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+let version = `${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}`;
 let hasError = false;
 const core = {
     initTime: new Date(),
@@ -91,8 +92,9 @@ const core = {
         //set version to import file
         //let res = isProd ? result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`) : result;
 
-        let res = result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`);
-
+        //let res = result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`);
+        let res = result.replace(/(import[ {}'".\/a-z_,]+)(['"])/igm, `$1.js?v=${version}$2`);
+      
         result = babel.transform(res, {
             minified: isProd ? true : false,
             comments: false,

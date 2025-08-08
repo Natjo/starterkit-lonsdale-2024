@@ -2,7 +2,9 @@
     display: grid;
     --nb: 1;
     --offset: 0px;
-
+    grid-column: var(--ctr) / fluid;
+    grid-template-columns: subgrid;
+    
     .slider-content {
         margin-left: calc(-1 * var(--left));
         margin-right: calc(-1 * var(--right));
@@ -24,7 +26,7 @@
     }
 
     .slider-wrapper {
-        grid-column: inherit
+        grid-column: inherit;
         container-type: inline-size;
     }
 

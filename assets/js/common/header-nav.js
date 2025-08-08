@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { ParamsData } from '../app.js';
+import { ParamsData } from '../app';
 
 export default (header) => {
     const clicktouch = ('ontouchstart' in document.activeElement) ? 'touchstart' : 'click';
