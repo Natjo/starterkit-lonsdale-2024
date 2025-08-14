@@ -149,16 +149,10 @@ main {
     }
 .hero {
     --ctr: ctr;
-
 }
 .hero >* {
         grid-column: var(--ctr);
     }
-hr{
-    border: none;
-    border-top: 1px solid var(--theme-1);
-    width: 100%;
-}
 /* Montserrat */
 @font-face {
     font-family: "Montserrat";
@@ -1469,6 +1463,14 @@ time{
 .strate-accordion.column .accordion {
             grid-column: col-right / var(--ctr);
         }
+.strate-separator:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-1);
+        grid-column: var(--ctr);
+    }
 .strate-results {
     --ctr: ctr-sm;
     margin-top: var(--margin-md);
@@ -1525,4 +1527,6 @@ time{
     .page-contact .strate {
         --ctr: ctr-sm;
     }
+
+
 /*# sourceMappingURL=styles.css.map */

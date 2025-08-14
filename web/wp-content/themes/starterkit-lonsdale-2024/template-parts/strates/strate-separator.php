@@ -1,3 +1,1 @@
-<div <?= options("strate strate-separator", $args) ?>>
-    <hr>
-</div>
+<div <?= options("strate strate-separator", $args) ?>></div>

@@ -16,5 +16,4 @@ $hx = !empty($args["header"]["title"]) ? 3 : 2;
     </div>
 
     <?php component::picture($args["images"], true); ?>
-
 </section>

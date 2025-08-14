@@ -92,7 +92,7 @@ const core = {
         //let res = isProd ? result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`) : result;
 
         //let res = result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`);
-        let res = result.replace(/(import[ {}'".\/a-z_,]+)(['"])/igm, `$1.js?v=${version}$2`);
+        let res = result.replace(/(import[ {}'".\/a-z_,@-]+)(['"])/igm, `$1.js?v=${version}$2`);
       
         result = babel.transform(res, {
             minified: isProd ? true : false,

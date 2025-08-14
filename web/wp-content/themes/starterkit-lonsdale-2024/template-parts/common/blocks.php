@@ -9,14 +9,14 @@ if (isset($aBlocks) && !empty($aBlocks)) {
 
         switch ($block['acf_fc_layout']) {
             case 'title':
-                component::title($block["title-hx"], $block["title-title"], "title " . $block["title-style"]);
+                component::title($block["hx"], $block["title"], "title " . $block["style"]);
                 break;
             case 'text':
                 component::text($block["text-text"]);
                 break;
             case 'cta':
-                $style =  $block["cta-type"] == "btn" ? $block["cta-btn-style"] : $block["cta-link-style"];
-                component::link($block["cta-link"], $block["cta-type"] . " " . $style);
+                $style =  $block["type"] == "btn" ? "btn-" . $block["style"] :  "link-" . $block["style"];
+                component::link($block["link"], $block["type"] . " " . $style);
                 break;
             case 'image':
                 // console($block["image-desktop"]);
@@ -36,7 +36,7 @@ if (isset($aBlocks) && !empty($aBlocks)) {
                 break;
             case 'accordion':
                 $args = [
-                    "items" => $block["accordion-items"]
+                    "items" => $block["items"]
                 ];
 
                 component::accordion($args["items"]);

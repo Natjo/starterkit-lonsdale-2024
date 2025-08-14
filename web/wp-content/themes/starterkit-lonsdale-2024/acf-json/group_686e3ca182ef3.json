@@ -5,7 +5,7 @@
         {
             "key": "field_686e3d8869bb8",
             "label": "",
-            "name": "title-title",
+            "name": "title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -26,7 +26,7 @@
         {
             "key": "field_686e4594b2935",
             "label": "",
-            "name": "title-hx",
+            "name": "hx",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -57,7 +57,7 @@
         {
             "key": "field_686e4645af036",
             "label": "",
-            "name": "title-style",
+            "name": "style",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -109,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753688884
+    "modified": 1755096527
 }

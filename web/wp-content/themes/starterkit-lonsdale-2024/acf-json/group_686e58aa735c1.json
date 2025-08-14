@@ -5,7 +5,7 @@
         {
             "key": "field_686e58d2a863b",
             "label": "Type",
-            "name": "cta-type",
+            "name": "type",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -34,67 +34,22 @@
         {
             "key": "field_686e5a70ff817",
             "label": "Style",
-            "name": "cta-btn-style",
+            "name": "style",
             "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_686e58d2a863b",
-                        "operator": "==",
-                        "value": "btn"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "choices": {
-                "btn-1": "Primary",
-                "btn-2": "Secondary"
+                "1": "Primary",
+                "2": "Secondary"
             },
-            "default_value": "btn-1",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
-        },
-        {
-            "key": "field_686e5b0d419ae",
-            "label": "Style",
-            "name": "cta-link-style",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_686e58d2a863b",
-                        "operator": "==",
-                        "value": "link"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "link-1": "Primary",
-                "link-2": "Secondary"
-            },
-            "default_value": "link-1",
+            "default_value": 1,
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -108,7 +63,7 @@
         {
             "key": "field_686e58b6a863a",
             "label": "Lien",
-            "name": "cta-link",
+            "name": "link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -146,5 +101,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753688980
+    "modified": 1755096252
 }

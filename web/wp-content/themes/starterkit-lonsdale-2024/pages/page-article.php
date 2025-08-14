@@ -2,13 +2,14 @@
 
 get_header();
 get_template_part('template-parts/common/header_nav');
+
 ?>
 
 <main id="main" role="main" tabindex="-1" class="page-article">
     <?php get_template_part('template-parts/common/breadcrumb'); ?>
 
     <article>
-        <?php hero::article(); ?>
+        <?php hero::article(); $fields = get_fields(); console($fields);?>
 
         <div class="layout-sidebar">
             <div class="sidebar">

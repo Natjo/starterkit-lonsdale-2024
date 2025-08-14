@@ -127,11 +127,11 @@
             "prefix_name": 0
         },
         {
-            "key": "field_68668f0291f2b",
+            "key": "field_689c98c1811b9",
             "label": "Lien",
-            "name": "link",
+            "name": "cta",
             "aria-label": "",
-            "type": "link",
+            "type": "clone",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -140,8 +140,13 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "allow_in_bindings": 0
+            "clone": [
+                "group_686e58aa735c1"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         },
         {
             "key": "field_68669ef42bb81",
@@ -247,5 +252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753688667
+    "modified": 1755093475
 }

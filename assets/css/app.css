@@ -47,10 +47,11 @@
 @import "strates/strate-news.css";
 @import "strates/strate-slider.css";
 @import "strates/strate-accordion.css";
-
+@import "strates/strate-separator.css";
 @import "strates/strate-results.css";
 @import "strates/strate-sitemap.css";
 @import "strates/strate-contact.css";
 
 /* pages */
 @import "pages/page-contact.css";
+
