@@ -13,6 +13,7 @@ const babel = require('@babel/core');
 const watch = require('node-watch');
 const isProd = process.argv[2] == '--prod' ? true : false;
 const { optimize } = require('svgo');
+require('dotenv').config({ path: '.docker/.env' })
 
 const src = 'assets/';
 const dist = `web/wp-content/themes/${process.env.WP_THEME_NAME}/`;

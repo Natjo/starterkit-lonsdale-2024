@@ -24,7 +24,8 @@
         "postcss-comment": "2.0.0",
         "postcss-extend-rule": "4.0.0",
         "svgo": "4.0.0",
-        "uglifycss": "^0.0.29"
+        "uglifycss": "^0.0.29",
+        "dotenv": "^17.2.1"
     },
     "dependencies": {
         "core-js": "^3.43.0"
