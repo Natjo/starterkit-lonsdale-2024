@@ -92,8 +92,11 @@ function sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight,
     //$image->setOption('webp:lossless', 'true');
     $image->sharpenImage($sc_radius, $sc_sigma);
     $image->setImageFormat("webp");
-    $image->setImageAlphaChannel(Imagick::ALPHACHANNEL_ACTIVATE);
-    $image->setBackgroundColor(new ImagickPixel('transparent'));
+
+    if ($format == "PNG") {
+        $image->setImageAlphaChannel(Imagick::ALPHACHANNEL_ACTIVATE);
+        $image->setBackgroundColor(new ImagickPixel('transparent'));
+    }
     if ($format == "GIF") {
         $image->writeImages($resizedFilepath, true);
     } else {
