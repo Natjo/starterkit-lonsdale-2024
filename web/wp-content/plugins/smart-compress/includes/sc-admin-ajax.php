@@ -52,7 +52,7 @@ function sm_quality_callback()
             $originalFilepath = WP_CONTENT_DIR . "/plugins/smart-compress/img/" . $file . ".jpg";
             $resizedFilepath = WP_CONTENT_DIR . "/plugins/smart-compress/img/" . $filename . ".webp";
             $crop = null;
-
+         
             sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight, $crop);
         }
     }

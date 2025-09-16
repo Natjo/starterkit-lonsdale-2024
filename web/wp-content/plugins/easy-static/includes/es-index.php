@@ -71,13 +71,10 @@ if (strpos($index, '/* easy-static */') !== false) {
 
     <nav class="nav-tab-wrapper">
         <a href="#pages" class="nav-tab nav-tab-active">Pages</a>
-        <a href="#parameters" class="nav-tab">Paramètres</a>
         <a href="#export" class="nav-tab">Export</a>
     </nav>
 
     <br>
-
-    <?php include 'es-parameters.php'; ?>
 
     <?php include 'es-pages.php'; ?>
 

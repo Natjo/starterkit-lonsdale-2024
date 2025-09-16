@@ -2,7 +2,7 @@
 /*
 Plugin Name: Smart Compress
 Description: Generate webp on upload or on the fly
-Version: 1.0.5
+Version: 1.0.6
 Author: Martin Jonathan
 */
 
@@ -43,9 +43,9 @@ function sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight,
     }
     if ($sc_quality == 1) { //best
         $sc_compression = 80;
-        $sc_blur = 0.97;
+        $sc_blur = 0.98;
         $sc_radius = 1;
-        $sc_sigma = .7;
+        $sc_sigma = .6;
     }
 
     $image = new Imagick($originalFilepath);
@@ -89,13 +89,14 @@ function sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight,
             $image->cropImage(round($newWidth), round($newHeight), round(($resize_w - $newWidth) / 2), round(($resize_h - $newHeight) / 2));
         }
     }
-    //$image->setOption('webp:lossless', 'true');
+
+    // $image->setOption('webp:lossless', 'true');
     $image->sharpenImage($sc_radius, $sc_sigma);
     $image->setImageFormat("webp");
 
     if ($format == "PNG") {
-        $image->setImageAlphaChannel(Imagick::ALPHACHANNEL_ACTIVATE);
-        $image->setBackgroundColor(new ImagickPixel('transparent'));
+       // $image->setImageAlphaChannel(Imagick::ALPHACHANNEL_ACTIVATE);
+       // $image->setBackgroundColor(new ImagickPixel('transparent'));
     }
     if ($format == "GIF") {
         $image->writeImages($resizedFilepath, true);

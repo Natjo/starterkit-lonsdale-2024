@@ -9,25 +9,25 @@
     "author": "Martin Jonathan",
     "license": "ISC",
     "devDependencies": {
-        "@babel/core": "^7.27.4",
-        "@babel/preset-env": "^7.27.2",
-        "@csstools/postcss-global-data": "^3.0.0",
+        "@babel/cli": "^7.28.3",
+        "@babel/core": "^7.28.4",
+        "@babel/preset-env": "^7.28.3",
+        "@csstools/postcss-global-data": "^3.1.0",
         "autoprefixer": "^10.4.21",
-        "babel-cli": "^6.26.0",
-        "babel-minify": "^0.5.2",
-        "fs-extra": "^11.3.0",
+        "babel-minify": "^0.2.0",
+        "dotenv": "^17.2.2",
+        "fs-extra": "^11.3.1",
         "node-watch": "^0.7.4",
         "postcss": "^8.5.6",
-        "postcss-custom-media": "11.0.6",
+        "postcss-comment": "^2.0.0",
+        "postcss-custom-media": "^11.0.6",
+        "postcss-extend-rule": "^4.0.0",
+        "postcss-import": "^16.1.1",
         "postcss-nested": "^7.0.2",
-        "postcss-import": "16.1.1",
-        "postcss-comment": "2.0.0",
-        "postcss-extend-rule": "4.0.0",
-        "svgo": "4.0.0",
-        "uglifycss": "^0.0.29",
-        "dotenv": "^17.2.1"
+        "svgo": "^4.0.0",
+        "uglifycss": "^0.0.29"
     },
     "dependencies": {
-        "core-js": "^3.43.0"
+        "core-js": "^3.45.1"
     }
 }

@@ -398,6 +398,7 @@ function static_export_pages_callback()
         // Recursive function that crawls a page's anchor tags and store them in the scanned array.
         private function crawlPage($page_url)
         {
+             $page_url = rtrim($page_url, "/") . '/';
 
             if (ENV_LOCAL) {
                 $page_url = str_replace('https://' . $_SERVER['SERVER_ADDR'], $this->site_url_base, $page_url);
