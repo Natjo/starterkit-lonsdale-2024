@@ -4,6 +4,6 @@
 
 		<div class="desc"><?= $args['description'] ?></div>
 
-		<?= component::picture($args['images']) ?>
+		<?= component::picture($args['images'],true) ?>
 	</a>
 </div>

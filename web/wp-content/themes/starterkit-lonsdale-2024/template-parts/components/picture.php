@@ -5,6 +5,7 @@ $breakpoint = $args['breakpoint'];
 $lazy = !empty($args["lazy"]) ? ' loading="lazy"' : "";
 $alt = !empty($imgDesktop["alt"]) ? ' alt="' . $imgDesktop["alt"] . '"' : 'alt=""';
 $classes = !empty($args["classes"]) ? ' class="' . $args["classes"] . '"' : "";
+$fetchpriority = empty($args["lazy"]) ? ' fetchpriority="high"' : '';
 
 $media = "";
 if (!empty($imgMobile)) {
@@ -13,7 +14,7 @@ if (!empty($imgMobile)) {
 }
 ?>
 
-<picture <?= $classes ?>>
+<picture <?= $classes ?> >
     <?php if ($imgMobile) : ?>
         <?php if (!empty($imgMobile["webp"])) : ?>
             <source width="<?= $imgMobile["width"] ?>" height="<?= $imgMobile["height"] ?>" srcset="<?= $imgMobile["webp"] ?>" <?= $media_mobile ?> type="image/webp">
@@ -29,6 +30,6 @@ if (!empty($imgMobile)) {
         <source width="<?= $imgDesktop["width"] ?>" height="<?= $imgDesktop["height"] ?>" srcset="<?= $imgDesktop["src"] ?>" <?= $media ?> type="image/jpg">
     <?php endif ?>
 
-    <img src="<?= $imgDesktop["src"] ?>" <?= $alt ?> width="<?= $imgDesktop["width"] ?>" height="<?= $imgDesktop["height"] ?>" <?= $lazy ?>>
+    <img <?= $fetchpriority ?> src="<?= $imgDesktop["src"] ?>" <?= $alt ?> width="<?= $imgDesktop["width"] ?>" height="<?= $imgDesktop["height"] ?>" <?= $lazy ?>>
 
 </picture>

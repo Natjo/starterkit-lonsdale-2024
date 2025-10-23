@@ -7,5 +7,5 @@
         <?= component::link($args['link'], "btn btn-1"); ?>
     </div>
 
-    <?php component::picture($args["images"], "", true); ?>
+    <?php component::picture($args["images"]); ?>
 </header>

@@ -37,6 +37,14 @@
 
     --layout-sidebar:
         [full] var(--ctr-offset) [fluid] 1fr [ctr] var(--col) var(--gap) [ctr-sm] var(--col) var(--gap) var(--col) [sidebar-left-end] var(--gap) var(--col) var(--gap) var(--col) [middle] var(--gap) var(--col) var(--gap) var(--col) var(--gap) var(--col) [ctr-sm-end] var(--gap) var(--col) [ctr-end] var(--gap) [sidebar] var(--col) var(--gap) var(--col) var(--gap) var(--col) [sidebar-end] 1fr [fluid-end] var(--ctr-offset) [full-end];
+
+    --easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --easeInOutQuart: cubic-bezier(0.76, 0, 0.24, 1);
+    --easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    --easeOutQuad: cubic-bezier(0.5, 1, 0.89, 1);
+    --easeInOutQuad: cubic-bezier(0.45, 0, 0.55, 1);
+    --easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+    --easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 

@@ -151,7 +151,7 @@ class Strate_Helper
         $options = Strate_Helper::strate_options($aStrate);
 
         $header = Strate_Helper::strate_header($aStrate);
-console($aStrate);
+
         $fields = [
             "full" => $aStrate["full"],
             "reverse" => $aStrate["reverse"],

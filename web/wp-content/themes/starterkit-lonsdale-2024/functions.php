@@ -4,8 +4,8 @@ define('THEME_ASSETS', get_template_directory_uri() . '/assets/');
 define('THEME_URL', get_template_directory_uri() . '/');
 define('HOME_URL', get_home_url());
 define('AJAX_URL', admin_url('admin-ajax.php'));
-
 define('VERSION', file_get_contents(get_template_directory() . "/assets/version.txt"));
+
 
 if (ENV_PROD) {
     define('GTAG_KEY', get_field('params_ga_code', 'option'));
@@ -193,3 +193,24 @@ function theme()
 }
 
 
+function styles()
+{
+    $version = ENV_PROD  && VERSION ? "?v=" . VERSION : "";
+    $version = "";
+    echo '<link rel="preload" href="' . THEME_ASSETS . "styles.css" . $version . '" as="style" type="text/css" crossorigin>';
+    echo '<link crossorigin rel="stylesheet" href="' . THEME_ASSETS . "styles.css" . $version . '" />';
+}
+
+
+function appjs()
+{
+    $version = ENV_PROD && VERSION ? "?v=" . VERSION : "";
+    $data_version = ENV_PROD && VERSION ?  VERSION : "";
+
+    echo '
+    <script async id="appjs"  type="module" src="' . THEME_ASSETS . "js/app.js" . $version . '"
+    data-ajax_url="' . AJAX_URL . '"
+    data-theme_url="' . THEME_URL . '"
+    data-gtag_key="' . GTAG_KEY . '"
+    data-version="' .  $data_version  . '"></script>';
+}

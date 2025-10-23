@@ -8,6 +8,7 @@ get_template_part('template-parts/common/header_nav', '');
 
 ?>
 
+<div id="wrapper">
 <main id="main" role="main" tabindex="-1" class="page-actualities">
     <?php get_template_part('template-parts/common/breadcrumb', ''); ?>
 
@@ -17,4 +18,5 @@ get_template_part('template-parts/common/header_nav', '');
 </main>
 
 <?php
-get_footer();
+get_footer();?>
+</div>

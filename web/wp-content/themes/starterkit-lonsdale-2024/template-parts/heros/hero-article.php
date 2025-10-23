@@ -7,5 +7,5 @@
         <?= component::date($args['date']); ?>
     </div>
 
-    <?php component::picture($args["images"], "", true); ?>
+    <?php component::picture($args["images"]); ?>
 </header>

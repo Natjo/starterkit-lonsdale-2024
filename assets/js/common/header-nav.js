@@ -1,7 +1,5 @@
-/* eslint-disable */
-import { ParamsData } from '../app';
-
 export default (header) => {
+
     const clicktouch = ('ontouchstart' in document.activeElement) ? 'touchstart' : 'click';
     const btn_nav = document.getElementById('btn-nav');
     const panel = document.getElementById('nav-panel');

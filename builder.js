@@ -19,7 +19,7 @@ const src = 'assets/';
 const dist = `web/wp-content/themes/${process.env.WP_THEME_NAME}/`;
 
 let date = new Date();
-//let version = `${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+
 let version = `${date.getMonth()}${date.getDay()}${date.getHours()}${date.getMinutes()}`;
 let hasError = false;
 const core = {
@@ -91,10 +91,13 @@ const core = {
     babel(result, dest) {
         //set version to import file
         //let res = isProd ? result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`) : result;
-
         //let res = result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`);
-        let res = result.replace(/(import[ {}'".\/a-z_,@-]+)(['"])/igm, `$1.js?v=${version}$2`);
-      
+
+        let res = "";
+        //si pas extension ->.js
+        result = result.replace(".js", '');
+        if (isProd) res = result.replace(/(import[ {}'".\/a-z_,@-]+)(['"])/igm, `$1.js?v=${version}$2`);
+        else res = result.replace(/(import[ {}'".\/a-z_,@-]+)(['"])/igm, `$1.js$2`);
         result = babel.transform(res, {
             minified: isProd ? true : false,
             comments: false,
@@ -105,16 +108,16 @@ const core = {
         fs.writeFileSync(dest, result);
     },
     postcss(str, func, name) {
-        postcss([cssnested,postcssExtendRule,
+        postcss([cssnested, postcssExtendRule,
             postcssGlobalData({
                 files: [`${src}css/styles/customMedias.css`]
             }),
             cssCustomMedia(),
             autoprefixer({ add: true })])
             .use(atImport({
-                path: ["assets/css"],
+                path: ["assets/css", "assets/js/modules"],
             }))
-            .process(str, {parser: parser, map: { inline: false, annotation: "styles.css.map" } })
+            .process(str, { parser: parser, map: { inline: false, annotation: "styles.css.map" } })
             .catch(error => {
                 console.log(`\x1b[90m${error}\x1b[39m\x1b[23m`);
                 console.log(error.reason, 'line:', error.line, 'col', error.column);
@@ -153,7 +156,9 @@ console.log(`${core.time()}s`);
 
 if (isProd) return
 
-watch(src, { recursive: true }, (evt, file) => {
+
+ watch(src, { recursive: true }, (evt, file) => {
+  
     if (/.DS_Store$/.test(file)) return
     core.initTime = new Date();
     const isFile = file.indexOf('.') > 0 ? true : false;

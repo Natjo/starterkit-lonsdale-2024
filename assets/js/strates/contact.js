@@ -1,11 +1,10 @@
 /* eslint-disable */
-import formValidate from '../modules/formValidate.js';
-import { ParamsData } from '../app.js';
+import formValidate from '../modules/formValidate';
 
 export default (el) => {
     const form = el.querySelector('form');
     const status_msg = el.querySelector('.msg');
-    const url = ParamsData.ajax_url;
+    const url = appjs.dataset.ajax_url;
 
     if (form) {
         new formValidate(form, () => {

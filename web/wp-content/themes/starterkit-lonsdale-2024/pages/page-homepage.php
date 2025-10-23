@@ -8,10 +8,11 @@ get_template_part('template-parts/common/header_nav');
 ?>
 
 <main id="main" role="main" class="page-homepage">
-    <?php hero::homepage();?>
 
-    <?php Strate_Helper::strates();?>
+    <?php hero::homepage(); ?>
+
+    <?php Strate_Helper::strates(); ?>
+
 </main>
 
-<?php
-get_footer();
+<?php get_footer(); ?>

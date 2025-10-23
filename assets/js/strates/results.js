@@ -1,6 +1,3 @@
-/* eslint-disable */
-import { ParamsData } from '../app.js';
-
 export default (el) => {
     const btn_more = el.querySelector(".btn-more");
     const list = el.querySelector(".list")
@@ -34,7 +31,7 @@ export default (el) => {
         formData.append('type', type);
 
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', ParamsData.ajax_url, true);
+        xhr.open('POST', appjs.dataset.ajax_url, true);
         xhr.onload = () => {
             const response = JSON.parse(xhr.response);
             const parser = new DOMParser();

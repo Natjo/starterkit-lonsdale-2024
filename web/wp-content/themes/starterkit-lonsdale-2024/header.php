@@ -6,10 +6,12 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
 
+
+
     <?= lsd_seo(); ?>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <link rel="icon" type="image/png" href="<?= THEME_ASSETS ?>favicon/favicon-96x96.png" sizes="96x96" />
@@ -27,7 +29,14 @@
 
     <?php wp_head(); ?>
 
-    <link rel='stylesheet' href='<?= THEME_ASSETS; ?>styles.css?v=<?= VERSION; ?>' />
+    <?php styles(); ?>
+
+    <link rel="preload" href="<?= THEME_ASSETS ?>fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="<?= THEME_ASSETS ?>fonts/aeonik-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="/wp-content/uploads/2022/08/desktop.jpg">
+    <link rel="preload" as="image" href="/wp-content/uploads/2022/09/desktop1-620x441.jpg">
+<!--     <link rel="preload" as="script" href="<?= THEME_ASSETS ?>js/app.js" crossorigin>
+    <link rel="preload" as="script" href="<?= THEME_ASSETS ?>js/modules/lenis.js" crossorigin> -->
 </head>
 
 <body <?php body_class(theme()); ?>>

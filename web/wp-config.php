@@ -19,8 +19,8 @@
  */
 
 
-define('ENV_LOCAL', ( false !== strrpos( $_SERVER[ 'HTTP_HOST' ], '.code' ) ) );
-define('ENV_PREPROD_LONSDALE', ( false !== strrpos( $_SERVER[ 'HTTP_HOST' ], '.preprod8.lonsdale.fr' ) ) );
+define('ENV_LOCAL', ( false !== strrpos( $_SERVER[ 'SERVER_NAME' ], '.code' ) ) );
+define('ENV_PREPROD_LONSDALE', ( false !== strrpos( $_SERVER[ 'SERVER_NAME' ], '.preprod8.lonsdale.fr' ) ) );
 define('ENV_PROD', ( !ENV_LOCAL && !ENV_PREPROD_LONSDALE ) );
 
 
