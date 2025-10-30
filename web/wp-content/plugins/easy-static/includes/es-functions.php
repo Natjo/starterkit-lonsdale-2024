@@ -16,14 +16,16 @@ function mfp_Add_My_Admin_Link()
         'dashicons-text-page',
     );
 }
-if($haschange && $isStatic){
+if($isStatic){
     add_action( 'admin_bar_menu', 'toolbar_link_to_mypage', 999 );
 }
 
 function toolbar_link_to_mypage( $wp_admin_bar ) {
+    global $haschange;
+    $msg = $haschange ? '<span class="error">⚠ Must regnerate !</span>' : 'A jour';
     $args = array(
         'id'    => 'easy_static',
-        'title' => 'Easy static : <b>⚠ Must regnerate!</b>',
+        'title' => 'Easy static : '. $msg,
         'href'  => 'admin.php?page=easy-static%2Fincludes%2Fes-index.php',
         'meta'  => array( 'class' => 'es-btn_error' )
     );

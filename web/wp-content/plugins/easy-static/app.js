@@ -22,25 +22,13 @@ btn_generate.onclick = () => {
     const xhr = new XMLHttpRequest();
 
     xhr.open("post", ajax_url, true);
-    //xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
     xhr.onload = () => {
         btn_generate.classList.remove('loading');
+
         document.getElementById('pages').classList.remove('disabled');
-        if (document.querySelector('.es-notice')) {
-            document.querySelector(".es-notice").remove();
-        }
-        if (document.querySelector('.es-notification')) {
-            document.querySelector('.es-notification').remove();
-        }
-        if (document.querySelector('.es-btn_error')) {
-            document.querySelector('.es-btn_error').remove();
-        }
 
-        const response = JSON.parse(xhr.responseText);
-        // pages_result.innerHTML = response.markup;
-
-        // window.location.reload();
+        window.location.reload();
     }
 }
 

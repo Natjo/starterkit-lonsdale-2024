@@ -1,10 +1,18 @@
-
 #wpadminbar {
     .es-btn_error {
-        .ab-item b{
-            font-weight: 800;
-            color: #d63638!important;
+        --color: #2271b1;
+
+        .ab-item:has(.error) {
+            --color: #d63638;
         }
 
+        .ab-item {
+            background: var(--color);
+
+            &:hover {
+                background: rgb(FROM var(--color) r g b / 80%) !important;
+                color: #fff !important;
+            }
+        }
     }
 }

@@ -1,1 +1,30 @@
-import Lenis from"./modules/lenis.js?v=941741";history.scrollRestoration="manual";const version=appjs.dataset.version?`js?v=${appjs.dataset.version}`:"js";const modules=document.querySelectorAll("[data-module]");const observer=new IntersectionObserver(items=>items.forEach(e=>{if(e.isIntersecting){import(`./${e.target.dataset.module}.${version}`).then(mod=>mod.default(e.target));observer.unobserve(e.target)}}));modules.forEach(module=>observer.observe(module));const strates=document.querySelectorAll(".strate,.hero");const observerEls=new IntersectionObserver(items=>items.forEach(e=>{e.target.classList[e.isIntersecting?"add":"remove"]("viewport")}));strates.forEach(el=>observerEls.observe(el));const easeOutQuint=x=>1-Math.pow(1-x,5);const easeOutQuart=x=>1-Math.pow(1-x,4);const easeOutQuad=x=>1-(1-x)*(1-x);const easeOutExpo=x=>x===1?1:1-Math.pow(2,-10*x);const lenis=new Lenis({lerp:0.1,duration:1.5,smoothWheel:true});function raf(time){lenis.raf(time);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+import Lenis from './modules/lenis.js';
+history.scrollRestoration = 'manual';
+const version = appjs.dataset.version ? `js?v=${appjs.dataset.version}` : "js";
+const modules = document.querySelectorAll('[data-module]');
+const observer = new IntersectionObserver(items => items.forEach(e => {
+  if (e.isIntersecting) {
+    import(`./${e.target.dataset.module}.${version}`).then(mod => mod.default(e.target));
+    observer.unobserve(e.target);
+  }
+}));
+modules.forEach(module => observer.observe(module));
+const strates = document.querySelectorAll(".strate,.hero");
+const observerEls = new IntersectionObserver(items => items.forEach(e => {
+  e.target.classList[e.isIntersecting ? "add" : "remove"]("viewport");
+}));
+strates.forEach(el => observerEls.observe(el));
+const easeOutQuint = x => 1 - Math.pow(1 - x, 5);
+const easeOutQuart = x => 1 - Math.pow(1 - x, 4);
+const easeOutQuad = x => 1 - (1 - x) * (1 - x);
+const easeOutExpo = x => x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+const lenis = new Lenis({
+  lerp: 0.1,
+  duration: 1.5,
+  smoothWheel: true
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
