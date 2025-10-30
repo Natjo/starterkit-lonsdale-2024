@@ -30,6 +30,9 @@ export default (el) => {
         formData.append('query', el.dataset.query);
         formData.append('type', type);
 
+        console.log(el.dataset.nonce,paged,el.dataset.query,type);
+
+
         const xhr = new XMLHttpRequest();
         xhr.open('POST', appjs.dataset.ajax_url, true);
         xhr.onload = () => {

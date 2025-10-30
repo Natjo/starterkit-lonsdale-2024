@@ -38,11 +38,28 @@
             <h2>Options</h2>
         </header>
 
-        <?php
-
-        ?>
         <ul>
             <li><input id="es-option-minify" type="checkbox" <?= $isminify === true ? "checked" : "" ?>><label>Compresser les pages générées</label></li>
         </ul>
+    </section>
+    <br>
+
+    <section style="border: 1px dashed rgba(0,0,0,.4); padding: 10px 20px;">
+        <ul>
+            <li>- Les <b>posts/page</b> sont regenerés automatiquement à la publication</li>
+            <li>- La modification d'un <b>menu</b> regénère toutes les pages</li>
+            <li>- La modification d'un <b>paramètre</b>regénère toutes les pages</li>
+        </ul>
+        <br>
+        <p>
+            Pour toutes modfications autres, il faudra re générer toute les pages :
+        </p>
+
+        <ul>
+            <li>Regenerer les miniatures</li>
+            <li>Mise à jour Worpress</li>
+            <li>Changement des fichiers php</li>
+        </ul>
+
     </section>
 </section>

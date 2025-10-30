@@ -51,12 +51,12 @@ if (strpos($index, '/* easy-static */') !== false) {
     <p>Génération statique des pages.</p>
 
     <?php if (!empty($haschange) && !empty($isStatic)) : ?>
-        <div class="es-notice notice-warning">
+       <!--  <div class="es-notice notice-warning">
             <ul>
                 <li><b>Des modifications nécessitent de regenerer le site.</b></li>
 
             </ul>
-        </div>
+        </div> -->
     <?php endif; ?>
 
 

@@ -25,14 +25,10 @@ btn_generate.onclick = () => {
     xhr.send(data);
     xhr.onload = () => {
         btn_generate.classList.remove('loading');
-
         document.getElementById('pages').classList.remove('disabled');
-
         window.location.reload();
     }
 }
-
-
 
 // Switch mode 
 if (toogle_status.checked) {
@@ -63,8 +59,6 @@ toogle_status.onchange = () => {
     }
 }
 
-
-
 // tabs
 const tab_links = document.querySelectorAll('.nav-tab-wrapper .nav-tab');
 const tab_content = document.querySelectorAll('.tab-content');
@@ -93,13 +87,12 @@ tab_links.forEach(link => {
 /*
 export
  */
-
 const relative = document.getElementById('es-relative');
 
 relative.addEventListener('keypress', (e) => {
-    //if (e.which === 47)  e.preventDefault();
     if (e.which === 13) e.preventDefault();
 });
+
 relative.onblur = () => {
     let value = relative.innerText;
 
@@ -128,8 +121,6 @@ relative.onblur = () => {
         document.querySelector('.es-action').classList.remove('disabled');
     }
 }
-
-
 
 // generate pages
 const btn_download_pages = document.getElementById('es-download-pages');

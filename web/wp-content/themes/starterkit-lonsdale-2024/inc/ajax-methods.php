@@ -16,9 +16,12 @@ add_action('wp_ajax_results', 'results_callback');
 add_action('wp_ajax_nopriv_results', 'results_callback');
 function results_callback()
 {
-    checkNonce('results_nonce');
+    global $isStatic;
 
-
+    if (!$isStatic) {
+        checkNonce('results_nonce');
+    }
+    
     ob_start();
     $args = [
         "paged" => $_POST["paged"],
@@ -30,7 +33,6 @@ function results_callback()
 
     $response['content'] = ob_get_clean();
 
-    $response['msg'] = "Message envoyé  vec succès";
 
     $response['msg'] = "Message envoyé  avec succès";
 

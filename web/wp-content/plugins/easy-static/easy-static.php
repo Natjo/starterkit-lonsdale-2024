@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy static
 Description: Generate static site
-Version: 1.4.5
+Version: 1.5.0
 Author: Martin Jonathan
 */
 
@@ -104,22 +104,21 @@ require_once plugin_dir_path(__FILE__) . 'includes/es-functions.php';
 
 require_once plugin_dir_path(__FILE__) . 'includes/es-admin-ajax.php';
 
+
 // set haschange to true if page/post is edited
 add_action('save_post', 'wpdocs_notify_subscribers', 10, 3);
 function wpdocs_notify_subscribers($post_id, $post, $update)
 {
-    global $easy_static_active;
     global $is_es_active;
-    //print_r($post);
-    //echo $post->post_name;
 
     if ($is_es_active) {
-        // if ($easy_static_active[0]->value) {
-       // if ($post->post_type == "page" || $post->post_type == "post") {
-            if ($post->static_active) {
-                hasChanged();
-            }
-       // }
+
+        // if ($post->post_type == "page" || $post->post_type == "post") {
+        if ($post->static_active) {
+            hasChanged();
+            generate_post($post);
+        }
+        // }
     }
 }
 
@@ -127,10 +126,15 @@ function wpdocs_notify_subscribers($post_id, $post, $update)
 add_action('check_admin_referer', 'check_nav_menu_updates', 11, 1);
 function check_nav_menu_updates($action)
 {
+    //réglages
+    //menu
+
+    print_r("eerer");
     if (('update-nav_menu' != $action) or !isset($_POST['menu-locations'])) {
         return;
     }
     hasChanged();
+    generate_all();
 }
 
 // set haschange to true if change in parameters
@@ -141,6 +145,7 @@ function clear_advert_main_transient($post_id)
     if ($easy_static_active[0]->value) {
         if ($screen->base === "toplevel_page_acf-options-parametres") {
             hasChanged();
+            generate_all();
         }
     }
 }
