@@ -2,7 +2,7 @@
 /*
 Plugin Name: Smart Compress
 Description: Generate webp on upload or on the fly
-Version: 1.0.6
+Version: 1.0.8
 Author: Martin Jonathan
 */
 
@@ -35,17 +35,23 @@ function sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight,
     global $sc_blur;
     global $sc_quality;
 
+    if ($sc_quality == 1) { //best
+        $sc_compression = 80;
+        $sc_blur = 0.98;
+        $sc_radius = 1;
+        $sc_sigma = .6;
+    }
     if ($sc_quality == 0) { //optimal
         $sc_compression = 70;
         $sc_blur = 1;
         $sc_radius = .8;
         $sc_sigma = .6;
     }
-    if ($sc_quality == 1) { //best
-        $sc_compression = 80;
-        $sc_blur = 0.98;
-        $sc_radius = 1;
-        $sc_sigma = .6;
+    if ($sc_quality == 2) { //green
+        $sc_compression = 50;
+        $sc_blur = 1;
+        $sc_radius = 0;
+        $sc_sigma = 0;
     }
 
     $image = new Imagick($originalFilepath);

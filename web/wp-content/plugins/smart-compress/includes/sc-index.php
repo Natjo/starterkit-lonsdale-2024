@@ -18,18 +18,19 @@ $nonce = wp_create_nonce('sm_nonce');
                 <div class="sc-choices">
                     <input id="sc-quality-1" type="radio" name="sc-quality" value="1" <?= $sc_quality == 1 ? "checked" : "" ?>><label for="sc-quality-1"><span>Best</span></label>
                     <input id="sc-quality-0" type="radio" name="sc-quality" value="0" <?= $sc_quality == 0 ? "checked" : "" ?>><label for="sc-quality-0"><span>Optimal</span></label>
+                    <input id="sc-quality-2" type="radio" name="sc-quality" value="2" <?= $sc_quality == 2 ? "checked" : "" ?>><label for="sc-quality-2"><span>Green</span></label>
                 </div>
 
             </section>
 
-            <section>
+          <!--   <section>
                 <h2>Type de génération <button class="sc-btn-tips" value="type">?</button></h2>
 
                 <div class="sc-choices">
                     <input id="sc-upload" type="radio" name="sc-type" value="0" <?= $sc_type == 0 ? "checked" : "" ?>><label for="sc-upload"><span>On upload</span></label>
                     <input id="sc-onfly" type="radio" name="sc-type" value="1" <?= $sc_type == 1 ? "checked" : "" ?>><label for="sc-onfly"><span>On the fly</span></label>
                 </div>
-            </section>
+            </section> -->
 
             <section>
                 <h2>Generate Uploads <button class="sc-btn-tips" value="uploads">?</button></h2>
