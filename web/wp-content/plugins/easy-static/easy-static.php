@@ -129,7 +129,6 @@ function check_nav_menu_updates($action)
     //réglages
     //menu
 
-    print_r("eerer");
     if (('update-nav_menu' != $action) or !isset($_POST['menu-locations'])) {
         return;
     }
