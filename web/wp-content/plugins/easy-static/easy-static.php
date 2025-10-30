@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy static
 Description: Generate static site
-Version: 1.5.0
+Version: 1.5.1
 Author: Martin Jonathan
 */
 
@@ -112,28 +112,26 @@ function wpdocs_notify_subscribers($post_id, $post, $update)
     global $is_es_active;
 
     if ($is_es_active) {
-
-        // if ($post->post_type == "page" || $post->post_type == "post") {
         if ($post->static_active) {
-            hasChanged();
+           // hasChanged();
             generate_post($post);
         }
-        // }
     }
 }
 
-
+//réglages,menu
 add_action('check_admin_referer', 'check_nav_menu_updates', 11, 1);
 function check_nav_menu_updates($action)
 {
-    //réglages
-    //menu
+    global $is_es_active;
 
     if (('update-nav_menu' != $action) or !isset($_POST['menu-locations'])) {
         return;
     }
-    hasChanged();
-    generate_all();
+    if ($is_es_active) {
+      //  hasChanged();
+        generate_all();
+    }
 }
 
 // set haschange to true if change in parameters
@@ -143,7 +141,7 @@ function clear_advert_main_transient($post_id)
     $screen = get_current_screen();
     if ($easy_static_active[0]->value) {
         if ($screen->base === "toplevel_page_acf-options-parametres") {
-            hasChanged();
+          //  hasChanged();
             generate_all();
         }
     }

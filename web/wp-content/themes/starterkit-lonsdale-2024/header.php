@@ -6,8 +6,6 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
 
-
-
     <?= lsd_seo(); ?>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,9 +31,11 @@
 
     <link rel="preload" href="<?= THEME_ASSETS ?>fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="<?= THEME_ASSETS ?>fonts/aeonik-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" as="image" href="/wp-content/uploads/2022/08/desktop.jpg">
-    <link rel="preload" as="image" href="/wp-content/uploads/2022/09/desktop1-620x441.jpg">
-<!--     <link rel="preload" as="script" href="<?= THEME_ASSETS ?>js/app.js" crossorigin>
+    
+    <!-- <link rel="preload" as="image" href="/wp-content/uploads/2022/08/desktop.webp">
+    <link rel="preload" as="image" href="/wp-content/uploads/2022/09/desktop1-620x441.webp"> -->
+
+    <!--<link rel="preload" as="script" href="<?= THEME_ASSETS ?>js/app.js" crossorigin>
     <link rel="preload" as="script" href="<?= THEME_ASSETS ?>js/modules/lenis.js" crossorigin> -->
 </head>
 

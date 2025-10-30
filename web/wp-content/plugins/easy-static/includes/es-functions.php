@@ -605,6 +605,8 @@ function generate_post($post)
     global $authentification;
     global $table;
 
+    if($post->post_type == "revision") return;
+    
     $permalink = get_permalink($post->ID);
 
     $arrContextOptions = array(
