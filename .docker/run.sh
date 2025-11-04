@@ -21,7 +21,7 @@ echo -e ${RED}"Delete all docker containers${NC}"
 # docker container rm $(docker container ls -aq)
 
 echo -e ${GREEN}"Build project docker container${NC}"
-docker-compose up
+docker compose up
 
 echo -e ${GREEN}"Website up and running:${NC}"
 echo -e ${GREEN}"${WP_HOME}${NC}"

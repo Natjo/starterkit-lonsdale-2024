@@ -195,8 +195,8 @@ function theme()
 
 function styles()
 {
-    $version = ENV_PROD  && VERSION ? "?v=" . VERSION : "";
-    $version = "";
+    $version = ENV_PROD && VERSION ? "?v=" . VERSION : "";
+
     echo '<link rel="preload" href="' . THEME_ASSETS . "styles.css" . $version . '" as="style" type="text/css" crossorigin>';
     echo '<link crossorigin rel="stylesheet" href="' . THEME_ASSETS . "styles.css" . $version . '" />';
 }

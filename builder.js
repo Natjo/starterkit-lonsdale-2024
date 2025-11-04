@@ -89,20 +89,13 @@ const core = {
     },
     time: () => time = (new Date() - core.initTime) / 1000,
     babel(result, dest) {
-        //set version to import file
-        //let res = isProd ? result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`) : result;
-        //let res = result.replace(/(import[ {}'".\/a-z_,]+)(.js)/igm, `$1.js?v=${version}`);
-
         let res = "";
-        //si pas extension ->.js
         result = result.replace(".js", '');
         if (isProd) res = result.replace(/(import[ {}'".\/a-z_,@-]+)(['"])/igm, `$1.js?v=${version}$2`);
         else res = result.replace(/(import[ {}'".\/a-z_,@-]+)(['"])/igm, `$1.js$2`);
         result = babel.transform(res, {
             minified: isProd ? true : false,
             comments: false,
-            //compact: true,
-            //presets: isProd ? [["minify", { "builtIns": 'entry' }]] : []
         }).code;
         fs.ensureDirSync(path.dirname(dest));
         fs.writeFileSync(dest, result);
@@ -157,8 +150,8 @@ console.log(`${core.time()}s`);
 if (isProd) return
 
 
- watch(src, { recursive: true }, (evt, file) => {
-  
+watch(src, { recursive: true }, (evt, file) => {
+
     if (/.DS_Store$/.test(file)) return
     core.initTime = new Date();
     const isFile = file.indexOf('.') > 0 ? true : false;

@@ -101,3 +101,6 @@ function lsd_get_featured($id, $size = 'medium')
         return $imgUrl;
     }
 }
+
+
+

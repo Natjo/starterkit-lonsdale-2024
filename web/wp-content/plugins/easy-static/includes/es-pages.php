@@ -44,22 +44,24 @@
     </section>
     <br>
 
-    <section style="border: 1px dashed rgba(0,0,0,.4); padding: 10px 20px;">
+    <section>
         <ul>
             <li>- Les <b>posts/page</b> sont regenerés automatiquement à la publication</li>
             <li>- La modification d'un <b>menu</b> regénère toutes les pages</li>
             <li>- La modification d'un <b>paramètre</b>regénère toutes les pages</li>
         </ul>
         <br>
-        <p>
-            Pour toutes modfications autres, il faudra re générer toute les pages :
-        </p>
+        <div style="background: rgba(255, 208, 0, 0.12);;border: 1px solid rgba(255, 208, 0, 1); padding: 5px 20px;">
+            <p style="font-weight: 800;margin-bottom:0;">
+                Pour toutes modfications autres, il faudra re générer toute les pages :
+            </p>
 
-        <ul>
-            <li>Regenerer les miniatures</li>
-            <li>Mise à jour Worpress</li>
-            <li>Changement des fichiers php</li>
-        </ul>
+            <ul>
+                <li>- Regenerer les miniatures</li>
+                <li>- Mise à jour Worpress</li>
+                <li>- Changement des fichiers php</li>
+            </ul>
+        </div>
 
     </section>
 </section>

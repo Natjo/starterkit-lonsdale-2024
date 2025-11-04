@@ -97,6 +97,9 @@ function test_callback()
             mkdir(WP_CONTENT_DIR . '/easy-static/static/', 0755, true);
 
             $this->crawlPage($this->site_url_base . "/");
+
+            $htaccess = file_get_contents(WP_CONTENT_DIR . "/plugins/easy-static/includes/es-htaccess.php");
+            file_put_contents(WP_CONTENT_DIR . "/easy-static/static/.htaccess", $htaccess);
         }
 
         private function getHtml($url, $page_url)
@@ -342,6 +345,9 @@ function static_export_pages_callback()
             $appcss_file = str_replace("/wp-content/themes/" . $this->theme_slug . "/assets/", "/" . $this->dist_folder . "assets/", $appcss_file);
             file_put_contents(WP_CONTENT_DIR . "/easy-static/export/assets/css/app.css", $appcss_file);
 
+            $htaccess = file_get_contents(WP_CONTENT_DIR . "/plugins/easy-static/includes/es-htaccess.php");
+            file_put_contents(WP_CONTENT_DIR . "/easy-static/export/.htaccess", $htaccess);
+
             // uploads
             copyfolder(WP_CONTENT_DIR . '/uploads/', WP_CONTENT_DIR . "/easy-static/export/uploads/");
         }
@@ -398,7 +404,7 @@ function static_export_pages_callback()
         // Recursive function that crawls a page's anchor tags and store them in the scanned array.
         private function crawlPage($page_url)
         {
-             $page_url = rtrim($page_url, "/") . '/';
+            $page_url = rtrim($page_url, "/") . '/';
 
             if (ENV_LOCAL) {
                 $page_url = str_replace('https://' . $_SERVER['SERVER_ADDR'], $this->site_url_base, $page_url);

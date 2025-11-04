@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy static
 Description: Generate static site
-Version: 1.5.1
+Version: 1.5.2
 Author: Martin Jonathan
 */
 

@@ -54,7 +54,6 @@ services:
     entrypoint: /bin/bash -c 'cat /tmp/default.template | sed "s/\\\$$domain/${DOMAIN}/g" > /etc/nginx/conf.d/default.conf && nginx -g "daemon off;"'
 
   nodejs:
-    image: node:18
     container_name: ${APP_NAME}-node
     build:
       context: .

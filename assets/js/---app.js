@@ -3,7 +3,6 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-
  import(`./modules/lenis.js`).then(mod => {
         const lenis = new mod.default({
             lerp: .06
