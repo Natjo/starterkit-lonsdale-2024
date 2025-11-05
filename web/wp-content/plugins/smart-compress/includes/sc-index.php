@@ -74,10 +74,7 @@ $nonce = wp_create_nonce('sm_nonce');
                     - <b>Blur</b> détermine si le rendu doit être plus net ou plus flou au resize.<br>
                     - <b>Radius</b> et <b>Sigma</b> qui ajoute via l'effet <b>sharpenImage</b> la possibilité de rendre l'image plus net<br>
                 </p>
-
-                <p>
-                    Il y a 2 préselection faites avec les réglages fait pour différents utilisation ou type de site:
-                </p>
+                <br>
 
                 <h3>best</h3>
                 <p>
@@ -94,6 +91,14 @@ $nonce = wp_create_nonce('sm_nonce');
                     radius = .8<br>
                     sigma = .6
                 </p>
+
+            <h3>Green</h3>
+                <p>
+                    compression = 50% <br>
+                    blur = 1<br>
+                    radius = 0<br>
+                    sigma = 0
+                </p>
             </div>
 
             <div class="sc-tips-panel" data-page="type">
@@ -106,12 +111,15 @@ $nonce = wp_create_nonce('sm_nonce');
                 <p>Génère les webp à la volée. Les images ne seront pas générées à l'upload</p>
             </div>
 
+
             <div class="sc-tips-panel" data-page="uploads">
                 <h2>Génération des webps dans le dosssier uploads</h2>
                 <p>
-                    Création des image auformats webp de toutes les images à du dossier uploads
+                    Création des images du dossier uploads au format webp en fonction des années.
                 </p>
+      
             </div>
+
 
 
             <div class="sc-tips-panel" data-page="developper">
@@ -120,7 +128,7 @@ $nonce = wp_create_nonce('sm_nonce');
 
 
                 <p>
-                    Ce <b>plugins</b> va créer une image au format webp aux mêmes tailles définies avec <code>add_image_size</code>.<br>
+                    Le <b>plugins</b> va créer une image au format webp aux mêmes tailles définies avec <code>add_image_size</code>.<br>
                 </p>
 
                 <p>
@@ -135,12 +143,12 @@ $nonce = wp_create_nonce('sm_nonce');
                 </p>
 
                 <p>
-                    Pour la gnération <b>On l'upload</b>, on générera les images webp via le hook <code>wp_generate_attachment_metadata</code>, à chaque upload dans médias ou dans les fields ...<br>
-                    Et avec le hook <code>wp_delete_file</code> appelé à chaque effacement, on effacera les webp correspondant
+                   On générera les images webp via le hook <code>wp_generate_attachment_metadata</code>, à chaque upload dans médias ou dans les fields ...<br>
+                Et avec le hook <code>wp_delete_file</code> appelé à chaque effacement, on effacera les webp correspondant
 
                 </p>
 
-                <p>
+<!--                 <p>
                     Pour la génération <b>On the fly</b>, on ne génerera que les images qu'on affiche si elle ne l'ont pas déjà etées.<br>
                     L'avantage est que n'aura que les images au tailles voulues.<br>
                     Pour ce mode il faudra ajouter le script suivant qui test si le webp n'existe pas pour le générer au moment de la création de l'image dans le code:<br>
@@ -148,10 +156,10 @@ $nonce = wp_create_nonce('sm_nonce');
 if (function_exists('sm_onthefly')) {
     sm_onthefly($id, $size_name);
 }
-</pre>
+</pre> -->
                 </p>
 <br>
-                <hr>
+              <!--   <hr>
 
                 <div>
                     <h3>Génération et affichage des webps dans les wysiwyg</h3>
@@ -162,7 +170,7 @@ if (function_exists('sm_onthefly')) {
                     </code>
 
                 </div>
-                <br>
+                <br> -->
        <hr>
                 <div>
                     <h3>Purger les images webp du dossier upload</h3>
@@ -173,17 +181,12 @@ if (function_exists('sm_onthefly')) {
                     <h3>Génération des webps dans les assets</h3>
 
                     <p>
-                        Va générer les images au format webp dans le dossier assets à la racine du thème.
+                        Génére les images au format webp dans le dossier assets (<small>/assets/img/</small>) à la racine du thème.
                     </p>
                     <p>
                         Attention il faudra faire une regénération si il y a modification d'image dans le dossier assets source, car le plugin n'est pas synchronisé avec le builder.
                     </p>
                     <button class="sc-btn btn-assets">Generate</button>
-                </div>
-
-                <div>
-                    <h3>Emplacement des images des assets:</h3>
-                    <small>/assets/img/</small>
                 </div>
             </div>
         </div>

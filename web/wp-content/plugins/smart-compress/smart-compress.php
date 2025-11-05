@@ -2,7 +2,7 @@
 /*
 Plugin Name: Smart Compress
 Description: Generate webp on upload or on the fly
-Version: 1.0.8
+Version: 1.1.0
 Author: Martin Jonathan
 */
 

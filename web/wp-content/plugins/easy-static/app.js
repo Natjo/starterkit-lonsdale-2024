@@ -151,31 +151,27 @@ function zip() {
         link_download_uploads.dowload = "export";
         link_download_uploads.style.display = "inline";
         btn_download_pages.classList.remove('loading');
+        btn_download_pages.style.display = "none"
     }
 }
 
 const link_download_uploads = document.getElementById('es-download-uploads');
 link_download_uploads.addEventListener('click', () => {
     setTimeout(() => {
-        link_download_uploads.style.display = "none";
+        link_download_uploads.style.display = "none"; 
+        btn_download_pages.style.display = "block";
+        const data = new FormData();
+        data.append('action', "static_export_download_remove");
+        data.append('nonce', nonce);
+        const xhr = new XMLHttpRequest();
+        xhr.open("post", ajax_url, true);
+        xhr.send(data);
+        xhr.onload = () => { 
+           
+        }
     }, 300);
 });
 
-
-// remove zip
-const btn_zip_remove = document.getElementById('es-zip-remove');
-btn_zip_remove.onclick = () => {
-    btn_zip_remove.classList.add('loading');
-    const data = new FormData();
-    data.append('action', "static_export_download_remove");
-    data.append('nonce', nonce);
-    const xhr = new XMLHttpRequest();
-    xhr.open("post", ajax_url, true);
-    xhr.send(data);
-    xhr.onload = () => {
-        btn_zip_remove.classList.remove('loading');
-    }
-}
 
 
 // Authentification

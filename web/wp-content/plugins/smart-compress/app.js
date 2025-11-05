@@ -136,7 +136,7 @@ function Dialog() {
         const data = new FormData(document.querySelector(".sc-generate"));
         data.append('action', action);
         data.append('nonce', nonce);
-    
+
         const xhr = new XMLHttpRequest();
         xhr.open("post", ajax_url, true);
 
@@ -154,9 +154,12 @@ function Dialog() {
     }
 
     this.end = () => {
-        btn_pause.classList.add('hide');
-        btn_cancel.classList.add('hide');
-        btn_close.classList.remove('hide');
+        setTimeout(() => {
+            btn_pause.classList.add('hide');
+            btn_cancel.classList.add('hide');
+            btn_close.classList.remove('hide');
+            dialog.classList.remove('open');
+        }, 2000)
     }
 }
 

@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy static
 Description: Generate static site
-Version: 1.5.2
+Version: 1.5.4
 Author: Martin Jonathan
 */
 
@@ -112,27 +112,58 @@ function wpdocs_notify_subscribers($post_id, $post, $update)
     global $is_es_active;
 
     if ($is_es_active) {
+        $args = array(
+            'public'   => true,
+            '_builtin' => false
+        );
+
+        $post_types = ["post", "page"];
+
+        foreach (get_post_types($args, 'names', 'and')  as $post_type) {
+            array_push($post_types, $post_type);
+        }
+
         if ($post->static_active) {
-           // hasChanged();
-            generate_post($post);
+            if (in_array($post->post_type, $post_types)) {
+                generate_post($post);
+            }
         }
     }
 }
 
-//réglages,menu
-add_action('check_admin_referer', 'check_nav_menu_updates', 11, 1);
+//réglages
+add_action('check_admin_referer', 'check_nav_menu_updates', 11, 3);
 function check_nav_menu_updates($action)
 {
     global $is_es_active;
 
-    if (('update-nav_menu' != $action) or !isset($_POST['menu-locations'])) {
-        return;
-    }
+    $arr = ["general-options", "writing-options", "reading-options", "update-permalink"];
+
     if ($is_es_active) {
-      //  hasChanged();
-        generate_all();
+        if (in_array($action, $arr)) {
+            generate_all();
+        }
     }
 }
+
+// menu
+// wp_update_nav_menu() fired twice, so wee need to once
+global $once;
+$once = 0;
+function wpdocs_update_menu_stuff_after_update($menu_id, $menu_data = array())
+{
+    global $once;
+    $once++;
+
+    global $is_es_active;
+    if ($once == 2) {
+        if ($is_es_active) {
+            generate_all();
+        }
+        $once = 0;
+    }
+}
+add_action('wp_update_nav_menu', 'wpdocs_update_menu_stuff_after_update', 10, 1);
 
 // set haschange to true if change in parameters
 function clear_advert_main_transient($post_id)
@@ -141,7 +172,7 @@ function clear_advert_main_transient($post_id)
     $screen = get_current_screen();
     if ($easy_static_active[0]->value) {
         if ($screen->base === "toplevel_page_acf-options-parametres") {
-          //  hasChanged();
+            //  hasChanged();
             generate_all();
         }
     }
