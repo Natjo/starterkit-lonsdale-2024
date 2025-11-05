@@ -222,3 +222,6 @@ add_filter('wp_speculation_rules_configuration', '__return_null');
 
 // Remove inline css
 remove_action('wp_head', 'wp_print_auto_sizes_contain_css_fix', 1);
+
+
+add_filter('show_admin_bar', '__return_false');

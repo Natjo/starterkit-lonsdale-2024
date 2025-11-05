@@ -24,7 +24,7 @@ function theme_setup()
         'sitemap' => 'Sitemap'
     ));
 
-    show_admin_bar(false);
+   // show_admin_bar(false);
 
     add_image_size('415_300', 415, 300, array('center', 'center'));
 
