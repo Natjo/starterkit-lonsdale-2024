@@ -26,7 +26,7 @@ btn_generate.onclick = () => {
     xhr.onload = () => {
         btn_generate.classList.remove('loading');
         document.getElementById('pages').classList.remove('disabled');
-        window.location.reload();
+       // window.location.reload();
     }
 }
 
@@ -66,6 +66,8 @@ const tab_content = document.querySelectorAll('.tab-content');
 tab_content.forEach((tab, i) => {
     tab.style.display = tab.id === 'pages' ? 'block' : 'none'
 })
+
+
 
 tab_links.forEach(link => {
     link.onclick = e => {
@@ -160,6 +162,7 @@ link_download_uploads.addEventListener('click', () => {
     setTimeout(() => {
         link_download_uploads.style.display = "none"; 
         btn_download_pages.style.display = "block";
+        
         const data = new FormData();
         data.append('action', "static_export_download_remove");
         data.append('nonce', nonce);
@@ -169,9 +172,9 @@ link_download_uploads.addEventListener('click', () => {
         xhr.onload = () => { 
            
         }
+
     }, 300);
 });
-
 
 
 // Authentification

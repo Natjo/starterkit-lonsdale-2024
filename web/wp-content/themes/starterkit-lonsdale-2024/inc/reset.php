@@ -59,7 +59,11 @@ function smartwp_remove_wp_block_library_css()
     wp_dequeue_style('wc-block-style'); // Remove WooCommerce block CSS
 }
 add_action('wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100);
-
+add_action('wp_enqueue_scripts', 'mywptheme_child_deregister_styles', 20);
+function mywptheme_child_deregister_styles()
+{
+    wp_dequeue_style('classic-theme-styles');
+}
 
 // no image compression
 add_filter('jpeg_quality', function ($arg) {
@@ -117,7 +121,8 @@ function init_remove_support()
 }
 
 
-
+remove_action('wp_head', 'feed_links', 2);
+remove_action('wp_head', 'feed_links_extra', 3);
 
 // remove oembed
 function disable_embeds_code_init()
@@ -145,7 +150,6 @@ function disable_embeds_code_init()
     // Remove filter of the oEmbed result before any HTTP requests are made.
     remove_filter('pre_oembed_result', 'wp_filter_pre_oembed_result', 10);
 }
-
 add_action('init', 'disable_embeds_code_init', 9999);
 
 function disable_embeds_tiny_mce_plugin($plugins)

@@ -6,8 +6,8 @@
             --color: #d63638;
         }
 
-        .ab-item {
-            background: var(--color);
+        .ab-item ,.ab-item:focus{
+            background: var(--color)!important;
 
             &:hover {
                 background: rgb(FROM var(--color) r g b / 80%) !important;

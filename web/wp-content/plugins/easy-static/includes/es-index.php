@@ -1,6 +1,6 @@
 <?php
 global $wpdb;
-global $table_prefix;
+//global $table_prefix;
 global $table;
 $nonce = wp_create_nonce('test_nonce');
 
@@ -47,11 +47,14 @@ if (strpos($index, '/* easy-static */') !== false) {
 
 <link rel='stylesheet' id='wp-block-library-css' href="<?= wp_guess_url() ?>/wp-content/plugins/easy-static/styles.css" media='all' />
 <div class="wrap" id="es-main" data-static="<?= $isStatic ? true : false; ?>" data-nonce="<?= $nonce ?>" data-ajaxurl="<?= AJAX_URL ?>">
-    <h1>Easy Static</h1>
-    <p>Génération statique des pages.</p>
+    <div class="es-header">
+        <h1>Easy Static</h1>
+        <p>Génération statique du site</p>
+
+    </div>
 
     <?php if (!empty($haschange) && !empty($isStatic)) : ?>
-       <!--  <div class="es-notice notice-warning">
+        <!--  <div class="es-notice notice-warning">
             <ul>
                 <li><b>Des modifications nécessitent de regenerer le site.</b></li>
 

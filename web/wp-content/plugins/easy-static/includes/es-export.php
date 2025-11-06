@@ -13,7 +13,6 @@ $nonce = wp_create_nonce('test_nonce');
     <section>
         <header>
             <h2>Exporter le site statique</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, repellat.</p>
         </header>
 
         <div style="display: flex">

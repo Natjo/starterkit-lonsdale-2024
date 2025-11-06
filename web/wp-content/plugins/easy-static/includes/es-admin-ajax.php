@@ -93,18 +93,21 @@ function test_callback()
 
         public function GenerateSitemap()
         {
+       
             rm_rf(WP_CONTENT_DIR . '/easy-static/static/');
             mkdir(WP_CONTENT_DIR . '/easy-static/static/', 0755, true);
 
             $this->crawlPage($this->site_url_base . "/");
-
+   
             $htaccess = file_get_contents(WP_CONTENT_DIR . "/plugins/easy-static/includes/es-htaccess.php");
             file_put_contents(WP_CONTENT_DIR . "/easy-static/static/.htaccess", $htaccess);
+
+             
         }
 
         private function getHtml($url, $page_url)
         {
-
+ 
             $arrContextOptions = array(
                 "ssl" => array(
                     "verify_peer" => false,
@@ -119,6 +122,8 @@ function test_callback()
                     )
                 );
             }
+
+        
 
             // folder
             $folder = str_replace($this->site_url_base . "/", "", $page_url);
@@ -151,17 +156,17 @@ function test_callback()
         // Recursive function that crawls a page's anchor tags and store them in the scanned array.
         private function crawlPage($page_url)
         {
+         
             $page_url = rtrim($page_url, "/") . '/';
 
             if (ENV_LOCAL) {
                 $page_url = str_replace('https://' . $_SERVER['SERVER_ADDR'], $this->site_url_base, $page_url);
             }
-
+  
             $url = filter_var($page_url, FILTER_SANITIZE_URL);
 
-
             // Check if the url is invalid or if the page is already scanned;
-            if (in_array($url, $this->scanned, FALSE) || !filter_var($page_url, FILTER_VALIDATE_URL)) {
+            if (in_array($url, $this->scanned, FALSE) || !filter_var(str_replace("_", "", $page_url), FILTER_VALIDATE_URL)) {
                 return;
             }
 
@@ -247,8 +252,8 @@ function test_callback()
         }
     }
 
-    $smg = new SitemapGenerator1($isminify, $authentification);
-    $smg->GenerateSitemap();
+    $smg = new SitemapGenerator1($isminify, $authentification); 
+    $smg->GenerateSitemap();  
 
     $link = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), getenv('MYSQL_DATABASE'));
     $sql = "UPDATE " . $table . " SET value = CURRENT_TIMESTAMP WHERE option ='generate' ";
@@ -260,7 +265,7 @@ function test_callback()
 
     mysqli_close($link);
 
-    $response['markup'] = "done";
+    $response['markup'] = "done done";
 
     wp_send_json($response);
 
@@ -413,7 +418,7 @@ function static_export_pages_callback()
             $url = filter_var($page_url, FILTER_SANITIZE_URL);
 
             // Check if the url is invalid or if the page is already scanned;
-            if (in_array($url, $this->scanned, FALSE) || !filter_var($page_url, FILTER_VALIDATE_URL)) {
+            if (in_array($url, $this->scanned, FALSE) || !filter_var(str_replace("_", "", $page_url), FILTER_VALIDATE_URL)) {
                 return;
             }
 

@@ -155,6 +155,18 @@
     content: 'Mode static active';
 }
 
+.es-header {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 20px;
+
+    p{
+        margin: 0;
+        font-style: italic;
+    }
+}
+
 #es-main {
     hr {
         margin-top: 40px;

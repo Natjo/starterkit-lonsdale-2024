@@ -493,7 +493,7 @@ class SitemapGenerator2
 
 
         // Check if the url is invalid or if the page is already scanned;
-        if (in_array($url, $this->scanned, FALSE) || !filter_var($page_url, FILTER_VALIDATE_URL)) {
+        if (in_array($url, $this->scanned, FALSE) || !filter_var(str_replace("_", "", $page_url), FILTER_VALIDATE_URL)) {
             return;
         }
 

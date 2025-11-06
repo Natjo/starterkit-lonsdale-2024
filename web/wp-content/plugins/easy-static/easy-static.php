@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy static
 Description: Generate static site
-Version: 1.5.4
+Version: 1.5.5
 Author: Martin Jonathan
 */
 
@@ -17,7 +17,7 @@ global $is_es_active;
 
 // Create table easystatic if not exist
 $charset_collate = $wpdb->get_charset_collate();
-$table = $table_prefix . "easystatic";
+$table =  "easystatic";
 if (!$wpdb->get_var("SHOW TABLES LIKE '$table'") == $table) {
     $sql = "CREATE TABLE $table (
         id mediumint(9) NOT NULL AUTO_INCREMENT,

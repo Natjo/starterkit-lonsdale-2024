@@ -23,15 +23,6 @@ $nonce = wp_create_nonce('sm_nonce');
 
             </section>
 
-          <!--   <section>
-                <h2>Type de génération <button class="sc-btn-tips" value="type">?</button></h2>
-
-                <div class="sc-choices">
-                    <input id="sc-upload" type="radio" name="sc-type" value="0" <?= $sc_type == 0 ? "checked" : "" ?>><label for="sc-upload"><span>On upload</span></label>
-                    <input id="sc-onfly" type="radio" name="sc-type" value="1" <?= $sc_type == 1 ? "checked" : "" ?>><label for="sc-onfly"><span>On the fly</span></label>
-                </div>
-            </section> -->
-
             <section>
                 <h2>Generate Uploads <button class="sc-btn-tips" value="uploads">?</button></h2>
                 <form action="test" class="sc-generate">
@@ -148,29 +139,10 @@ $nonce = wp_create_nonce('sm_nonce');
 
                 </p>
 
-<!--                 <p>
-                    Pour la génération <b>On the fly</b>, on ne génerera que les images qu'on affiche si elle ne l'ont pas déjà etées.<br>
-                    L'avantage est que n'aura que les images au tailles voulues.<br>
-                    Pour ce mode il faudra ajouter le script suivant qui test si le webp n'existe pas pour le générer au moment de la création de l'image dans le code:<br>
-                <pre>
-if (function_exists('sm_onthefly')) {
-    sm_onthefly($id, $size_name);
-}
-</pre> -->
+
                 </p>
 <br>
-              <!--   <hr>
-
-                <div>
-                    <h3>Génération et affichage des webps dans les wysiwyg</h3>
-                    <p>Va générer les images à la volées des textes wysiwyg</p>
-                    <p>Il faudra ajouter cette fonction:</p>
-                    <code>
-                        sm_wysiwygWebp($fields['text']);
-                    </code>
-
-                </div>
-                <br> -->
+         
        <hr>
                 <div>
                     <h3>Purger les images webp du dossier upload</h3>

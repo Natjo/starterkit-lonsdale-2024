@@ -2,7 +2,7 @@
 /*
 Plugin Name: Smart Compress
 Description: Generate webp on upload or on the fly
-Version: 1.1.0
+Version: 1.1.1
 Author: Martin Jonathan
 */
 
@@ -101,8 +101,8 @@ function sm_generate($originalFilepath, $resizedFilepath, $newWidth, $newHeight,
     $image->setImageFormat("webp");
 
     if ($format == "PNG") {
-       // $image->setImageAlphaChannel(Imagick::ALPHACHANNEL_ACTIVATE);
-       // $image->setBackgroundColor(new ImagickPixel('transparent'));
+        // $image->setImageAlphaChannel(Imagick::ALPHACHANNEL_ACTIVATE);
+        // $image->setBackgroundColor(new ImagickPixel('transparent'));
     }
     if ($format == "GIF") {
         $image->writeImages($resizedFilepath, true);
@@ -313,10 +313,12 @@ function smart_compress()
 
     $sc_last_generate_table = $wpdb->get_results("SELECT * FROM " . $sc_table . " WHERE option = 'last_generate'");
     if (empty($sc_last_generate_table)) {
-        $data = array('option' => "last_generate", 'value' => json_encode($years));
-        $format = array('%s', '%s');
-        $wpdb->insert($sc_table, $data, $format);
-        $sc_last_generate = "";
+        if (!empty($years)) {
+            $data = array('option' => "last_generate", 'value' => json_encode($years));
+            $format = array('%s', '%s');
+            $wpdb->insert($sc_table, $data, $format);
+        }
+        $sc_last_generate = $years;
     } else {
         $sc_last_generate = json_decode($sc_last_generate_table[0]->value, true);
     }
