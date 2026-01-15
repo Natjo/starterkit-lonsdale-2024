@@ -32,9 +32,9 @@ const easeOutExpo = x => x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
 
 
 const lenis = new Lenis({
-    lerp: 0.1,
-    duration: 1.5,
-    smoothWheel: true
+  //  lerp: 0.1,
+   // duration: 1.5,
+    //smoothWheel: true
     //duration: 1.14,
     // easing: t => easeOutExpo(t),
 });

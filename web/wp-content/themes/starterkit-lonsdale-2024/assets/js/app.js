@@ -18,11 +18,7 @@ const easeOutQuint = x => 1 - Math.pow(1 - x, 5);
 const easeOutQuart = x => 1 - Math.pow(1 - x, 4);
 const easeOutQuad = x => 1 - (1 - x) * (1 - x);
 const easeOutExpo = x => x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
-const lenis = new Lenis({
-  lerp: 0.1,
-  duration: 1.5,
-  smoothWheel: true
-});
+const lenis = new Lenis({});
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);

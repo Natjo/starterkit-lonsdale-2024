@@ -193,11 +193,14 @@ img {
             scale: none;
             /*  will-change: transform; */
         }
+/*
+
 * {
     box-sizing: border-box;
 }
+*/
 .container {
-    position: static;
+   /* position: static;*/
 }
 @view-transition {
     navigation: auto;
